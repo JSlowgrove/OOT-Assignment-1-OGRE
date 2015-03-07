@@ -20,10 +20,13 @@ private:
 										
 	void UpdateGame(float dt);
 	void UpdateScene(Ogre::Vector3 &pos, Ogre::Quaternion &q);
+	Ogre::Matrix3 rotateX(float angle);
 	
 	std::shared_ptr<Ogre::SceneNode> cubeNode;
 	std::shared_ptr<Ogre::SceneNode> greenCubeNode;
 	std::shared_ptr<Ogre::SceneNode> atheneNode;
+	Ogre::Vector3 atheneVelocity;
+	Ogre::Vector3 athenePosition;
 	Ogre::Vector3 initial_position;
 	OgreApplication* application;
 	

@@ -71,6 +71,8 @@ void GameWorld::CreateEntities()
 	atheneNode->setScale(Ogre::Vector3(0.75f, 0.75f, 0.75f));
 	atheneNode->setPosition(initial_position);
 	atheneNode->attachObject(athene);
+
+	atheneVelocity = Ogre::Vector3(10.0f, 0.0f, 10.0f);
 }
 
 // Create a ogre world environment with a predefined geometry and a texture
@@ -256,4 +258,29 @@ void GameWorld::Update(float dt)
 {
 	UpdateGame(dt);
 
+	//update athene position
+	athenePosition = athenePosition + (atheneVelocity * dt);
+	//apply updated athene position
+	atheneNode->setPosition(athenePosition);
+
+	float angle = 2.0f * dt;
+
+	Ogre::Matrix3 rotationMatrix = rotateX(angle); 
+	
+	// orientation 
+	Ogre::Quaternion q; 
+	q.FromRotationMatrix(rotationMatrix); 
+	atheneNode->rotate(q, Ogre::Node::TS_LOCAL);
+}
+
+//a function to rotate an object around the x axis
+Ogre::Matrix3 GameWorld::rotateX(float angle) 
+{ 
+	Ogre::Matrix3 matX, rotateY, rotateZ; 
+	matX = Ogre::Matrix3( 
+		1.0, 0.0, 0.0, 
+		0.0, std::cos(angle), -std::sin(angle),
+		0.0, std::sin(angle), std::cos(angle) 
+		);
+	return matX; 
 }
