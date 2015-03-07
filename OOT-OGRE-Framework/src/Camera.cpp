@@ -37,9 +37,9 @@ void Camera::Update(OIS::Keyboard* keyboard, OIS::Mouse* mouse)
 		forwardScale = -1.0f;
 
 	if (keyboard->isKeyDown(OIS::KC_D) || keyboard->isKeyDown(OIS::KC_RIGHT))
-		sideScale = 1.0f;
-	else if (keyboard->isKeyDown(OIS::KC_A) || keyboard->isKeyDown(OIS::KC_LEFT))
 		sideScale = -1.0f;
+	else if (keyboard->isKeyDown(OIS::KC_A) || keyboard->isKeyDown(OIS::KC_LEFT))
+		sideScale = 1.0f;
 
 	if (keyboard->isKeyDown(OIS::KC_Q) || keyboard->isKeyDown(OIS::KC_HOME))
 		verticalScale = 1.0f;
