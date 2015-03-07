@@ -93,7 +93,7 @@ void GameWorld::CreateEnviroment()
 	Ogre::Pass* firstPass = firstTechnique->getPass(0);
 
 	Ogre::TextureUnitState* textureUnit = firstPass->createTextureUnitState();
-	textureUnit->setTextureName("checker.png", Ogre::TEX_TYPE_2D);  // BeachStones.jpg
+	textureUnit->setTextureName("BeachStones.jpg", Ogre::TEX_TYPE_2D);  // checker.png
 	textureUnit->setTextureCoordSet(0);
 
 	const Ogre::String& materialName = "GroundTexture";
