@@ -22,6 +22,7 @@ private:
 	void UpdateScene(Ogre::Vector3 &pos, Ogre::Quaternion &q);
 	
 	std::shared_ptr<Ogre::SceneNode> cubeNode;
+	std::shared_ptr<Ogre::SceneNode> greenCubeNode;
 	Ogre::Vector3 initial_position;
 	OgreApplication* application;
 	

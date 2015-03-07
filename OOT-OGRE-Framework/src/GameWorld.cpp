@@ -47,6 +47,18 @@ void GameWorld::CreateEntities()
 	cubeNode->setScale(Ogre::Vector3(0.5f, 0.5f, 0.5f));
 	cubeNode->setPosition(initial_position);
 	cubeNode->attachObject(cube);
+
+	// Load a green cube
+	auto greenCube = application->GetSceneManager()->createEntity("cube.mesh");
+	greenCube->setCastShadows(true);
+	greenCube->setMaterialName("GREEN");
+
+	initial_position = Ogre::Vector3(50.0f, 0.0f, 0.0f);
+
+	greenCubeNode.reset(application->GetSceneManager()->getRootSceneNode()->createChildSceneNode("greenCube"));  // give a name "greenCube" to the cubeNode
+	greenCubeNode->setScale(Ogre::Vector3(0.25f, 0.25f, 0.25f));
+	greenCubeNode->setPosition(initial_position);
+	greenCubeNode->attachObject(greenCube);
 }
 
 // Create a ogre world environment with a predefined geometry and a texture
