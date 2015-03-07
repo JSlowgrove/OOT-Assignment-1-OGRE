@@ -23,6 +23,7 @@ private:
 	
 	std::shared_ptr<Ogre::SceneNode> cubeNode;
 	std::shared_ptr<Ogre::SceneNode> greenCubeNode;
+	std::shared_ptr<Ogre::SceneNode> atheneNode;
 	Ogre::Vector3 initial_position;
 	OgreApplication* application;
 	

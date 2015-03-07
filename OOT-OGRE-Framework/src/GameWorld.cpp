@@ -59,6 +59,18 @@ void GameWorld::CreateEntities()
 	greenCubeNode->setScale(Ogre::Vector3(0.25f, 0.25f, 0.25f));
 	greenCubeNode->setPosition(initial_position);
 	greenCubeNode->attachObject(greenCube);
+
+	// Load a green athene statue
+	auto athene = application->GetSceneManager()->createEntity("athene.mesh");
+	athene->setCastShadows(true);
+	athene->setMaterialName("GREEN");
+
+	initial_position = Ogre::Vector3(0.0f, 0.0f, 50.0f);
+
+	atheneNode.reset(application->GetSceneManager()->getRootSceneNode()->createChildSceneNode("athene"));  // give a name "greenCube" to the cubeNode
+	atheneNode->setScale(Ogre::Vector3(0.75f, 0.75f, 0.75f));
+	atheneNode->setPosition(initial_position);
+	atheneNode->attachObject(athene);
 }
 
 // Create a ogre world environment with a predefined geometry and a texture
