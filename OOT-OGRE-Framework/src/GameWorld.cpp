@@ -262,6 +262,8 @@ void GameWorld::Update(float dt)
 {
 	UpdateGame(dt);
 
+	helicopter->updateActor(dt);
+
 	//update athene position
 	/*athenePosition = athenePosition + (atheneVelocity * dt);
 	//apply updated athene position

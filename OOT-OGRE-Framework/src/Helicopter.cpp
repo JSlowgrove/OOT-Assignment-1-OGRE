@@ -151,6 +151,8 @@ void Helicopter::setActor(OgreApplication* application)
 	/*initialise variables*/
 	Ogre::Real scale = 200.0f;
 	Ogre::Vector3 initialPosition;
+	mainRotorRotateSpeed = 0.0f;
+	sideRotorRotateSpeed = 0.0f;
 
 	/*initialise rotation*/
 	Ogre::Matrix3 rotateXMat;
@@ -212,5 +214,29 @@ void Helicopter::setActor(OgreApplication* application)
 /*Updates the Helicopter actor.*/
 void Helicopter::updateActor(float dt)
 {
+	/*set the helicopter speed*/
+	speed = Ogre::Vector3(10.0f, 10.0f, 10.0f);
+	/*set the rotors speed*/
+	mainRotorRotateSpeed = sideRotorRotateSpeed = 10.0f;
+
+	/*update the helicopter position*/
+	float updatedX = position.x + (speed.x * dt);
+	float updatedY = position.y + (speed.y * dt);
+	float updatedZ = position.z + (speed.z * dt);
+	position = Ogre::Vector3(updatedX, updatedY, updatedZ); 
+	helicopterNode->setPosition(position);
 	
+	/*set the side rotor to spin*/
+	Ogre::Matrix3 rotateXMat;
+	float rotateAngle = sideRotorRotateSpeed * 3.141596f / 180.0f;
+	rotateXMat = util::RotationMatrixXYZ(Ogre::Vector3(rotateAngle, 0.0f, 0.0f));
+	Ogre::Quaternion orientationQ;
+	orientationQ.FromRotationMatrix(rotateXMat);
+	sideRotorNode->rotate(orientationQ);
+
+	/*set the main rotor to spin*/
+	rotateAngle = mainRotorRotateSpeed * 3.141596f / 180.0f;
+	rotateXMat = util::RotationMatrixXYZ(Ogre::Vector3(0.0f, 0.0f, rotateAngle));
+	orientationQ.FromRotationMatrix(rotateXMat);
+	mainRotorNode->rotate(orientationQ);
 }
