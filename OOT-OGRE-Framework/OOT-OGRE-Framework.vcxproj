@@ -12,6 +12,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="src\Helicopter.h" />
+    <ClInclude Include="src\MyUtils.h" />
     <ClInclude Include="src\OgreApplication.h" />
     <ClInclude Include="src\OgreWrapper.h" />
     <ClInclude Include="src\GameWorld.h" />
@@ -19,7 +21,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\Helicopter.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\MyUtils.cpp" />
     <ClCompile Include="src\OgreApplication.cpp" />
     <ClCompile Include="src\OgreWrapper.cpp" />
     <ClCompile Include="src\GameWorld.cpp" />

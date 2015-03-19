@@ -33,7 +33,7 @@ void GameWorld::InitilaiseScene()
 void GameWorld::CreateEntities()
 {
 	// Create a material object named "RED" and a material object "GREEN"
-	application->SetEntityColour("RED", Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, Ogre::ColourValue(1.0f, 0.1f, 0.1f), Ogre::ColourValue(0.6f, 0.0f, 0.0f), 100.0f);
+	/*application->SetEntityColour("RED", Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, Ogre::ColourValue(1.0f, 0.1f, 0.1f), Ogre::ColourValue(0.6f, 0.0f, 0.0f), 100.0f);
 	application->SetEntityColour("GREEN", Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, Ogre::ColourValue(0.1f, 0.8f, 0.1f), Ogre::ColourValue(0.0f, 0.6f, 0.0f), 50.0f);
 	
 	// Load a cube
@@ -72,7 +72,11 @@ void GameWorld::CreateEntities()
 	atheneNode->setPosition(initial_position);
 	atheneNode->attachObject(athene);
 
-	atheneVelocity = Ogre::Vector3(10.0f, 0.0f, 10.0f);
+	atheneVelocity = Ogre::Vector3(10.0f, 0.0f, 10.0f);*/
+
+	/*initialise a helicopter*/
+	helicopter.reset(new Helicopter(1));
+	helicopter->setActor(application);
 }
 
 // Create a ogre world environment with a predefined geometry and a texture
@@ -259,7 +263,7 @@ void GameWorld::Update(float dt)
 	UpdateGame(dt);
 
 	//update athene position
-	athenePosition = athenePosition + (atheneVelocity * dt);
+	/*athenePosition = athenePosition + (atheneVelocity * dt);
 	//apply updated athene position
 	atheneNode->setPosition(athenePosition);
 
@@ -270,7 +274,7 @@ void GameWorld::Update(float dt)
 	// orientation 
 	Ogre::Quaternion q; 
 	q.FromRotationMatrix(rotationMatrix); 
-	atheneNode->rotate(q, Ogre::Node::TS_LOCAL);
+	atheneNode->rotate(q, Ogre::Node::TS_LOCAL);*/
 }
 
 //a function to rotate an object around the x axis
