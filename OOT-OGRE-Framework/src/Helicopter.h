@@ -5,11 +5,12 @@
 #include <memory>
 #include "OgreApplication.h"
 #include "MyUtils.h"
+#include "GameActor.h"
 
 /**
-@brief A class for a Helicopter object.
+@brief A class for a Helicopter object that inherits GameActor.
 */
-class Helicopter
+class Helicopter : public GameActor
 {
 private:
 	/**A pointer to the Helicopter node.*/
@@ -18,54 +19,26 @@ private:
 	std::shared_ptr<Ogre::SceneNode> mainRotorNode;
 	/**A pointer to the side rotor node of the Helicopter.*/
 	std::shared_ptr<Ogre::SceneNode> sideRotorNode;
-	/**The position of the Helicopter.*/
-	Ogre::Vector3 position;
-	/**The angle of the Helicopter.*/
-	Ogre::Vector3 angle;
 	/**The speed of the Helicopter.*/
 	Ogre::Vector3 speed;
 	/**The speed of the main rotors rotation.*/
 	float mainRotorRotateSpeed;
 	/**The speed of the side rotors rotation.*/
 	float sideRotorRotateSpeed;
-	/**The ID of the Helicopter*/
-	int iD;	
 
 public:
 	/**
 	Constructs the Helicopter object.
-	@param unsigned int The ID of the helicopter
+	@param Ogre::Vector3 The position of the Helicopter.
+	@param Ogre::Vector3 The orientation of the Helicopter.
+	@param Ogre::Real The scale of the Helicopter.
 	*/
-	Helicopter(int iD);
+	Helicopter(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::Real scale);
 
 	/**
 	Destructs the Helicopter object.
 	*/
 	~Helicopter();
-
-	/**
-	Setter # Sets the position of the Helicopter.
-	@param Ogre::Vector3 The new position of the Helicopter.
-	*/
-	void setPosition(Ogre::Vector3 position);
-
-	/**
-	Setter # Sets the x position of the Helicopter.
-	@param float The new x position of the Helicopter.
-	*/
-	void setX(float x);
-
-	/**
-	Setter # Sets the y position of the Helicopter.
-	@param float The new y position of the Helicopter.
-	*/
-	void setY(float y);
-
-	/**
-	Setter # Sets the z position of the Helicopter.
-	@param float The new z position of the Helicopter.
-	*/
-	void setZ(float z);
 
 	/**
 	Setter # Sets the speed of the Helicopter.
@@ -93,30 +66,6 @@ public:
 	void setZSpeed(float zSpeed);
 
 	/**
-	Setter # Sets the angle of the Helicopter.
-	@param Ogre::Vector3 The new angle of the Helicopter.
-	*/
-	void setAngle(Ogre::Vector3 angle);
-	
-	/**
-	Setter # Sets the x angle of the Helicopter.
-	@param float The new x angle of the Helicopter.
-	*/
-	void setXAngle(float xAngle);
-
-	/**
-	Setter # Sets the y angle of the Helicopter.
-	@param float The new y angle of the Helicopter.
-	*/
-	void setYAngle(float yAngle);
-
-	/**
-	Setter # Sets the z angle of the Helicopter.
-	@param float The new z angle of the Helicopter.
-	*/
-	void setZAngle(float zAngle);
-
-	/**
 	Setter # Sets the rotation speed of the main rotor.
 	@param float The new rotation speed of the main rotor.
 	*/
@@ -129,14 +78,15 @@ public:
 	void setSideRotorRotateSpeed(float sideRotorRotateSpeed);
 
 	/**
-	Setter # Sets the actor for the Helicopter.
+	Sets up the actor for the Helicopter.
 	@param OgreApplication A pointer to the application.
 	*/
-	void setActor(OgreApplication* application);
+	void setUpActor(OgreApplication* application);
 
 	/**
 	Updates the Helicopter actor.
 	@param float The delta time.
+	@param OIS::Keyboard* A pointer to the keyboard.
 	*/
-	void updateActor(float dt);
+	void updateActor(float dt, OIS::Keyboard* keyboard);
 };

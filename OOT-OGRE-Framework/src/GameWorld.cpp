@@ -32,51 +32,9 @@ void GameWorld::InitilaiseScene()
 
 void GameWorld::CreateEntities()
 {
-	// Create a material object named "RED" and a material object "GREEN"
-	/*application->SetEntityColour("RED", Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, Ogre::ColourValue(1.0f, 0.1f, 0.1f), Ogre::ColourValue(0.6f, 0.0f, 0.0f), 100.0f);
-	application->SetEntityColour("GREEN", Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, Ogre::ColourValue(0.1f, 0.8f, 0.1f), Ogre::ColourValue(0.0f, 0.6f, 0.0f), 50.0f);
-	
-	// Load a cube
-	auto cube = application->GetSceneManager()->createEntity("cube.mesh");
-	cube->setCastShadows(true);
-	cube->setMaterialName("RED");
-
-	initial_position = Ogre::Vector3(0.0f, 0.0f, 0.0f);
-	
-	cubeNode.reset(application->GetSceneManager()->getRootSceneNode()->createChildSceneNode("cube"));  // give a name "cube" to the cubeNode
-	cubeNode->setScale(Ogre::Vector3(0.5f, 0.5f, 0.5f));
-	cubeNode->setPosition(initial_position);
-	cubeNode->attachObject(cube);
-
-	// Load a green cube
-	auto greenCube = application->GetSceneManager()->createEntity("cube.mesh");
-	greenCube->setCastShadows(true);
-	greenCube->setMaterialName("GREEN");
-
-	initial_position = Ogre::Vector3(50.0f, 0.0f, 0.0f);
-
-	greenCubeNode.reset(application->GetSceneManager()->getRootSceneNode()->createChildSceneNode("greenCube"));  // give a name "greenCube" to the cubeNode
-	greenCubeNode->setScale(Ogre::Vector3(0.25f, 0.25f, 0.25f));
-	greenCubeNode->setPosition(initial_position);
-	greenCubeNode->attachObject(greenCube);
-
-	// Load a green athene statue
-	auto athene = application->GetSceneManager()->createEntity("athene.mesh");
-	athene->setCastShadows(true);
-	athene->setMaterialName("GREEN");
-
-	initial_position = Ogre::Vector3(0.0f, 0.0f, 50.0f);
-
-	atheneNode.reset(application->GetSceneManager()->getRootSceneNode()->createChildSceneNode("athene"));  // give a name "greenCube" to the cubeNode
-	atheneNode->setScale(Ogre::Vector3(0.75f, 0.75f, 0.75f));
-	atheneNode->setPosition(initial_position);
-	atheneNode->attachObject(athene);
-
-	atheneVelocity = Ogre::Vector3(10.0f, 0.0f, 10.0f);*/
-
 	/*initialise a helicopter*/
-	helicopter.reset(new Helicopter(1));
-	helicopter->setActor(application);
+	helicopter.reset(new Helicopter(Ogre::Vector3(0.0f, 10.0f, 0.0f), Ogre::Vector3(90.0f, 0.0f, 0.0f), 200.0f));
+	helicopter->setUpActor(application);
 }
 
 // Create a ogre world environment with a predefined geometry and a texture
@@ -225,7 +183,7 @@ void GameWorld::Run()
 		while (timeToUpdate > STEP_LENGTH && numOfUpdates < 60)
 		{
 			timeToUpdate -= STEP_LENGTH;
-			Update(deltaTime_s);
+			Update(deltaTime_s, dynamic_cast<OIS::Keyboard*>(keyboard.get()));
 
 			numOfUpdates++;
 		}
@@ -258,25 +216,11 @@ void GameWorld::UpdateScene(Ogre::Vector3 &pos, Ogre::Quaternion &q )
 	// show updated position in Ogre
 }
 
-void GameWorld::Update(float dt)
+void GameWorld::Update(float dt, OIS::Keyboard* keyboard)
 {
 	UpdateGame(dt);
 
-	helicopter->updateActor(dt);
-
-	//update athene position
-	/*athenePosition = athenePosition + (atheneVelocity * dt);
-	//apply updated athene position
-	atheneNode->setPosition(athenePosition);
-
-	float angle = 2.0f * dt;
-
-	Ogre::Matrix3 rotationMatrix = rotateX(angle); 
-	
-	// orientation 
-	Ogre::Quaternion q; 
-	q.FromRotationMatrix(rotationMatrix); 
-	atheneNode->rotate(q, Ogre::Node::TS_LOCAL);*/
+	helicopter->updateActor(dt, keyboard);
 }
 
 //a function to rotate an object around the x axis

@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="src\GameActor.h" />
     <ClInclude Include="src\Helicopter.h" />
     <ClInclude Include="src\MyUtils.h" />
     <ClInclude Include="src\OgreApplication.h" />
@@ -21,6 +22,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\GameActor.cpp" />
     <ClCompile Include="src\Helicopter.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\MyUtils.cpp" />

@@ -3,10 +3,9 @@
 /**************************************************************************************************************/
 
 /*Constructs the Helicopter object.*/
-Helicopter::Helicopter(int iD)
+Helicopter::Helicopter(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::Real scale) 
+	: GameActor(position, orientation, scale)
 {
-	/*set the value of ID*/
-	this->iD = iD;
 }
 
 /**************************************************************************************************************/
@@ -14,43 +13,6 @@ Helicopter::Helicopter(int iD)
 /*Destructs the Helicopter object.*/
 Helicopter::~Helicopter()
 {
-
-}
-
-/**************************************************************************************************************/
-
-/*Sets the position of the Helicopter.*/
-void Helicopter::setPosition(Ogre::Vector3 position)
-{
-	/*set the position*/
-	this->position = position;
-}
-
-/**************************************************************************************************************/
-
-/*Sets the x position of the Helicopter.*/
-void Helicopter::setX(float x)
-{
-	/*set the x position*/
-	position = Ogre::Vector3(x, position.y, position.z);
-}
-
-/**************************************************************************************************************/
-
-/*Sets the y position of the Helicopter.*/
-void Helicopter::setY(float y)
-{
-	/*set the y position*/
-	position = Ogre::Vector3(position.x, y, position.z);
-}
-
-/**************************************************************************************************************/
-
-/*Sets the z position of the Helicopter.*/
-void Helicopter::setZ(float z)
-{
-	/*set the x position*/
-	position = Ogre::Vector3(position.x, position.y, z);
 }
 
 /**************************************************************************************************************/
@@ -91,42 +53,6 @@ void Helicopter::setZSpeed(float zSpeed)
 
 /**************************************************************************************************************/
 
-/*Sets the angle of the Helicopter.*/
-void Helicopter::setAngle(Ogre::Vector3 angle)
-{
-	/*set the angle*/
-	this->angle = angle;
-}
-
-/**************************************************************************************************************/
-
-/*Sets the x angle of the Helicopter.*/
-void Helicopter::setXAngle(float xAngle)
-{
-	/*set the x angle*/
-	angle = Ogre::Vector3(xAngle, angle.y, angle.z);
-}
-
-/**************************************************************************************************************/
-
-/*Sets the y angle of the Helicopter.*/
-void Helicopter::setYAngle(float yAngle)
-{
-	/*set the y angle*/
-	angle = Ogre::Vector3(angle.x, yAngle, angle.z);
-}
-
-/**************************************************************************************************************/
-
-/*Sets the z angle of the Helicopter.*/
-void Helicopter::setZAngle(float zAngle)
-{
-	/*set the x angle*/
-	angle = Ogre::Vector3(angle.x, angle.y, zAngle);
-}
-
-/**************************************************************************************************************/
-
 /*Sets the rotation speed of the main rotor.*/
 void Helicopter::setMainRotorRotateSpeed(float mainRotorRotateSpeed)
 {
@@ -146,17 +72,15 @@ void Helicopter::setSideRotorRotateSpeed(float sideRotorRotateSpeed)
 /**************************************************************************************************************/
 
 /*Sets the actor for the Helicopter.*/
-void Helicopter::setActor(OgreApplication* application)
+void Helicopter::setUpActor(OgreApplication* application)
 {
 	/*initialise variables*/
-	Ogre::Real scale = 200.0f;
-	Ogre::Vector3 initialPosition;
 	mainRotorRotateSpeed = 0.0f;
 	sideRotorRotateSpeed = 0.0f;
 
-	/*initialise rotation*/
+	/*initialise helicopter rotation*/
 	Ogre::Matrix3 rotateXMat;
-	float angle = 90.0f *3.141596f / 180.0f;
+	float angle = orientation.x * 3.141596f / 180.0f;
 	rotateXMat = util::RotationMatrixXYZ(Ogre::Vector3(angle, 0.f, 0.f));
 	Ogre::Quaternion orientationQ;
 	orientationQ.FromRotationMatrix(rotateXMat);
@@ -186,25 +110,24 @@ void Helicopter::setActor(OgreApplication* application)
 	sideRotor->setMaterialName(materialName);
 
 	/*initialise the helicopter node*/
-	initialPosition = Ogre::Vector3(0.0f, 10.0f, 0.0f);
-	helicopterNode.reset(application->GetSceneManager()->getRootSceneNode()->createChildSceneNode("Helicopter " + std::to_string(iD) + " "));
+	helicopterNode.reset(application->GetSceneManager()->getRootSceneNode()->createChildSceneNode(std::to_string(actorID) + "Helicopter "));
 	helicopterNode->setScale(Ogre::Vector3(scale, scale, scale));
 	helicopterNode->setOrientation(orientationQ);
-	helicopterNode->setPosition(initialPosition);
+	helicopterNode->setPosition(position);
 	helicopterNode->attachObject(helicopter);
 	helicopterNode->showBoundingBox(false);
 
 	/*initialise the main rotor node*/
-	initialPosition = Ogre::Vector3(0.0f, 0.0f,-0.045f);
+	Ogre::Vector3 initialRotorPosition = Ogre::Vector3(0.0f, 0.0f,-0.045f);
 	mainRotorNode.reset(helicopterNode->createChildSceneNode("mainRotor"));
-	mainRotorNode->setPosition(initialPosition);
+	mainRotorNode->setPosition(initialRotorPosition);
 	mainRotorNode->attachObject(mainRotor);
 	mainRotorNode->showBoundingBox(false);
 
 	/*initialise the side rotor node*/
-	initialPosition = Ogre::Vector3(-0.015f, -0.11f, -0.004f);
+	initialRotorPosition = Ogre::Vector3(-0.015f, -0.11f, -0.004f);
 	sideRotorNode.reset(helicopterNode->createChildSceneNode("sideRotor"));
-	sideRotorNode->setPosition(initialPosition);
+	sideRotorNode->setPosition(initialRotorPosition);
 	sideRotorNode->attachObject(sideRotor);
 	sideRotorNode->showBoundingBox(false);
 }
@@ -212,7 +135,7 @@ void Helicopter::setActor(OgreApplication* application)
 /**************************************************************************************************************/
 
 /*Updates the Helicopter actor.*/
-void Helicopter::updateActor(float dt)
+void Helicopter::updateActor(float dt, OIS::Keyboard* keyboard)
 {
 	/*set the helicopter speed*/
 	speed = Ogre::Vector3(10.0f, 10.0f, 10.0f);
