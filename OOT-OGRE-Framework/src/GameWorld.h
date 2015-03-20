@@ -14,6 +14,7 @@
 #include <iostream>
 #include "OgreApplication.h"
 #include "Helicopter.h"
+#include "TerrainManager.h"
 
 class GameWorld
 {
@@ -24,6 +25,7 @@ private:
 	Ogre::Matrix3 rotateX(float angle);
 
 	std::shared_ptr<Helicopter> helicopter;
+	std::shared_ptr<TerrainManager> terrain;
 	
 	Ogre::Vector3 initial_position;
 	OgreApplication* application;

@@ -3,6 +3,7 @@
 //  OOT Tutorial Ogre Framework Demo.
 //  Created by Wen Tang on 19/01/15.
 //
+#include "stdafx.h"
 #include "GameWorld.h"
 #include "Camera.h"
 
@@ -33,7 +34,7 @@ void GameWorld::InitilaiseScene()
 void GameWorld::CreateEntities()
 {
 	/*initialise a helicopter*/
-	helicopter.reset(new Helicopter(Ogre::Vector3(0.0f, 10.0f, 0.0f), Ogre::Vector3(90.0f, 0.0f, 0.0f), 200.0f));
+	helicopter.reset(new Helicopter(Ogre::Vector3(0.0f, 600.0f, 0.0f), Ogre::Vector3(90.0f, 0.0f, 0.0f), 200.0f));
 	helicopter->setUpActor(application);
 }
 
@@ -41,7 +42,7 @@ void GameWorld::CreateEntities()
 void GameWorld::CreateEnviroment()
 {
 	// Create a plane and apply a texture to it
-	Ogre::Plane plane(Ogre::Vector3::UNIT_Y, 0);
+	/*Ogre::Plane plane(Ogre::Vector3::UNIT_Y, 0);
 	Ogre::MeshManager::getSingleton().createPlane("ground", Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, plane, 400, 400, 200, 200, true, 5, 5, 5, Ogre::Vector3::UNIT_Z);
 
 	Ogre::String tempName = "Ground";
@@ -61,8 +62,14 @@ void GameWorld::CreateEnviroment()
 	textureUnit->setTextureCoordSet(0);
 
 	const Ogre::String& materialName = "GroundTexture";
-	ground->setMaterialName(materialName);
+	ground->setMaterialName(materialName);*/
 
+	/*initialise the terrain*/
+	terrain.reset(new TerrainManager());
+	terrain->Create(application->GetSceneManager());
+	terrain->Loaded();
+
+	Ogre::Plane plane(Ogre::Vector3::UNIT_Y, 100);
 	application->GetSceneManager()->setSkyDome(true, "Examples/CloudySky", 10, 8, 100);
 	
 }
@@ -100,8 +107,8 @@ void GameWorld::Run()
 	// Create a camera
 	Ogre::String cameraName = "MainCamera";
 	auto cameraNode = application->CreateCamera(cameraName);
-	cameraNode->setPosition(Ogre::Vector3(-80.0f, 60.0f, -80.0f));
-	static_cast<Ogre::Camera*>(cameraNode->getAttachedObject("MainCamera"))->lookAt(0.0f, 0.0f, 0.0f);
+	cameraNode->setPosition(Ogre::Vector3(0.0f, 700.0f, 0.0f));
+	static_cast<Ogre::Camera*>(cameraNode->getAttachedObject("MainCamera"))->lookAt(0.0f, 4.0f, 0.0f);
 	shared_ptr<Ogre::MovableObject> cameraObject;
 	cameraObject.reset(cameraNode->getAttachedObject("MainCamera"));
 	std::shared_ptr<Camera> camera = make_shared<Camera>(cameraNode, cameraObject);

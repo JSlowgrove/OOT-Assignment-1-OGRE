@@ -62,7 +62,7 @@ bool OgreApplication::Initialize()
 	// Create  Root, RenderWindow, SceneManager, and SceneNode 
 	root = ogreWrapper.GetRoot();
 	renderWindow = ogreWrapper.GetWindow();
-	sceneManager  = root->createSceneManager(Ogre::ST_GENERIC, "MySceneManager");
+	sceneManager  = root->createSceneManager(Ogre::ST_EXTERIOR_REAL_FAR, "MySceneManager");
 	rootSceneNode  = sceneManager ->getRootSceneNode();
 
 	// load resources
@@ -102,8 +102,8 @@ shared_ptr<Ogre::SceneNode>  OgreApplication::CreateCamera(Ogre::String  name)
 	// Setup the visual ratio of the camera. To make it looks real, same as the viewport.
 	float ratio = static_cast<float>(viewport->getActualWidth()) / static_cast<float>(viewport->getActualHeight());
 	camera->setAspectRatio(ratio);
-	camera->setNearClipDistance(0.2f);
-	camera->setFarClipDistance(1000.0f);
+	camera->setNearClipDistance(0.01f);
+	camera->setFarClipDistance(50000.0f);
 	
 	// Set the window to be active
 	renderWindow->setActive(true);
