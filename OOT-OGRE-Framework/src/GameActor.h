@@ -106,4 +106,22 @@ public:
 	@param OIS::Keyboard* A pointer to the keyboard.
 	*/
 	virtual void updateActor(float dt, OIS::Keyboard* keyboard) = 0;
+
+	/**
+	Getter # Gets the position of the GameActor.
+	@returns Ogre::Vector3 The position of the GameActor.
+	*/
+	Ogre::Vector3 getPosition();
+
+	/**
+	Getter # Gets the orientation of the GameActor.
+	@returns Ogre::Vector3 The orientation of the GameActor.
+	*/
+	Ogre::Vector3 getOrientation();
+
+	/**
+	Getter # Gets the actorID of the GameActor.
+	@returns std::string The actorID of the GameActor.
+	*/
+	std::string getActorID();
 };

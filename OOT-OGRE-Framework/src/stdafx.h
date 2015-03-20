@@ -17,3 +17,4 @@
 #include <OgreTechnique.h>
 #include <OgreConfigFile.h>
 #include <Ois.h>
+#include "SdkTrays.h"

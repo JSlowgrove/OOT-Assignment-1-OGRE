@@ -66,6 +66,8 @@ bool OgreApplication::Initialize()
 	rootSceneNode  = sceneManager ->getRootSceneNode();
 
 	// load resources
+	overlaySystem = std::make_shared<Ogre::OverlaySystem>(); 
+	sceneManager->addRenderQueueListener(overlaySystem.get());
 	Ogre::ResourceGroupManager::getSingleton().initialiseAllResourceGroups();
 
 	return true;

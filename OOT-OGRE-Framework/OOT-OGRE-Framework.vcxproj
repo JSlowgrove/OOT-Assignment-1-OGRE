@@ -87,7 +87,7 @@
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <AdditionalOptions>-Zm196 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>-Zm242 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

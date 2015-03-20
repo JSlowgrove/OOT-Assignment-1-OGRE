@@ -24,6 +24,8 @@ class OgreApplication
 
 private:
 	
+	shared_ptr<Ogre::OverlaySystem> overlaySystem;
+
 	OgreWrapper	ogreWrapper; 
     Ogre::Root	*root; 
 	Ogre::RenderWindow	*renderWindow;						
@@ -37,8 +39,8 @@ private:
 	shared_ptr<OIS::Mouse>	mouse;						
 	shared_ptr<OIS::Keyboard> keyboard;					
 																	
-	void	CreateLights();													
-	void	CreateEnviroment();
+	void CreateLights();													
+	void CreateEnviroment();
 	   
 public:
 																
@@ -70,6 +72,7 @@ public:
     shared_ptr<OIS::Mouse> GetMouse(){return mouse;}
 	shared_ptr<Ogre::Timer> GetTimer(){return timer;}
 
+	Ogre::RenderWindow* GetRenderWindow() {return renderWindow;}
 };
 
 #endif  // End of _OGRE_APPLICATION_H_

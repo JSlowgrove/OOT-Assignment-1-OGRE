@@ -16,7 +16,7 @@
 #include "Helicopter.h"
 #include "TerrainManager.h"
 
-class GameWorld
+class GameWorld : public OgreBites::SdkTrayListener
 {
 private:
 										
@@ -26,6 +26,14 @@ private:
 
 	std::shared_ptr<Helicopter> helicopter;
 	std::shared_ptr<TerrainManager> terrain;
+
+	OgreBites::ParamsPanel* paramPanel;
+	void CreateGUI();
+
+	// on screen panel 
+	shared_ptr<OgreBites::SdkTrayManager> trayManager; 
+	Ogre::FrameEvent frameEvent; 
+	OgreBites::InputContext inputContext;
 	
 	Ogre::Vector3 initial_position;
 	OgreApplication* application;

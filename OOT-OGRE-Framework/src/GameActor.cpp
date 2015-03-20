@@ -111,3 +111,30 @@ void GameActor::setScale(Ogre::Real scale)
 	/*set the scale*/
 	this->scale = scale;
 }
+
+/**************************************************************************************************************/
+
+/*Gets the position of the game actor.*/
+Ogre::Vector3 GameActor::getPosition()
+{
+	/*return the position*/
+	return position;
+}
+
+/**************************************************************************************************************/
+
+/*Gets the orientation of the game actor.*/
+Ogre::Vector3 GameActor::getOrientation()
+{
+	/*return the orientation*/
+	return orientation;
+}
+
+/**************************************************************************************************************/
+
+/*Gets the actorID of the game actor.*/
+std::string GameActor::getActorID()
+{
+	/*return the actorID as an std::string*/
+	return std::to_string(actorID);
+}

@@ -17,6 +17,8 @@ GameWorld::GameWorld(OgreApplication* application_)
 {
 	application = application_;
 	initial_position = Ogre::Vector3(0.0f, 0.0f, 0.0f); 
+	trayManager = nullptr; 
+	frameEvent= Ogre::FrameEvent();
 }
 
 
@@ -29,6 +31,7 @@ void GameWorld::InitilaiseScene()
 	CreateEnviroment();
 	CreateLights();
 	CreateEntities();
+	CreateGUI();
 }
 
 void GameWorld::CreateEntities()
@@ -41,29 +44,6 @@ void GameWorld::CreateEntities()
 // Create a ogre world environment with a predefined geometry and a texture
 void GameWorld::CreateEnviroment()
 {
-	// Create a plane and apply a texture to it
-	/*Ogre::Plane plane(Ogre::Vector3::UNIT_Y, 0);
-	Ogre::MeshManager::getSingleton().createPlane("ground", Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME, plane, 400, 400, 200, 200, true, 5, 5, 5, Ogre::Vector3::UNIT_Z);
-
-	Ogre::String tempName = "Ground";
-	Ogre::Entity* ground = application->GetSceneManager()->createEntity("Ground", "ground");
-	ground->setCastShadows(false);
-
-	Ogre::SceneNode* groundNode = application->GetSceneManager()->getRootSceneNode()->createChildSceneNode(tempName.append("Node"));
-	groundNode->attachObject(ground);
-	groundNode->setPosition(0.0f, 0.0f, 0.0f);
-
-	Ogre::MaterialPtr material = Ogre::MaterialManager::getSingleton().create("GroundTexture", Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME);
-	Ogre::Technique* firstTechnique = material->getTechnique(0);
-	Ogre::Pass* firstPass = firstTechnique->getPass(0);
-
-	Ogre::TextureUnitState* textureUnit = firstPass->createTextureUnitState();
-	textureUnit->setTextureName("BeachStones.jpg", Ogre::TEX_TYPE_2D);  // checker.png
-	textureUnit->setTextureCoordSet(0);
-
-	const Ogre::String& materialName = "GroundTexture";
-	ground->setMaterialName(materialName);*/
-
 	/*initialise the terrain*/
 	terrain.reset(new TerrainManager());
 	terrain->Create(application->GetSceneManager());
@@ -135,6 +115,18 @@ void GameWorld::Run()
 	//Game loop
 	while (!application->GetOgreWrapper().GetWindow()->isClosed())
 	{
+		//display the frame stats
+		trayManager->showFrameStats((OgreBites::TL_BOTTOMLEFT));
+
+		//Update helicopter stats
+		char buffer[256];
+		Ogre::SceneNode *helicopterNode = application->GetSceneManager()->getSceneNode(helicopter->getActorID() + "Helicopter ");
+		Ogre::Vector3 vValue = helicopter->getPosition();
+		sprintf_s(buffer, 256, "%4.2f %4.2f %4.2f", vValue.x, vValue.y, vValue.z);
+		paramPanel->setParamValue(0, buffer);
+		vValue = helicopter->getOrientation();
+		sprintf_s(buffer, 256, "%4.2f %4.2f %4.2f", vValue.x, vValue.y, vValue.z);
+		paramPanel->setParamValue(1, buffer);
 
 		//Evaluate the current time and the time elapsed since last frame 
 		//Prepare the next iteration. 	
@@ -174,6 +166,10 @@ void GameWorld::Run()
 		{
 			Reset();
 		}
+
+		//Update Ogre
+		frameEvent.timeSinceLastFrame = deltaTime;
+		trayManager->frameRenderingQueued(frameEvent);
 		
 		const OIS::MouseState& mouseState = mouse->getMouseState();
 
@@ -240,4 +236,21 @@ Ogre::Matrix3 GameWorld::rotateX(float angle)
 		0.0, std::sin(angle), std::cos(angle) 
 		);
 	return matX; 
+}
+
+void GameWorld::CreateGUI()
+{
+	OgreBites::InputContext inputContext;
+	inputContext.mKeyboard = application->GetKeyboard().get();
+	inputContext.mMouse = application->GetMouse().get();
+	trayManager = make_shared<OgreBites::SdkTrayManager>("GUI", application->GetRenderWindow(), inputContext, this);
+
+	//Create a parameter panel
+	Ogre::StringVector parameters;
+	parameters.push_back("Helicopter Position");
+	parameters.push_back("Helicopter Orientation");
+	paramPanel = trayManager->createParamsPanel(OgreBites::TL_TOPLEFT, "Parameter Panel", 350, parameters);
+
+	trayManager->showLogo(OgreBites::TL_BOTTOMRIGHT);
+	trayManager->hideCursor(); 
 }
