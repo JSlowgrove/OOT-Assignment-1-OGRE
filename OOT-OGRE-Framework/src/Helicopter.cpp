@@ -53,31 +53,9 @@ void Helicopter::setZSpeed(float zSpeed)
 
 /**************************************************************************************************************/
 
-/*Sets the rotation speed of the main rotor.*/
-void Helicopter::setMainRotorRotateSpeed(float mainRotorRotateSpeed)
-{
-	/*set the rotor speed*/
-	this->mainRotorRotateSpeed = mainRotorRotateSpeed;
-}
-
-/**************************************************************************************************************/
-
-/*Sets the rotation speed of the side rotor.*/
-void Helicopter::setSideRotorRotateSpeed(float sideRotorRotateSpeed)
-{
-	/*set the rotor speed*/
-	this->sideRotorRotateSpeed = sideRotorRotateSpeed;
-}
-
-/**************************************************************************************************************/
-
 /*Sets the actor for the Helicopter.*/
 void Helicopter::setUpActor(OgreApplication* application)
 {
-	/*initialise variables*/
-	mainRotorRotateSpeed = 0.0f;
-	sideRotorRotateSpeed = 0.0f;
-
 	/*initialise helicopter rotation*/
 	Ogre::Matrix3 rotateXMat;
 	float angle = orientation.x * 3.141596f / 180.0f;
@@ -86,7 +64,8 @@ void Helicopter::setUpActor(OgreApplication* application)
 	orientationQ.FromRotationMatrix(rotateXMat);
 
 	/*load the helicopter green texture*/
-	Ogre::MaterialPtr material = Ogre::MaterialManager::getSingleton().create("GreenTexture", Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME);
+	Ogre::MaterialPtr material = Ogre::MaterialManager::getSingleton().create("GreenTexture", 
+		Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME);
 	Ogre::Technique* firstTechnique = material->getTechnique(0);
 	Ogre::Pass* firstPass = firstTechnique->getPass(0);
 	Ogre::TextureUnitState* textureUnit = firstPass->createTextureUnitState();
@@ -94,42 +73,33 @@ void Helicopter::setUpActor(OgreApplication* application)
 	textureUnit->setTextureCoordSet(0);
 	const Ogre::String& materialName = "GreenTexture";
 
-	/*load the meshes*/
+	/*load the mesh*/
 	auto helicopter = application->GetSceneManager()->createEntity("helicopter.mesh");
-	auto mainRotor = application->GetSceneManager()->createEntity("topRotor.mesh");
-	auto sideRotor = application->GetSceneManager()->createEntity("aftRotor.mesh");
 
 	/*set the lighting*/
 	helicopter->setCastShadows(false);
-	mainRotor->setCastShadows(false);
-	sideRotor->setCastShadows(false);
 
 	/*set the materials*/
 	helicopter->setMaterialName(materialName);
-	mainRotor->setMaterialName(materialName);
-	sideRotor->setMaterialName(materialName);
 
 	/*initialise the helicopter node*/
-	helicopterNode.reset(application->GetSceneManager()->getRootSceneNode()->createChildSceneNode(std::to_string(actorID) + "Helicopter "));
+	helicopterNode.reset(application->GetSceneManager()->getRootSceneNode()
+		->createChildSceneNode(std::to_string(actorID) + "Helicopter "));
 	helicopterNode->setScale(Ogre::Vector3(scale, scale, scale));
 	helicopterNode->setOrientation(orientationQ);
 	helicopterNode->setPosition(position);
 	helicopterNode->attachObject(helicopter);
 	helicopterNode->showBoundingBox(false);
 
-	/*initialise the main rotor node*/
+	/*initialise the main rotor*/
 	Ogre::Vector3 initialRotorPosition = Ogre::Vector3(0.0f, 0.0f,-0.045f);
-	mainRotorNode.reset(helicopterNode->createChildSceneNode("mainRotor"));
-	mainRotorNode->setPosition(initialRotorPosition);
-	mainRotorNode->attachObject(mainRotor);
-	mainRotorNode->showBoundingBox(false);
+	mainRotor.reset(new Rotor(initialRotorPosition, orientation, scale, helicopterNode, "topRotor"));
+	mainRotor->setUpActor(application);
 
-	/*initialise the side rotor node*/
+	/*initialise the side rotor*/
 	initialRotorPosition = Ogre::Vector3(-0.015f, -0.11f, -0.004f);
-	sideRotorNode.reset(helicopterNode->createChildSceneNode("sideRotor"));
-	sideRotorNode->setPosition(initialRotorPosition);
-	sideRotorNode->attachObject(sideRotor);
-	sideRotorNode->showBoundingBox(false);
+	sideRotor.reset(new Rotor(initialRotorPosition, orientation, scale, helicopterNode, "aftRotor"));
+	sideRotor->setUpActor(application);
 }
 
 /**************************************************************************************************************/
@@ -139,8 +109,10 @@ void Helicopter::updateActor(float dt, OIS::Keyboard* keyboard)
 {
 	/*set the helicopter speed*/
 	speed = Ogre::Vector3(10.0f, 10.0f, 10.0f);
+
 	/*set the rotors speed*/
-	mainRotorRotateSpeed = sideRotorRotateSpeed = 10.0f;
+	mainRotor->setRotateSpeed(10.0f);
+	sideRotor->setRotateSpeed(10.0f);
 
 	/*update the helicopter position*/
 	float updatedX = position.x + (speed.x * dt);
@@ -148,18 +120,12 @@ void Helicopter::updateActor(float dt, OIS::Keyboard* keyboard)
 	float updatedZ = position.z + (speed.z * dt);
 	position = Ogre::Vector3(updatedX, updatedY, updatedZ); 
 	helicopterNode->setPosition(position);
-	
-	/*set the side rotor to spin*/
-	Ogre::Matrix3 rotateXMat;
-	float rotateAngle = sideRotorRotateSpeed * 3.141596f / 180.0f;
-	rotateXMat = util::RotationMatrixXYZ(Ogre::Vector3(rotateAngle, 0.0f, 0.0f));
-	Ogre::Quaternion orientationQ;
-	orientationQ.FromRotationMatrix(rotateXMat);
-	sideRotorNode->rotate(orientationQ);
 
 	/*set the main rotor to spin*/
-	rotateAngle = mainRotorRotateSpeed * 3.141596f / 180.0f;
-	rotateXMat = util::RotationMatrixXYZ(Ogre::Vector3(0.0f, 0.0f, rotateAngle));
-	orientationQ.FromRotationMatrix(rotateXMat);
-	mainRotorNode->rotate(orientationQ);
+	mainRotor->setRotateAxis(Ogre::Vector3(0.0f,0.0f,1.0f));
+	mainRotor->updateActor(dt, keyboard);
+	
+	/*set the side rotor to spin*/
+	sideRotor->setRotateAxis(Ogre::Vector3(1.0f,0.0f,0.0f));
+	sideRotor->updateActor(dt, keyboard);
 }

@@ -6,6 +6,7 @@
 #include "OgreApplication.h"
 #include "MyUtils.h"
 #include "GameActor.h"
+#include "Rotor.h"
 
 /**
 @brief A class for a Helicopter object that inherits GameActor.
@@ -15,16 +16,12 @@ class Helicopter : public GameActor
 private:
 	/**A pointer to the Helicopter node.*/
 	std::shared_ptr<Ogre::SceneNode> helicopterNode;
-	/**A pointer to the main rotor node of the Helicopter.*/
-	std::shared_ptr<Ogre::SceneNode> mainRotorNode;
-	/**A pointer to the side rotor node of the Helicopter.*/
-	std::shared_ptr<Ogre::SceneNode> sideRotorNode;
+	/**A pointer to the main rotor of the Helicopter.*/
+	std::shared_ptr<Rotor> mainRotor;
+	/**A pointer to the side rotor of the Helicopter.*/
+	std::shared_ptr<Rotor> sideRotor;
 	/**The speed of the Helicopter.*/
 	Ogre::Vector3 speed;
-	/**The speed of the main rotors rotation.*/
-	float mainRotorRotateSpeed;
-	/**The speed of the side rotors rotation.*/
-	float sideRotorRotateSpeed;
 
 public:
 	/**
@@ -45,7 +42,6 @@ public:
 	@param Ogre::Vector3 The new speed of the Helicopter.
 	*/
 	void setSpeed(Ogre::Vector3 speed);
-
 	
 	/**
 	Setter # Sets the x speed of the Helicopter.
@@ -64,18 +60,6 @@ public:
 	@param float The new z speed of the Helicopter.
 	*/
 	void setZSpeed(float zSpeed);
-
-	/**
-	Setter # Sets the rotation speed of the main rotor.
-	@param float The new rotation speed of the main rotor.
-	*/
-	void setMainRotorRotateSpeed(float mainRotorRotateSpeed);
-
-	/**
-	Setter # Sets the rotation speed of the side rotor.
-	@param float The new rotation speed of the side rotor.
-	*/
-	void setSideRotorRotateSpeed(float sideRotorRotateSpeed);
 
 	/**
 	Sets up the actor for the Helicopter.
