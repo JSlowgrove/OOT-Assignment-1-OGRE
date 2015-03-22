@@ -22,6 +22,8 @@ private:
 	std::shared_ptr<Rotor> sideRotor;
 	/**The speed of the Helicopter.*/
 	Ogre::Vector3 speed;
+	/**The rotate speed*/
+	Ogre::Vector3 rotateSpeed;
 	/**A bool for if the Helicopter should move up*/
 	bool up;
 	/**A bool for if the Helicopter should move down*/
@@ -30,6 +32,10 @@ private:
 	bool left;
 	/**A bool for if the Helicopter should move right*/
 	bool right;
+	/**A bool for if the Helicopter should move forwards*/
+	bool forwards;
+	/**A bool for if the Helicopter should move backwards*/
+	bool backwards;
 	/**A bool for if the Helicopter should rotate up*/
 	bool rotateUp;
 	/**A bool for if the Helicopter should rotate down*/
@@ -38,6 +44,24 @@ private:
 	bool rotateLeft;
 	/**A bool for if the Helicopter should rotate right*/
 	bool rotateRight;
+
+	/**
+	Updates the speeds of the helicopter using the user commands.
+	*/
+	void updateSpeed();
+
+	/**
+	Updates the rotate speeds of the helicopter using the user commands.
+	*/
+	void updateRotate();
+
+	/**
+	Works out the new orientation angle.
+	@param Ogre::Real The orientation value to check.
+	@param Ogre::Real The rotation value.
+	@returns Ogre::Real The new angle.
+	*/
+	Ogre::Real orientationCheck(Ogre::Real orientationCheck, Ogre::Real rotation);
 
 public:
 	/**
@@ -82,6 +106,36 @@ public:
 	@param float The new z speed of the Helicopter.
 	*/
 	void setZSpeed(float zSpeed);
+
+	/**
+	Getter # Gets the rotate speed of the Helicopter.
+	@returns Ogre::Vector3 The rotate speed of the Helicopter.
+	*/
+	Ogre::Vector3 getRotateSpeed();
+
+	/**
+	Setter # Sets the rotate speed of the Helicopter.
+	@param Ogre::Vector3 The new rotate speed of the Helicopter.
+	*/
+	void setRotateSpeed(Ogre::Vector3 rotateSpeed);
+	
+	/**
+	Setter # Sets the x rotate speed of the Helicopter.
+	@param float The new x rotate speed of the Helicopter.
+	*/
+	void setXRotateSpeed(float xRotateSpeed);
+
+	/**
+	Setter # Sets the y rotate speed of the Helicopter.
+	@param float The new y rotate speed of the Helicopter.
+	*/
+	void setYRotateSpeed(float yRotateSpeed);
+
+	/**
+	Setter # Sets the z rotate speed of the Helicopter.
+	@param float The new z rotate speed of the Helicopter.
+	*/
+	void setZRotateSpeed(float zRotateSpeed);
 
 	/**
 	Sets up the actor for the Helicopter.

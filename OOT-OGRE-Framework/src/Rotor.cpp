@@ -49,13 +49,8 @@ void Rotor::rotateRotor()
 	Ogre::Matrix3 rotateMat;
 	float rotateAngle = rotateSpeed * 3.141596f / 180.0f;
 
-	/*create a matrix using the angle and the axis to rotate along*/
-	rotateMat = util::RotationMatrixXYZ(Ogre::Vector3(rotateAngle * rotationAxis.x, 
-		rotateAngle * rotationAxis.y, rotateAngle * rotationAxis.z));
-
-	/*convert the matrix to a quaternion*/
-	Ogre::Quaternion orientationQ;
-	orientationQ.FromRotationMatrix(rotateMat);
+	/*get the rotation in the form of a Quaternion*/
+	Ogre::Quaternion orientationQ = util::covertRotateToQuaternion(rotationAxis, rotateAngle);
 
 	/*rotate the rotor*/
 	rotorNode->rotate(orientationQ);

@@ -31,7 +31,7 @@ void Camera::Update(OIS::Keyboard* keyboard, OIS::Mouse* mouse)
 	float sideScale = 0.0f;
 	float verticalScale = 0.0f;
 
-	if (keyboard->isKeyDown(OIS::KC_W) || keyboard->isKeyDown(OIS::KC_UP))
+	/*if (keyboard->isKeyDown(OIS::KC_W) || keyboard->isKeyDown(OIS::KC_UP))
 		forwardScale = 1.0f;
 	else if (keyboard->isKeyDown(OIS::KC_S) || keyboard->isKeyDown(OIS::KC_DOWN))
 		forwardScale = -1.0f;
@@ -44,7 +44,7 @@ void Camera::Update(OIS::Keyboard* keyboard, OIS::Mouse* mouse)
 	if (keyboard->isKeyDown(OIS::KC_Q) || keyboard->isKeyDown(OIS::KC_HOME))
 		verticalScale = 1.0f;
 	else if (keyboard->isKeyDown(OIS::KC_Z) || keyboard->isKeyDown(OIS::KC_END))
-		verticalScale = -1.0f;
+		verticalScale = -1.0f;*/
 
 	currentPosition += (look * forwardScale);
 	currentPosition += (up * verticalScale);
