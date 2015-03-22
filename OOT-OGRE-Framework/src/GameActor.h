@@ -25,30 +25,44 @@ protected:
 	static unsigned int actorIDGenerator;
 	/**A the GameActor id*/
 	unsigned int actorID;
-	
+
+public:
 	/**
-	Setter # Sets the orientation of the GameActor.
-	@param Ogre::Vector3 The new orientation of the GameActor.
+	Constructs the GameActor object.
+	@param Ogre::Vector3 The position of the GameActor.
+	@param Ogre::Vector3 The orientation of the GameActor.
+	@param Ogre::Real The scale of the GameActor.
 	*/
-	void setOrientation(Ogre::Vector3 orientation);
-	
-	/**
-	Setter # Sets the x orientation of the GameActor.
-	@param float The new x orientation of the GameActor.
-	*/
-	void setXOrientation(float xOrientation);
+	GameActor(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::Real scale);
 
 	/**
-	Setter # Sets the y orientation of the GameActor.
-	@param float The new y orientation of the GameActor.
+	A virtual destructor for the GameActor object.
 	*/
-	void setYOrientation(float yOrientation);
+	virtual ~GameActor();
 
 	/**
-	Setter # Sets the z orientation of the GameActor.
-	@param float The new z orientation of the GameActor.
+	A pure virtual function for setting up the GameActor.
+	@param OgreApplication A pointer to the application.
 	*/
-	void setZOrientation(float zOrientation);
+	virtual void setUpActor(OgreApplication* application) = 0;
+
+	/**
+	A pure virtual function for updating the GameActor.
+	@param float The delta time.
+	*/
+	virtual void updateActor(float dt) = 0;
+
+	/**
+	Getter # Gets the actorID of the GameActor.
+	@returns std::string The actorID of the GameActor.
+	*/
+	std::string getActorID();
+
+	/**
+	Getter # Gets the position of the GameActor.
+	@returns Ogre::Vector3 The position of the GameActor.
+	*/
+	Ogre::Vector3 getPosition();
 
 	/**
 	Setter # Sets the position of the GameActor.
@@ -75,53 +89,44 @@ protected:
 	void setZ(float z);
 
 	/**
-	Setter # Sets the scale of the GameActor.
-	@param Ogre::Real The new scale of the GameActor.
-	*/
-	void setScale(Ogre::Real scale);
-
-public:
-	/**
-	Constructs the GameActor object.
-	@param Ogre::Vector3 The position of the GameActor.
-	@param Ogre::Vector3 The orientation of the GameActor.
-	@param Ogre::Real The scale of the GameActor.
-	*/
-	GameActor(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::Real scale);
-
-	/**
-	A virtual destructor for the GameActor object.
-	*/
-	virtual ~GameActor();
-
-	/**
-	A pure virtual function for setting up the GameActor.
-	@param OgreApplication A pointer to the application.
-	*/
-	virtual void setUpActor(OgreApplication* application) = 0;
-
-	/**
-	A pure virtual function for updating the GameActor.
-	@param float The delta time.
-	@param OIS::Keyboard* A pointer to the keyboard.
-	*/
-	virtual void updateActor(float dt, OIS::Keyboard* keyboard) = 0;
-
-	/**
-	Getter # Gets the position of the GameActor.
-	@returns Ogre::Vector3 The position of the GameActor.
-	*/
-	Ogre::Vector3 getPosition();
-
-	/**
 	Getter # Gets the orientation of the GameActor.
 	@returns Ogre::Vector3 The orientation of the GameActor.
 	*/
 	Ogre::Vector3 getOrientation();
 
 	/**
-	Getter # Gets the actorID of the GameActor.
-	@returns std::string The actorID of the GameActor.
+	Setter # Sets the orientation of the GameActor.
+	@param Ogre::Vector3 The new orientation of the GameActor.
 	*/
-	std::string getActorID();
+	void setOrientation(Ogre::Vector3 orientation);
+	
+	/**
+	Setter # Sets the x orientation of the GameActor.
+	@param float The new x orientation of the GameActor.
+	*/
+	void setXOrientation(float xOrientation);
+
+	/**
+	Setter # Sets the y orientation of the GameActor.
+	@param float The new y orientation of the GameActor.
+	*/
+	void setYOrientation(float yOrientation);
+
+	/**
+	Setter # Sets the z orientation of the GameActor.
+	@param float The new z orientation of the GameActor.
+	*/
+	void setZOrientation(float zOrientation);
+
+	/**
+	Getter # Gets the scale of the GameActor.
+	@returns Ogre::Real The scale of the GameActor.
+	*/
+	Ogre::Real getScale();
+
+	/**
+	Setter # Sets the scale of the GameActor.
+	@param Ogre::Real The new scale of the GameActor.
+	*/
+	void setScale(Ogre::Real scale);
 };

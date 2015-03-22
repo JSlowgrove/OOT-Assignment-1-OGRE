@@ -69,7 +69,6 @@ public:
 	/**
 	Updates the Rotor actor.
 	@param float The delta time.
-	@param OIS::Keyboard* A pointer to the keyboard.
 	*/
-	void updateActor(float dt, OIS::Keyboard* keyboard);
+	void updateActor(float dt);
 };

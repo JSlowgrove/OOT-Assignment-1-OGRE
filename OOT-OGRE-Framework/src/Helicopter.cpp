@@ -7,6 +7,8 @@
 Helicopter::Helicopter(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::Real scale) 
 	: GameActor(position, orientation, scale)
 {
+	/*initialise the user commands to false*/
+	up = down = left = right = rotateUp = rotateDown = rotateLeft = rotateRight = false;
 }
 
 /**************************************************************************************************************/
@@ -14,6 +16,15 @@ Helicopter::Helicopter(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::
 /*Destructs the Helicopter object.*/
 Helicopter::~Helicopter()
 {
+}
+
+/**************************************************************************************************************/
+
+/*Gets the speed of the Helicopter.*/
+Ogre::Vector3 Helicopter::getSpeed()
+{
+	/*return the speed*/
+	return speed;
 }
 
 /**************************************************************************************************************/
@@ -105,8 +116,15 @@ void Helicopter::setUpActor(OgreApplication* application)
 
 /**************************************************************************************************************/
 
+/*Handles the user input*/
+void Helicopter::handleInput(OIS::Keyboard* keyboard)
+{
+}
+
+/**************************************************************************************************************/
+
 /*Updates the Helicopter actor.*/
-void Helicopter::updateActor(float dt, OIS::Keyboard* keyboard)
+void Helicopter::updateActor(float dt)
 {
 	/*set the helicopter speed*/
 	speed = Ogre::Vector3(10.0f, 10.0f, 10.0f);
@@ -124,9 +142,9 @@ void Helicopter::updateActor(float dt, OIS::Keyboard* keyboard)
 
 	/*set the main rotor to spin*/
 	mainRotor->setRotateAxis(Ogre::Vector3(0.0f,0.0f,1.0f));
-	mainRotor->updateActor(dt, keyboard);
+	mainRotor->updateActor(dt);
 	
 	/*set the side rotor to spin*/
 	sideRotor->setRotateAxis(Ogre::Vector3(1.0f,0.0f,0.0f));
-	sideRotor->updateActor(dt, keyboard);
+	sideRotor->updateActor(dt);
 }

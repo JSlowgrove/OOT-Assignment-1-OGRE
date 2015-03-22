@@ -223,7 +223,8 @@ void GameWorld::Update(float dt, OIS::Keyboard* keyboard)
 {
 	UpdateGame(dt);
 
-	helicopter->updateActor(dt, keyboard);
+	helicopter->handleInput(keyboard);
+	helicopter->updateActor(dt);
 }
 
 //a function to rotate an object around the x axis

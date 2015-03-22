@@ -22,6 +22,22 @@ private:
 	std::shared_ptr<Rotor> sideRotor;
 	/**The speed of the Helicopter.*/
 	Ogre::Vector3 speed;
+	/**A bool for if the Helicopter should move up*/
+	bool up;
+	/**A bool for if the Helicopter should move down*/
+	bool down;
+	/**A bool for if the Helicopter should move left*/
+	bool left;
+	/**A bool for if the Helicopter should move right*/
+	bool right;
+	/**A bool for if the Helicopter should rotate up*/
+	bool rotateUp;
+	/**A bool for if the Helicopter should rotate down*/
+	bool rotateDown;
+	/**A bool for if the Helicopter should rotate left*/
+	bool rotateLeft;
+	/**A bool for if the Helicopter should rotate right*/
+	bool rotateRight;
 
 public:
 	/**
@@ -36,6 +52,12 @@ public:
 	Destructs the Helicopter object.
 	*/
 	~Helicopter();
+
+	/**
+	Getter # Gets the speed of the Helicopter.
+	@returns Ogre::Vector3 The speed of the Helicopter.
+	*/
+	Ogre::Vector3 getSpeed();
 
 	/**
 	Setter # Sets the speed of the Helicopter.
@@ -68,9 +90,14 @@ public:
 	void setUpActor(OgreApplication* application);
 
 	/**
-	Updates the Helicopter actor.
-	@param float The delta time.
+	Handles the user input.
 	@param OIS::Keyboard* A pointer to the keyboard.
 	*/
-	void updateActor(float dt, OIS::Keyboard* keyboard);
+	void handleInput(OIS::Keyboard* keyboard);
+
+	/**
+	Updates the Helicopter actor.
+	@param float The delta time.
+	*/
+	void updateActor(float dt);
 };

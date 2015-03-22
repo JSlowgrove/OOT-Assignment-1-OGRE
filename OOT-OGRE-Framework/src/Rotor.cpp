@@ -95,7 +95,7 @@ void Rotor::setUpActor(OgreApplication* application)
 /**************************************************************************************************************/
 
 /*Updates the rotor actor.*/
-void Rotor::updateActor(float dt, OIS::Keyboard* keyboard)
+void Rotor::updateActor(float dt)
 {
 	/*set the rotor to spin*/
 	rotateRotor();
