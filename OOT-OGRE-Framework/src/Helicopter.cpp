@@ -126,24 +126,11 @@ void Helicopter::setUpActor(OgreApplication* application)
 	Ogre::Quaternion orientationQ;
 	orientationQ.FromRotationMatrix(rotateXMat);
 
-	/*load the helicopter green texture*/
-	Ogre::MaterialPtr material = Ogre::MaterialManager::getSingleton().create("GreenTexture", 
-		Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME);
-	Ogre::Technique* firstTechnique = material->getTechnique(0);
-	Ogre::Pass* firstPass = firstTechnique->getPass(0);
-	Ogre::TextureUnitState* textureUnit = firstPass->createTextureUnitState();
-	textureUnit->setTextureName("Green.png", Ogre::TEX_TYPE_2D);
-	textureUnit->setTextureCoordSet(0);
-	const Ogre::String& materialName = "GreenTexture";
-
-	/*load the mesh*/
-	auto helicopter = application->GetSceneManager()->createEntity("helicopter.mesh");
+	/*load the mesh and material (original model & texture from http://www.turbosquid.com/FullPreview/Index.cfm/ID/863905) */
+	auto helicopter = application->GetSceneManager()->createEntity("helicopter","helicopter.mesh");
 
 	/*set the lighting*/
 	helicopter->setCastShadows(false);
-
-	/*set the materials*/
-	helicopter->setMaterialName(materialName);
 
 	/*initialise the helicopter node*/
 	helicopterNode.reset(application->GetSceneManager()->getRootSceneNode()
@@ -155,12 +142,12 @@ void Helicopter::setUpActor(OgreApplication* application)
 	helicopterNode->showBoundingBox(false);
 
 	/*initialise the main rotor*/
-	Ogre::Vector3 initialRotorPosition = Ogre::Vector3(0.0f, 0.0f,-0.045f);
+	Ogre::Vector3 initialRotorPosition = Ogre::Vector3(-0.35f, 39.0f, -4.85f);
 	mainRotor.reset(new Rotor(initialRotorPosition, orientation, scale, helicopterNode, "topRotor"));
 	mainRotor->setUpActor(application);
 
 	/*initialise the side rotor*/
-	initialRotorPosition = Ogre::Vector3(-0.015f, -0.11f, -0.004f);
+	initialRotorPosition = Ogre::Vector3(8.0f, 43.0f, -110.5f);
 	sideRotor.reset(new Rotor(initialRotorPosition, orientation, scale, helicopterNode, "aftRotor"));
 	sideRotor->setUpActor(application);
 }
@@ -281,7 +268,7 @@ void Helicopter::updateActor(float dt)
 	orientation.z = orientationCheck(orientation.z, rotateSpeed.z);
 
 	/*set the main rotor to spin*/
-	mainRotor->setRotateAxis(Ogre::Vector3(0.0f,0.0f,1.0f));
+	mainRotor->setRotateAxis(Ogre::Vector3(0.0f,1.0f,0.0f));
 	mainRotor->updateActor(dt);
 	
 	/*set the side rotor to spin*/
@@ -298,12 +285,12 @@ void Helicopter::updateSpeed()
 	if (left)
 	{
 		/*set the speed to cause the the helicopter to move left*/
-		setXSpeed(10.0f);
+		setXSpeed(100.0f);
 	}
 	else if (right)
 	{
 		/*set the speed to cause the the helicopter to move right*/
-		setXSpeed(-10.0f);
+		setXSpeed(-100.0f);
 	}
 	else
 	{
@@ -312,15 +299,15 @@ void Helicopter::updateSpeed()
 	}
 
 	/*y axis*/
-	if (forwards)
+	if (up)
 	{
-		/*set the speed to cause the the helicopter to move forwards*/
-		setYSpeed(10.0f);
+		/*set the speed to cause the the helicopter to move up*/
+		setYSpeed(100.0f);
 	}
-	else if (backwards)
+	else if (down)
 	{
-		/*set the speed to cause the the helicopter to move backwards*/
-		setYSpeed(-10.0f);
+		/*set the speed to cause the the helicopter to move down*/
+		setYSpeed(-100.0f);
 	}
 	else
 	{
@@ -329,15 +316,15 @@ void Helicopter::updateSpeed()
 	}
 
 	/*z axis*/
-	if (up)
+	if (forwards)
 	{
-		/*set the speed to cause the the helicopter to move up*/
-		setZSpeed(10.0f);
+		/*set the speed to cause the the helicopter to move forwards*/
+		setZSpeed(100.0f);
 	}
-	else if (down)
+	else if (backwards)
 	{
-		/*set the speed to cause the the helicopter to move down*/
-		setZSpeed(-10.0f);
+		/*set the speed to cause the the helicopter to move backwards*/
+		setZSpeed(-100.0f);
 	}
 	else
 	{
@@ -368,21 +355,21 @@ void Helicopter::updateRotate()
 		setXRotateSpeed(0.0f);
 	}
 
-	/*z axis*/	
+	/*y axis*/	
 	if (rotateLeft)
 	{
 		/*set the speed to cause the the helicopter to rotate left*/
-		setZRotateSpeed(-10.0f);
+		setYRotateSpeed(10.0f);
 	}
 	else if (rotateRight)
 	{
 		/*set the speed to cause the the helicopter to rotate right*/
-		setZRotateSpeed(10.0f);
+		setYRotateSpeed(-10.0f);
 	}
 	else
 	{
-		/*set the speed to cause the the helicopter to stay still along the z axis*/
-		setZRotateSpeed(0.0f);
+		/*set the speed to cause the the helicopter to stay still along the y axis*/
+		setYRotateSpeed(0.0f);
 	}
 }
 

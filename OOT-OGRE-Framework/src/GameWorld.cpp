@@ -37,7 +37,7 @@ void GameWorld::InitilaiseScene()
 void GameWorld::CreateEntities()
 {
 	/*initialise a helicopter*/
-	helicopter.reset(new Helicopter(Ogre::Vector3(0.0f, 600.0f, 0.0f), Ogre::Vector3(90.0f, 0.0f, 0.0f), 200.0f));
+	helicopter.reset(new Helicopter(Ogre::Vector3(0.0f, 600.0f, 0.0f), Ogre::Vector3(0.0f, 0.0f, 0.0f), 1.0f));
 	helicopter->setUpActor(application);
 }
 

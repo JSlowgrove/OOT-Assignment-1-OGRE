@@ -61,25 +61,12 @@ void Rotor::rotateRotor()
 /*Sets the actor for the Rotor.*/
 void Rotor::setUpActor(OgreApplication* application)
 {
-	/*load the rotor black texture*/
-	Ogre::MaterialPtr material = Ogre::MaterialManager::getSingleton().create("RotorTexture", 
-		Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME);
-	Ogre::Technique* firstTechnique = material->getTechnique(0);
-	Ogre::Pass* firstPass = firstTechnique->getPass(0);
-	Ogre::TextureUnitState* textureUnit = firstPass->createTextureUnitState();
-	textureUnit->setTextureName("RotorTexture.png", Ogre::TEX_TYPE_2D);
-	textureUnit->setTextureCoordSet(0);
-	const Ogre::String& materialName = "RotorTexture";
-
-	/*load the mesh*/
-	auto rotor = application->GetSceneManager()->createEntity(rotorType + ".mesh");
+	/*load the mesh and material (original model & texture from http://www.turbosquid.com/FullPreview/Index.cfm/ID/863905) */
+	auto rotor = application->GetSceneManager()->createEntity(rotorType, rotorType + ".mesh");
 
 	/*set the lighting*/
 	rotor->setCastShadows(false);
-
-	/*set the materials*/
-	rotor->setMaterialName(materialName);
-
+	
 	/*initialise the rotor node*/
 	rotorNode.reset(helicopterNode->createChildSceneNode(rotorType + " " + std::to_string(actorID)));
 	rotorNode->setPosition(position);
