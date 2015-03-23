@@ -1,719 +1,719 @@
-11:23:23: Creating resource group General
-11:23:23: Creating resource group Internal
-11:23:23: Creating resource group Autodetect
-11:23:23: SceneManagerFactory for type 'DefaultSceneManager' registered.
-11:23:23: Registering ResourceManager for type Material
-11:23:23: Registering ResourceManager for type Mesh
-11:23:23: Registering ResourceManager for type Skeleton
-11:23:23: MovableObjectFactory for type 'ParticleSystem' registered.
-11:23:23: ArchiveFactory for archive type FileSystem registered.
-11:23:23: ArchiveFactory for archive type Zip registered.
-11:23:23: ArchiveFactory for archive type EmbeddedZip registered.
-11:23:23: DDS codec registering
-11:23:23: FreeImage version: 3.15.3
-11:23:23: This program uses FreeImage, a free, open source image library supporting all common bitmap formats. See http://freeimage.sourceforge.net for details
-11:23:23: Supported formats: bmp,ico,jpg,jif,jpeg,jpe,jng,koa,iff,lbm,mng,pbm,pbm,pcd,pcx,pgm,pgm,png,ppm,ppm,ras,tga,targa,tif,tiff,wap,wbmp,wbm,psd,cut,xbm,xpm,gif,hdr,g3,sgi,exr,j2k,j2c,jp2,pfm,pct,pict,pic,3fr,arw,bay,bmq,cap,cine,cr2,crw,cs1,dc2,dcr,drf,dsc,dng,erf,fff,ia,iiq,k25,kc2,kdc,mdc,mef,mos,mrw,nef,nrw,orf,pef,ptx,pxn,qtk,raf,raw,rdc,rw2,rwl,rwz,sr2,srf,srw,sti
-11:23:23: Registering ResourceManager for type HighLevelGpuProgram
-11:23:23: Registering ResourceManager for type Compositor
-11:23:23: MovableObjectFactory for type 'Entity' registered.
-11:23:23: MovableObjectFactory for type 'Light' registered.
-11:23:23: MovableObjectFactory for type 'BillboardSet' registered.
-11:23:23: MovableObjectFactory for type 'ManualObject' registered.
-11:23:23: MovableObjectFactory for type 'BillboardChain' registered.
-11:23:23: MovableObjectFactory for type 'RibbonTrail' registered.
-11:23:23: OGRE EXCEPTION(6:FileNotFoundException): 'resources.cfg' file not found! in ConfigFile::load at ..\..\..\..\OgreMain\src\OgreConfigFile.cpp (line 82)
-11:23:23: resources.cfg not found, automatic plugin loading disabled.
-11:23:23: *-*-* OGRE Initialising
-11:23:23: *-*-* Version 1.9.0 (Ghadamon)
-11:23:23: Loading library RenderSystem_GL_d
-11:23:23: Installing plugin: GL RenderSystem
-11:23:23: OpenGL Rendering Subsystem created.
-11:23:23: Plugin successfully installed
-11:23:23: Loading library RenderSystem_Direct3D9_d
-11:23:23: Installing plugin: D3D9 RenderSystem
-11:23:23: D3D9 : Direct3D9 Rendering Subsystem created.
-11:23:23: D3D9: Driver Detection Starts
-11:23:24: D3D9: Driver Detection Ends
-11:23:24: Plugin successfully installed
-11:23:24: Loading library Plugin_ParticleFX_d
-11:23:24: Installing plugin: ParticleFX
-11:23:24: Particle Emitter Type 'Point' registered
-11:23:24: Particle Emitter Type 'Box' registered
-11:23:24: Particle Emitter Type 'Ellipsoid' registered
-11:23:24: Particle Emitter Type 'Cylinder' registered
-11:23:24: Particle Emitter Type 'Ring' registered
-11:23:24: Particle Emitter Type 'HollowEllipsoid' registered
-11:23:24: Particle Affector Type 'LinearForce' registered
-11:23:24: Particle Affector Type 'ColourFader' registered
-11:23:24: Particle Affector Type 'ColourFader2' registered
-11:23:24: Particle Affector Type 'ColourImage' registered
-11:23:24: Particle Affector Type 'ColourInterpolator' registered
-11:23:24: Particle Affector Type 'Scaler' registered
-11:23:24: Particle Affector Type 'Rotator' registered
-11:23:24: Particle Affector Type 'DirectionRandomiser' registered
-11:23:24: Particle Affector Type 'DeflectorPlane' registered
-11:23:24: Plugin successfully installed
-11:23:24: Creating resource group Essential
-11:23:24: Added resource location '../../Media/thumbnails' of type 'FileSystem' to resource group 'Essential'
-11:23:24: Added resource location '../../Media/packs/SdkTrays.zip' of type 'Zip' to resource group 'Essential'
-11:23:24: Added resource location '../../Media/packs/profiler.zip' of type 'Zip' to resource group 'Essential'
-11:23:24: Added resource location '../../Media' of type 'FileSystem' to resource group 'General'
-11:23:24: Creating resource group Popular
-11:23:24: Added resource location '../../Media/fonts' of type 'FileSystem' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/materials/programs' of type 'FileSystem' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/materials/scripts' of type 'FileSystem' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/materials/textures' of type 'FileSystem' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/materials/textures/nvidia' of type 'FileSystem' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/models' of type 'FileSystem' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/particle' of type 'FileSystem' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/DeferredShadingMedia' of type 'FileSystem' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/PCZAppMedia' of type 'FileSystem' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/RTShaderLib' of type 'FileSystem' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/RTShaderLib/materials' of type 'FileSystem' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/materials/scripts/SSAO' of type 'FileSystem' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/materials/textures/SSAO' of type 'FileSystem' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/volumeTerrain' of type 'FileSystem' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/packs/cubemap.zip' of type 'Zip' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/packs/cubemapsJS.zip' of type 'Zip' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/packs/dragon.zip' of type 'Zip' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/packs/fresneldemo.zip' of type 'Zip' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/packs/ogretestmap.zip' of type 'Zip' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/packs/ogredance.zip' of type 'Zip' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/packs/Sinbad.zip' of type 'Zip' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/packs/skybox.zip' of type 'Zip' to resource group 'Popular'
-11:23:24: Added resource location '../../Media/volumeTerrain/volumeTerrainBig.zip' of type 'Zip' to resource group 'Popular'
-11:23:24: Creating resource group Tests
-11:23:24: Added resource location '../../Tests/Media' of type 'FileSystem' to resource group 'Tests'
-11:23:24: D3D9 : RenderSystem Option: Allow DirectX9Ex = No
-11:23:24: D3D9 : RenderSystem Option: Allow NVPerfHUD = No
-11:23:24: D3D9 : RenderSystem Option: FSAA = 0
-11:23:24: D3D9 : RenderSystem Option: Fixed Pipeline Enabled = Yes
-11:23:24: D3D9 : RenderSystem Option: Floating-point mode = Fastest
-11:23:24: D3D9 : RenderSystem Option: Full Screen = Yes
-11:23:24: D3D9 : RenderSystem Option: Multi device memory hint = Use minimum system memory
-11:23:24: D3D9 : RenderSystem Option: Rendering Device = Monitor-1-Intel(R) HD Graphics 4600
-11:23:24: D3D9 : RenderSystem Option: Resource Creation Policy = Create on all devices
-11:23:24: D3D9 : RenderSystem Option: Use Multihead = Auto
-11:23:24: D3D9 : RenderSystem Option: VSync = No
-11:23:24: D3D9 : RenderSystem Option: VSync Interval = 1
-11:23:24: D3D9 : RenderSystem Option: Video Mode = 800 x 600 @ 32-bit colour
-11:23:24: D3D9 : RenderSystem Option: sRGB Gamma Conversion = No
-11:23:25: CPU Identifier & Features
-11:23:25: -------------------------
-11:23:25:  *   CPU ID: GenuineIntel: Intel(R) Core(TM) i7-4700MQ CPU @ 2.40GHz
-11:23:25:  *      SSE: yes
-11:23:25:  *     SSE2: yes
-11:23:25:  *     SSE3: yes
-11:23:25:  *      MMX: yes
-11:23:25:  *   MMXEXT: yes
-11:23:25:  *    3DNOW: no
-11:23:25:  * 3DNOWEXT: no
-11:23:25:  *     CMOV: yes
-11:23:25:  *      TSC: yes
-11:23:25:  *      FPU: yes
-11:23:25:  *      PRO: yes
-11:23:25:  *       HT: no
-11:23:25: -------------------------
-11:23:25: D3D9 : Subsystem Initialising
-11:23:25: Registering ResourceManager for type Texture
-11:23:25: Registering ResourceManager for type GpuProgram
-11:23:25: ***************************************
-11:23:25: *** D3D9 : Subsystem Initialised OK ***
-11:23:25: ***************************************
-11:23:25: D3D9RenderSystem::_createRenderWindow "Animation and Simulation Tutorial Framework", 1280x720 windowed  miscParams: full screen antialiasing=0 vsync=true 
-11:23:25: D3D9 : Created D3D9 Rendering Window 'Animation and Simulation Tutorial Framework' : 1280x686, 32bpp
-11:23:25: D3D9: Vertex texture format supported - PF_L8
-11:23:25: D3D9: Vertex texture format supported - PF_L16
-11:23:25: D3D9: Vertex texture format supported - PF_A8
-11:23:25: D3D9: Vertex texture format supported - PF_A4L4
-11:23:25: D3D9: Vertex texture format supported - PF_BYTE_LA
-11:23:25: D3D9: Vertex texture format supported - PF_R5G6B5
-11:23:25: D3D9: Vertex texture format supported - PF_B5G6R5
-11:23:25: D3D9: Vertex texture format supported - PF_A4R4G4B4
-11:23:25: D3D9: Vertex texture format supported - PF_A1R5G5B5
-11:23:25: D3D9: Vertex texture format supported - PF_A8R8G8B8
-11:23:25: D3D9: Vertex texture format supported - PF_B8G8R8A8
-11:23:25: D3D9: Vertex texture format supported - PF_A2R10G10B10
-11:23:25: D3D9: Vertex texture format supported - PF_A2B10G10R10
-11:23:25: D3D9: Vertex texture format supported - PF_DXT1
-11:23:25: D3D9: Vertex texture format supported - PF_DXT2
-11:23:25: D3D9: Vertex texture format supported - PF_DXT3
-11:23:25: D3D9: Vertex texture format supported - PF_DXT4
-11:23:25: D3D9: Vertex texture format supported - PF_DXT5
-11:23:25: D3D9: Vertex texture format supported - PF_FLOAT16_RGB
-11:23:25: D3D9: Vertex texture format supported - PF_FLOAT16_RGBA
-11:23:25: D3D9: Vertex texture format supported - PF_FLOAT32_RGB
-11:23:25: D3D9: Vertex texture format supported - PF_FLOAT32_RGBA
-11:23:25: D3D9: Vertex texture format supported - PF_X8R8G8B8
-11:23:25: D3D9: Vertex texture format supported - PF_R8G8B8A8
-11:23:25: D3D9: Vertex texture format supported - PF_DEPTH
-11:23:25: D3D9: Vertex texture format supported - PF_SHORT_RGBA
-11:23:25: D3D9: Vertex texture format supported - PF_FLOAT16_R
-11:23:25: D3D9: Vertex texture format supported - PF_FLOAT32_R
-11:23:25: D3D9: Vertex texture format supported - PF_SHORT_GR
-11:23:25: D3D9: Vertex texture format supported - PF_FLOAT16_GR
-11:23:25: D3D9: Vertex texture format supported - PF_FLOAT32_GR
-11:23:25: D3D9: Vertex texture format supported - PF_SHORT_RGB
-11:23:25: D3D9: Vertex texture format supported - PF_PVRTC_RGB2
-11:23:25: D3D9: Vertex texture format supported - PF_PVRTC_RGBA2
-11:23:25: D3D9: Vertex texture format supported - PF_PVRTC_RGB4
-11:23:25: D3D9: Vertex texture format supported - PF_PVRTC_RGBA4
-11:23:25: D3D9: Vertex texture format supported - PF_PVRTC2_2BPP
-11:23:25: D3D9: Vertex texture format supported - PF_PVRTC2_4BPP
-11:23:25: D3D9: Vertex texture format supported - PF_R11G11B10_FLOAT
-11:23:25: D3D9: Vertex texture format supported - PF_R8_UINT
-11:23:25: D3D9: Vertex texture format supported - PF_R8G8_UINT
-11:23:25: D3D9: Vertex texture format supported - PF_R8G8B8_UINT
-11:23:25: D3D9: Vertex texture format supported - PF_R8G8B8A8_UINT
-11:23:25: D3D9: Vertex texture format supported - PF_R16_UINT
-11:23:25: D3D9: Vertex texture format supported - PF_R16G16_UINT
-11:23:25: D3D9: Vertex texture format supported - PF_R16G16B16_UINT
-11:23:25: D3D9: Vertex texture format supported - PF_R16G16B16A16_UINT
-11:23:25: D3D9: Vertex texture format supported - PF_R32_UINT
-11:23:25: D3D9: Vertex texture format supported - PF_R32G32_UINT
-11:23:25: D3D9: Vertex texture format supported - PF_R32G32B32_UINT
-11:23:25: D3D9: Vertex texture format supported - PF_R32G32B32A32_UINT
-11:23:25: D3D9: Vertex texture format supported - PF_R8_SINT
-11:23:25: D3D9: Vertex texture format supported - PF_R8G8_SINT
-11:23:25: D3D9: Vertex texture format supported - PF_R8G8B8_SINT
-11:23:25: D3D9: Vertex texture format supported - PF_R8G8B8A8_SINT
-11:23:25: D3D9: Vertex texture format supported - PF_R16_SINT
-11:23:25: D3D9: Vertex texture format supported - PF_R16G16_SINT
-11:23:25: D3D9: Vertex texture format supported - PF_R16G16B16_SINT
-11:23:25: D3D9: Vertex texture format supported - PF_R16G16B16A16_SINT
-11:23:25: D3D9: Vertex texture format supported - PF_R32_SINT
-11:23:25: D3D9: Vertex texture format supported - PF_R32G32_SINT
-11:23:25: D3D9: Vertex texture format supported - PF_R32G32B32_SINT
-11:23:25: D3D9: Vertex texture format supported - PF_R32G32B32A32_SINT
-11:23:25: D3D9: Vertex texture format supported - PF_R9G9B9E5_SHAREDEXP
-11:23:25: D3D9: Vertex texture format supported - PF_BC4_UNORM
-11:23:25: D3D9: Vertex texture format supported - PF_BC4_SNORM
-11:23:25: D3D9: Vertex texture format supported - PF_BC5_UNORM
-11:23:25: D3D9: Vertex texture format supported - PF_BC5_SNORM
-11:23:25: D3D9: Vertex texture format supported - PF_BC6H_UF16
-11:23:25: D3D9: Vertex texture format supported - PF_BC6H_SF16
-11:23:25: D3D9: Vertex texture format supported - PF_BC7_UNORM
-11:23:25: D3D9: Vertex texture format supported - PF_BC7_UNORM_SRGB
-11:23:25: D3D9: Vertex texture format supported - PF_R8
-11:23:25: D3D9: Vertex texture format supported - PF_RG8
-11:23:25: D3D9: Vertex texture format supported - PF_R8_SNORM
-11:23:25: D3D9: Vertex texture format supported - PF_R8G8_SNORM
-11:23:25: D3D9: Vertex texture format supported - PF_R8G8B8_SNORM
-11:23:25: D3D9: Vertex texture format supported - PF_R8G8B8A8_SNORM
-11:23:25: D3D9: Vertex texture format supported - PF_R16_SNORM
-11:23:25: D3D9: Vertex texture format supported - PF_R16G16_SNORM
-11:23:25: D3D9: Vertex texture format supported - PF_R16G16B16_SNORM
-11:23:25: D3D9: Vertex texture format supported - PF_R16G16B16A16_SNORM
-11:23:25: D3D9: Vertex texture format supported - PF_ETC1_RGB8
-11:23:25: D3D9: Vertex texture format supported - PF_ETC2_RGB8
-11:23:25: D3D9: Vertex texture format supported - PF_ETC2_RGBA8
-11:23:25: D3D9: Vertex texture format supported - PF_ETC2_RGB8A1
-11:23:25: D3D9: Vertex texture format supported - PF_ATC_RGB
-11:23:25: D3D9: Vertex texture format supported - PF_ATC_RGBA_EXPLICIT_ALPHA
-11:23:25: D3D9: Vertex texture format supported - PF_ATC_RGBA_INTERPOLATED_ALPHA
-11:23:25: RenderSystem capabilities
-11:23:25: -------------------------
-11:23:25: RenderSystem Name: Direct3D9 Rendering Subsystem
-11:23:25: GPU Vendor: intel
-11:23:25: Device Name: Monitor-1-Intel(R) HD Graphics 4600
-11:23:25: Driver Version: 9.18.13.4788
-11:23:25:  * Fixed function pipeline: yes
-11:23:25:  * Hardware generation of mipmaps: yes
-11:23:25:  * Texture blending: yes
-11:23:25:  * Anisotropic texture filtering: yes
-11:23:25:  * Dot product texture operation: yes
-11:23:25:  * Cube mapping: yes
-11:23:25:  * Hardware stencil buffer: yes
-11:23:25:    - Stencil depth: 8
-11:23:25:    - Two sided stencil support: yes
-11:23:25:    - Wrap stencil values: yes
-11:23:25:  * Hardware vertex / index buffers: yes
-11:23:25:  * Vertex programs: yes
-11:23:25:  * Number of floating-point constants for vertex programs: 256
-11:23:25:  * Number of integer constants for vertex programs: 16
-11:23:25:  * Number of boolean constants for vertex programs: 16
-11:23:25:  * Fragment programs: yes
-11:23:25:  * Number of floating-point constants for fragment programs: 224
-11:23:25:  * Number of integer constants for fragment programs: 16
-11:23:25:  * Number of boolean constants for fragment programs: 16
-11:23:25:  * Geometry programs: no
-11:23:25:  * Number of floating-point constants for geometry programs: 0
-11:23:25:  * Number of integer constants for geometry programs: 0
-11:23:25:  * Number of boolean constants for geometry programs: 0
-11:23:25:  * Tesselation Hull programs: no
-11:23:25:  * Number of floating-point constants for tesselation hull programs: 0
-11:23:25:  * Number of integer constants for tesselation hull programs: 0
-11:23:25:  * Number of boolean constants for tesselation hull programs: 0
-11:23:25:  * Tesselation Domain programs: no
-11:23:25:  * Number of floating-point constants for tesselation domain programs: 0
-11:23:25:  * Number of integer constants for tesselation domain programs: 0
-11:23:25:  * Number of boolean constants for tesselation domain programs: 0
-11:23:25:  * Compute programs: no
-11:23:25:  * Number of floating-point constants for compute programs: 0
-11:23:25:  * Number of integer constants for compute programs: 0
-11:23:25:  * Number of boolean constants for compute programs: 0
-11:23:25:  * Supported Shader Profiles: hlsl ps_1_1 ps_1_2 ps_1_3 ps_1_4 ps_2_0 ps_2_a ps_2_b ps_2_x ps_3_0 vs_1_1 vs_2_0 vs_2_a vs_2_x vs_3_0
-11:23:25:  * Texture Compression: yes
-11:23:25:    - DXT: yes
-11:23:25:    - VTC: no
-11:23:25:    - PVRTC: no
-11:23:25:    - ATC: no
-11:23:25:    - ETC1: no
-11:23:25:    - ETC2: no
-11:23:25:    - BC4/BC5: no
-11:23:25:    - BC6H/BC7: no
-11:23:25:  * Scissor Rectangle: yes
-11:23:25:  * Hardware Occlusion Query: yes
-11:23:25:  * User clip planes: yes
-11:23:25:  * VET_UBYTE4 vertex element type: yes
-11:23:25:  * Infinite far plane projection: yes
-11:23:25:  * Hardware render-to-texture: yes
-11:23:25:  * Floating point textures: yes
-11:23:25:  * Non-power-of-two textures: yes
-11:23:25:  * 1d textures: yes
-11:23:25:  * Volume textures: yes
-11:23:25:  * Multiple Render Targets: 4
-11:23:25:    - With different bit depths: yes
-11:23:25:  * Point Sprites: yes
-11:23:25:  * Extended point parameters: yes
-11:23:25:  * Max Point Size: 256
-11:23:25:  * Vertex texture fetch: yes
-11:23:25:  * Number of world matrices: 0
-11:23:25:  * Number of texture units: 8
-11:23:25:  * Stencil buffer depth: 8
-11:23:25:  * Number of vertex blend matrices: 0
-11:23:25:    - Max vertex textures: 4
-11:23:25:    - Vertex textures shared: no
-11:23:25:  * Render to Vertex Buffer : no
-11:23:25:  * Hardware Atomic Counters: no
-11:23:25:  * DirectX per stage constants: yes
-11:23:25: DefaultWorkQueue('Root') initialising on thread 23a8.
-11:23:25: DefaultWorkQueue('Root')::WorkerFunc - thread 1d28 starting.
-11:23:25: DefaultWorkQueue('Root')::WorkerFunc - thread 20f8 starting.
-11:23:25: DefaultWorkQueue('Root')::WorkerFunc - thread 2220 starting.
-11:23:25: DefaultWorkQueue('Root')::WorkerFunc - thread 464 starting.
-11:23:25: DefaultWorkQueue('Root')::WorkerFunc - thread 18fc starting.
-11:23:25: DefaultWorkQueue('Root')::WorkerFunc - thread 2140 starting.
-11:23:25: DefaultWorkQueue('Root')::WorkerFunc - thread 1fac starting.
-11:23:25: DefaultWorkQueue('Root')::WorkerFunc - thread 9c4 starting.
-11:23:25: Particle Renderer Type 'billboard' registered
-11:23:25: OverlayElementFactory for type Panel registered.
-11:23:25: OverlayElementFactory for type BorderPanel registered.
-11:23:25: OverlayElementFactory for type TextArea registered.
-11:23:25: Registering ResourceManager for type Font
-11:23:25: Parsing scripts for resource group Autodetect
-11:23:25: Finished parsing scripts for resource group Autodetect
-11:23:25: Creating resources for group Autodetect
-11:23:25: All done
-11:23:25: Parsing scripts for resource group Essential
-11:23:25: Parsing script SdkTrays.material
-11:23:25: Parsing script OgreProfiler.material
-11:23:25: Parsing script SdkTrays.fontdef
-11:23:25: Parsing script SdkTrays.overlay
-11:23:25: Texture: sdk_cursor.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) Internal format is PF_A8R8G8B8,32x32x1.
-11:23:25: Texture: sdk_tray.png: Loading 1 faces(PF_A8R8G8B8,64x64x1) Internal format is PF_A8R8G8B8,64x64x1.
-11:23:25: Texture: sdk_button_up.png: Loading 1 faces(PF_A8R8G8B8,128x32x1) Internal format is PF_A8R8G8B8,128x32x1.
-11:23:25: Texture: sdk_text_box.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) Internal format is PF_A8R8G8B8,32x32x1.
-11:23:25: Texture: sdk_mini_tray.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) Internal format is PF_A8R8G8B8,32x32x1.
-11:23:25: Texture: sdk_track.png: Loading 1 faces(PF_A8R8G8B8,16x32x1) Internal format is PF_A8R8G8B8,16x32x1.
-11:23:25: Texture: sdk_handle.png: Loading 1 faces(PF_A8R8G8B8,16x16x1) Internal format is PF_A8R8G8B8,16x16x1.
-11:23:25: Texture: sdk_mini_text_box.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) Internal format is PF_A8R8G8B8,32x32x1.
-11:23:26: Texture: sdk_label.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) Internal format is PF_A8R8G8B8,32x32x1.
-11:23:26: Texture: sdk_separator.png: Loading 1 faces(PF_A8R8G8B8,64x16x1) Internal format is PF_A8R8G8B8,64x16x1.
-11:23:26: Texture: sdk_logo.png: Loading 1 faces(PF_A8R8G8B8,128x64x1) Internal format is PF_A8R8G8B8,128x64x1.
-11:23:26: Texture: sdk_shade.png: Loading 1 faces(PF_A8R8G8B8,64x48x1) with 6 generated mipmaps from Image. Internal format is PF_A8R8G8B8,64x48x1.
-11:23:26: Texture: sdk_frame.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) Internal format is PF_A8R8G8B8,32x32x1.
-11:23:26: Texture: sdk_mini_text_box_over.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) Internal format is PF_A8R8G8B8,32x32x1.
-11:23:26: Texture: sdk_pulse.png: Loading 1 faces(PF_R8G8B8,8x1x1) Internal format is PF_X8R8G8B8,8x1x1.
-11:23:26: Finished parsing scripts for resource group Essential
-11:23:26: Creating resources for group Essential
-11:23:26: All done
-11:23:26: Parsing scripts for resource group General
-11:23:26: Finished parsing scripts for resource group General
-11:23:26: Creating resources for group General
-11:23:26: All done
-11:23:26: Parsing scripts for resource group Internal
-11:23:26: Finished parsing scripts for resource group Internal
-11:23:26: Creating resources for group Internal
-11:23:26: All done
-11:23:26: Parsing scripts for resource group Popular
-11:23:26: Parsing script DualQuaternion.program
-11:23:26: Parsing script Examples.program
-11:23:26: Parsing script Instancing.program
-11:23:26: Parsing script StdQuad_vp.program
-11:23:26: Parsing script deferred_post.program
-11:23:26: Parsing script ShadowCaster.program
-11:23:26: Parsing script GBuffer.program
-11:23:26: Parsing script triplanarReference.program
-11:23:26: Parsing script AdaptivePNTrianglesTessellation.material
-11:23:26: Parsing script aftRotor.material
-11:23:26: Parsing script ASCII.material
-11:23:26: Parsing script ASMSwizzle.material
-11:23:26: Compiler error: object unsupported by render system in ASMSwizzle.material(1): , Shader name: Ogre/GPTest/Swizzle_GP_ASM
-11:23:26: Parsing script BlackAndWhite.material
-11:23:26: Parsing script Bloom.material
-11:23:26: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Blur0_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:26: High-level program Blur0_ps20 encountered an error during loading and is thus not supported.
+12:23:49: Creating resource group General
+12:23:49: Creating resource group Internal
+12:23:49: Creating resource group Autodetect
+12:23:49: SceneManagerFactory for type 'DefaultSceneManager' registered.
+12:23:49: Registering ResourceManager for type Material
+12:23:49: Registering ResourceManager for type Mesh
+12:23:49: Registering ResourceManager for type Skeleton
+12:23:49: MovableObjectFactory for type 'ParticleSystem' registered.
+12:23:49: ArchiveFactory for archive type FileSystem registered.
+12:23:49: ArchiveFactory for archive type Zip registered.
+12:23:49: ArchiveFactory for archive type EmbeddedZip registered.
+12:23:49: DDS codec registering
+12:23:49: FreeImage version: 3.15.3
+12:23:49: This program uses FreeImage, a free, open source image library supporting all common bitmap formats. See http://freeimage.sourceforge.net for details
+12:23:49: Supported formats: bmp,ico,jpg,jif,jpeg,jpe,jng,koa,iff,lbm,mng,pbm,pbm,pcd,pcx,pgm,pgm,png,ppm,ppm,ras,tga,targa,tif,tiff,wap,wbmp,wbm,psd,cut,xbm,xpm,gif,hdr,g3,sgi,exr,j2k,j2c,jp2,pfm,pct,pict,pic,3fr,arw,bay,bmq,cap,cine,cr2,crw,cs1,dc2,dcr,drf,dsc,dng,erf,fff,ia,iiq,k25,kc2,kdc,mdc,mef,mos,mrw,nef,nrw,orf,pef,ptx,pxn,qtk,raf,raw,rdc,rw2,rwl,rwz,sr2,srf,srw,sti
+12:23:49: Registering ResourceManager for type HighLevelGpuProgram
+12:23:49: Registering ResourceManager for type Compositor
+12:23:49: MovableObjectFactory for type 'Entity' registered.
+12:23:49: MovableObjectFactory for type 'Light' registered.
+12:23:49: MovableObjectFactory for type 'BillboardSet' registered.
+12:23:49: MovableObjectFactory for type 'ManualObject' registered.
+12:23:49: MovableObjectFactory for type 'BillboardChain' registered.
+12:23:49: MovableObjectFactory for type 'RibbonTrail' registered.
+12:23:49: OGRE EXCEPTION(6:FileNotFoundException): 'resources.cfg' file not found! in ConfigFile::load at ..\..\..\..\OgreMain\src\OgreConfigFile.cpp (line 82)
+12:23:49: resources.cfg not found, automatic plugin loading disabled.
+12:23:49: *-*-* OGRE Initialising
+12:23:49: *-*-* Version 1.9.0 (Ghadamon)
+12:23:49: Loading library RenderSystem_GL_d
+12:23:49: Installing plugin: GL RenderSystem
+12:23:49: OpenGL Rendering Subsystem created.
+12:23:49: Plugin successfully installed
+12:23:49: Loading library RenderSystem_Direct3D9_d
+12:23:49: Installing plugin: D3D9 RenderSystem
+12:23:49: D3D9 : Direct3D9 Rendering Subsystem created.
+12:23:49: D3D9: Driver Detection Starts
+12:23:49: D3D9: Driver Detection Ends
+12:23:49: Plugin successfully installed
+12:23:49: Loading library Plugin_ParticleFX_d
+12:23:49: Installing plugin: ParticleFX
+12:23:49: Particle Emitter Type 'Point' registered
+12:23:49: Particle Emitter Type 'Box' registered
+12:23:49: Particle Emitter Type 'Ellipsoid' registered
+12:23:49: Particle Emitter Type 'Cylinder' registered
+12:23:49: Particle Emitter Type 'Ring' registered
+12:23:49: Particle Emitter Type 'HollowEllipsoid' registered
+12:23:49: Particle Affector Type 'LinearForce' registered
+12:23:49: Particle Affector Type 'ColourFader' registered
+12:23:49: Particle Affector Type 'ColourFader2' registered
+12:23:49: Particle Affector Type 'ColourImage' registered
+12:23:49: Particle Affector Type 'ColourInterpolator' registered
+12:23:49: Particle Affector Type 'Scaler' registered
+12:23:49: Particle Affector Type 'Rotator' registered
+12:23:49: Particle Affector Type 'DirectionRandomiser' registered
+12:23:49: Particle Affector Type 'DeflectorPlane' registered
+12:23:49: Plugin successfully installed
+12:23:49: Creating resource group Essential
+12:23:49: Added resource location '../../Media/thumbnails' of type 'FileSystem' to resource group 'Essential'
+12:23:49: Added resource location '../../Media/packs/SdkTrays.zip' of type 'Zip' to resource group 'Essential'
+12:23:49: Added resource location '../../Media/packs/profiler.zip' of type 'Zip' to resource group 'Essential'
+12:23:49: Added resource location '../../Media' of type 'FileSystem' to resource group 'General'
+12:23:49: Creating resource group Popular
+12:23:49: Added resource location '../../Media/fonts' of type 'FileSystem' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/materials/programs' of type 'FileSystem' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/materials/scripts' of type 'FileSystem' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/materials/textures' of type 'FileSystem' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/materials/textures/nvidia' of type 'FileSystem' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/models' of type 'FileSystem' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/particle' of type 'FileSystem' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/DeferredShadingMedia' of type 'FileSystem' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/PCZAppMedia' of type 'FileSystem' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/RTShaderLib' of type 'FileSystem' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/RTShaderLib/materials' of type 'FileSystem' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/materials/scripts/SSAO' of type 'FileSystem' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/materials/textures/SSAO' of type 'FileSystem' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/volumeTerrain' of type 'FileSystem' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/packs/cubemap.zip' of type 'Zip' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/packs/cubemapsJS.zip' of type 'Zip' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/packs/dragon.zip' of type 'Zip' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/packs/fresneldemo.zip' of type 'Zip' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/packs/ogretestmap.zip' of type 'Zip' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/packs/ogredance.zip' of type 'Zip' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/packs/Sinbad.zip' of type 'Zip' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/packs/skybox.zip' of type 'Zip' to resource group 'Popular'
+12:23:49: Added resource location '../../Media/volumeTerrain/volumeTerrainBig.zip' of type 'Zip' to resource group 'Popular'
+12:23:49: Creating resource group Tests
+12:23:49: Added resource location '../../Tests/Media' of type 'FileSystem' to resource group 'Tests'
+12:23:49: D3D9 : RenderSystem Option: Allow DirectX9Ex = No
+12:23:49: D3D9 : RenderSystem Option: Allow NVPerfHUD = No
+12:23:49: D3D9 : RenderSystem Option: FSAA = 0
+12:23:49: D3D9 : RenderSystem Option: Fixed Pipeline Enabled = Yes
+12:23:49: D3D9 : RenderSystem Option: Floating-point mode = Fastest
+12:23:49: D3D9 : RenderSystem Option: Full Screen = Yes
+12:23:49: D3D9 : RenderSystem Option: Multi device memory hint = Use minimum system memory
+12:23:49: D3D9 : RenderSystem Option: Rendering Device = Monitor-1-Intel(R) HD Graphics 4600
+12:23:49: D3D9 : RenderSystem Option: Resource Creation Policy = Create on all devices
+12:23:49: D3D9 : RenderSystem Option: Use Multihead = Auto
+12:23:49: D3D9 : RenderSystem Option: VSync = No
+12:23:49: D3D9 : RenderSystem Option: VSync Interval = 1
+12:23:49: D3D9 : RenderSystem Option: Video Mode = 800 x 600 @ 32-bit colour
+12:23:49: D3D9 : RenderSystem Option: sRGB Gamma Conversion = No
+12:23:50: CPU Identifier & Features
+12:23:50: -------------------------
+12:23:50:  *   CPU ID: GenuineIntel: Intel(R) Core(TM) i7-4700MQ CPU @ 2.40GHz
+12:23:50:  *      SSE: yes
+12:23:50:  *     SSE2: yes
+12:23:50:  *     SSE3: yes
+12:23:50:  *      MMX: yes
+12:23:50:  *   MMXEXT: yes
+12:23:50:  *    3DNOW: no
+12:23:50:  * 3DNOWEXT: no
+12:23:50:  *     CMOV: yes
+12:23:50:  *      TSC: yes
+12:23:50:  *      FPU: yes
+12:23:50:  *      PRO: yes
+12:23:50:  *       HT: no
+12:23:50: -------------------------
+12:23:50: D3D9 : Subsystem Initialising
+12:23:50: Registering ResourceManager for type Texture
+12:23:50: Registering ResourceManager for type GpuProgram
+12:23:50: ***************************************
+12:23:50: *** D3D9 : Subsystem Initialised OK ***
+12:23:50: ***************************************
+12:23:50: D3D9RenderSystem::_createRenderWindow "Animation and Simulation Tutorial Framework", 1280x720 windowed  miscParams: full screen antialiasing=0 vsync=true 
+12:23:50: D3D9 : Created D3D9 Rendering Window 'Animation and Simulation Tutorial Framework' : 1280x686, 32bpp
+12:23:50: D3D9: Vertex texture format supported - PF_L8
+12:23:50: D3D9: Vertex texture format supported - PF_L16
+12:23:50: D3D9: Vertex texture format supported - PF_A8
+12:23:50: D3D9: Vertex texture format supported - PF_A4L4
+12:23:50: D3D9: Vertex texture format supported - PF_BYTE_LA
+12:23:50: D3D9: Vertex texture format supported - PF_R5G6B5
+12:23:50: D3D9: Vertex texture format supported - PF_B5G6R5
+12:23:50: D3D9: Vertex texture format supported - PF_A4R4G4B4
+12:23:50: D3D9: Vertex texture format supported - PF_A1R5G5B5
+12:23:50: D3D9: Vertex texture format supported - PF_A8R8G8B8
+12:23:50: D3D9: Vertex texture format supported - PF_B8G8R8A8
+12:23:50: D3D9: Vertex texture format supported - PF_A2R10G10B10
+12:23:50: D3D9: Vertex texture format supported - PF_A2B10G10R10
+12:23:50: D3D9: Vertex texture format supported - PF_DXT1
+12:23:50: D3D9: Vertex texture format supported - PF_DXT2
+12:23:50: D3D9: Vertex texture format supported - PF_DXT3
+12:23:50: D3D9: Vertex texture format supported - PF_DXT4
+12:23:50: D3D9: Vertex texture format supported - PF_DXT5
+12:23:50: D3D9: Vertex texture format supported - PF_FLOAT16_RGB
+12:23:50: D3D9: Vertex texture format supported - PF_FLOAT16_RGBA
+12:23:50: D3D9: Vertex texture format supported - PF_FLOAT32_RGB
+12:23:50: D3D9: Vertex texture format supported - PF_FLOAT32_RGBA
+12:23:50: D3D9: Vertex texture format supported - PF_X8R8G8B8
+12:23:50: D3D9: Vertex texture format supported - PF_R8G8B8A8
+12:23:50: D3D9: Vertex texture format supported - PF_DEPTH
+12:23:50: D3D9: Vertex texture format supported - PF_SHORT_RGBA
+12:23:50: D3D9: Vertex texture format supported - PF_FLOAT16_R
+12:23:50: D3D9: Vertex texture format supported - PF_FLOAT32_R
+12:23:50: D3D9: Vertex texture format supported - PF_SHORT_GR
+12:23:50: D3D9: Vertex texture format supported - PF_FLOAT16_GR
+12:23:50: D3D9: Vertex texture format supported - PF_FLOAT32_GR
+12:23:50: D3D9: Vertex texture format supported - PF_SHORT_RGB
+12:23:50: D3D9: Vertex texture format supported - PF_PVRTC_RGB2
+12:23:50: D3D9: Vertex texture format supported - PF_PVRTC_RGBA2
+12:23:50: D3D9: Vertex texture format supported - PF_PVRTC_RGB4
+12:23:50: D3D9: Vertex texture format supported - PF_PVRTC_RGBA4
+12:23:50: D3D9: Vertex texture format supported - PF_PVRTC2_2BPP
+12:23:50: D3D9: Vertex texture format supported - PF_PVRTC2_4BPP
+12:23:50: D3D9: Vertex texture format supported - PF_R11G11B10_FLOAT
+12:23:50: D3D9: Vertex texture format supported - PF_R8_UINT
+12:23:50: D3D9: Vertex texture format supported - PF_R8G8_UINT
+12:23:50: D3D9: Vertex texture format supported - PF_R8G8B8_UINT
+12:23:50: D3D9: Vertex texture format supported - PF_R8G8B8A8_UINT
+12:23:50: D3D9: Vertex texture format supported - PF_R16_UINT
+12:23:50: D3D9: Vertex texture format supported - PF_R16G16_UINT
+12:23:50: D3D9: Vertex texture format supported - PF_R16G16B16_UINT
+12:23:50: D3D9: Vertex texture format supported - PF_R16G16B16A16_UINT
+12:23:50: D3D9: Vertex texture format supported - PF_R32_UINT
+12:23:50: D3D9: Vertex texture format supported - PF_R32G32_UINT
+12:23:50: D3D9: Vertex texture format supported - PF_R32G32B32_UINT
+12:23:50: D3D9: Vertex texture format supported - PF_R32G32B32A32_UINT
+12:23:50: D3D9: Vertex texture format supported - PF_R8_SINT
+12:23:50: D3D9: Vertex texture format supported - PF_R8G8_SINT
+12:23:50: D3D9: Vertex texture format supported - PF_R8G8B8_SINT
+12:23:50: D3D9: Vertex texture format supported - PF_R8G8B8A8_SINT
+12:23:50: D3D9: Vertex texture format supported - PF_R16_SINT
+12:23:50: D3D9: Vertex texture format supported - PF_R16G16_SINT
+12:23:50: D3D9: Vertex texture format supported - PF_R16G16B16_SINT
+12:23:50: D3D9: Vertex texture format supported - PF_R16G16B16A16_SINT
+12:23:50: D3D9: Vertex texture format supported - PF_R32_SINT
+12:23:50: D3D9: Vertex texture format supported - PF_R32G32_SINT
+12:23:50: D3D9: Vertex texture format supported - PF_R32G32B32_SINT
+12:23:50: D3D9: Vertex texture format supported - PF_R32G32B32A32_SINT
+12:23:50: D3D9: Vertex texture format supported - PF_R9G9B9E5_SHAREDEXP
+12:23:50: D3D9: Vertex texture format supported - PF_BC4_UNORM
+12:23:50: D3D9: Vertex texture format supported - PF_BC4_SNORM
+12:23:50: D3D9: Vertex texture format supported - PF_BC5_UNORM
+12:23:50: D3D9: Vertex texture format supported - PF_BC5_SNORM
+12:23:50: D3D9: Vertex texture format supported - PF_BC6H_UF16
+12:23:50: D3D9: Vertex texture format supported - PF_BC6H_SF16
+12:23:50: D3D9: Vertex texture format supported - PF_BC7_UNORM
+12:23:50: D3D9: Vertex texture format supported - PF_BC7_UNORM_SRGB
+12:23:50: D3D9: Vertex texture format supported - PF_R8
+12:23:50: D3D9: Vertex texture format supported - PF_RG8
+12:23:50: D3D9: Vertex texture format supported - PF_R8_SNORM
+12:23:50: D3D9: Vertex texture format supported - PF_R8G8_SNORM
+12:23:50: D3D9: Vertex texture format supported - PF_R8G8B8_SNORM
+12:23:50: D3D9: Vertex texture format supported - PF_R8G8B8A8_SNORM
+12:23:50: D3D9: Vertex texture format supported - PF_R16_SNORM
+12:23:50: D3D9: Vertex texture format supported - PF_R16G16_SNORM
+12:23:50: D3D9: Vertex texture format supported - PF_R16G16B16_SNORM
+12:23:50: D3D9: Vertex texture format supported - PF_R16G16B16A16_SNORM
+12:23:50: D3D9: Vertex texture format supported - PF_ETC1_RGB8
+12:23:50: D3D9: Vertex texture format supported - PF_ETC2_RGB8
+12:23:50: D3D9: Vertex texture format supported - PF_ETC2_RGBA8
+12:23:50: D3D9: Vertex texture format supported - PF_ETC2_RGB8A1
+12:23:50: D3D9: Vertex texture format supported - PF_ATC_RGB
+12:23:50: D3D9: Vertex texture format supported - PF_ATC_RGBA_EXPLICIT_ALPHA
+12:23:50: D3D9: Vertex texture format supported - PF_ATC_RGBA_INTERPOLATED_ALPHA
+12:23:50: RenderSystem capabilities
+12:23:50: -------------------------
+12:23:50: RenderSystem Name: Direct3D9 Rendering Subsystem
+12:23:50: GPU Vendor: intel
+12:23:50: Device Name: Monitor-1-Intel(R) HD Graphics 4600
+12:23:50: Driver Version: 9.18.13.4788
+12:23:50:  * Fixed function pipeline: yes
+12:23:50:  * Hardware generation of mipmaps: yes
+12:23:50:  * Texture blending: yes
+12:23:50:  * Anisotropic texture filtering: yes
+12:23:50:  * Dot product texture operation: yes
+12:23:50:  * Cube mapping: yes
+12:23:50:  * Hardware stencil buffer: yes
+12:23:50:    - Stencil depth: 8
+12:23:50:    - Two sided stencil support: yes
+12:23:50:    - Wrap stencil values: yes
+12:23:50:  * Hardware vertex / index buffers: yes
+12:23:50:  * Vertex programs: yes
+12:23:50:  * Number of floating-point constants for vertex programs: 256
+12:23:50:  * Number of integer constants for vertex programs: 16
+12:23:50:  * Number of boolean constants for vertex programs: 16
+12:23:50:  * Fragment programs: yes
+12:23:50:  * Number of floating-point constants for fragment programs: 224
+12:23:50:  * Number of integer constants for fragment programs: 16
+12:23:50:  * Number of boolean constants for fragment programs: 16
+12:23:50:  * Geometry programs: no
+12:23:50:  * Number of floating-point constants for geometry programs: 0
+12:23:50:  * Number of integer constants for geometry programs: 0
+12:23:50:  * Number of boolean constants for geometry programs: 0
+12:23:50:  * Tesselation Hull programs: no
+12:23:50:  * Number of floating-point constants for tesselation hull programs: 0
+12:23:50:  * Number of integer constants for tesselation hull programs: 0
+12:23:50:  * Number of boolean constants for tesselation hull programs: 0
+12:23:50:  * Tesselation Domain programs: no
+12:23:50:  * Number of floating-point constants for tesselation domain programs: 0
+12:23:50:  * Number of integer constants for tesselation domain programs: 0
+12:23:50:  * Number of boolean constants for tesselation domain programs: 0
+12:23:50:  * Compute programs: no
+12:23:50:  * Number of floating-point constants for compute programs: 0
+12:23:50:  * Number of integer constants for compute programs: 0
+12:23:50:  * Number of boolean constants for compute programs: 0
+12:23:50:  * Supported Shader Profiles: hlsl ps_1_1 ps_1_2 ps_1_3 ps_1_4 ps_2_0 ps_2_a ps_2_b ps_2_x ps_3_0 vs_1_1 vs_2_0 vs_2_a vs_2_x vs_3_0
+12:23:50:  * Texture Compression: yes
+12:23:50:    - DXT: yes
+12:23:50:    - VTC: no
+12:23:50:    - PVRTC: no
+12:23:50:    - ATC: no
+12:23:50:    - ETC1: no
+12:23:50:    - ETC2: no
+12:23:50:    - BC4/BC5: no
+12:23:50:    - BC6H/BC7: no
+12:23:50:  * Scissor Rectangle: yes
+12:23:50:  * Hardware Occlusion Query: yes
+12:23:50:  * User clip planes: yes
+12:23:50:  * VET_UBYTE4 vertex element type: yes
+12:23:50:  * Infinite far plane projection: yes
+12:23:50:  * Hardware render-to-texture: yes
+12:23:50:  * Floating point textures: yes
+12:23:50:  * Non-power-of-two textures: yes
+12:23:50:  * 1d textures: yes
+12:23:50:  * Volume textures: yes
+12:23:50:  * Multiple Render Targets: 4
+12:23:50:    - With different bit depths: yes
+12:23:50:  * Point Sprites: yes
+12:23:50:  * Extended point parameters: yes
+12:23:50:  * Max Point Size: 256
+12:23:50:  * Vertex texture fetch: yes
+12:23:50:  * Number of world matrices: 0
+12:23:50:  * Number of texture units: 8
+12:23:50:  * Stencil buffer depth: 8
+12:23:50:  * Number of vertex blend matrices: 0
+12:23:50:    - Max vertex textures: 4
+12:23:50:    - Vertex textures shared: no
+12:23:50:  * Render to Vertex Buffer : no
+12:23:50:  * Hardware Atomic Counters: no
+12:23:50:  * DirectX per stage constants: yes
+12:23:50: DefaultWorkQueue('Root') initialising on thread 1934.
+12:23:50: DefaultWorkQueue('Root')::WorkerFunc - thread cf4 starting.
+12:23:50: DefaultWorkQueue('Root')::WorkerFunc - thread b24 starting.
+12:23:50: DefaultWorkQueue('Root')::WorkerFunc - thread 1c4c starting.
+12:23:50: DefaultWorkQueue('Root')::WorkerFunc - thread 21d8 starting.
+12:23:50: DefaultWorkQueue('Root')::WorkerFunc - thread 235c starting.
+12:23:50: DefaultWorkQueue('Root')::WorkerFunc - thread 23f8 starting.
+12:23:50: DefaultWorkQueue('Root')::WorkerFunc - thread b48 starting.
+12:23:50: DefaultWorkQueue('Root')::WorkerFunc - thread d30 starting.
+12:23:50: Particle Renderer Type 'billboard' registered
+12:23:50: OverlayElementFactory for type Panel registered.
+12:23:50: OverlayElementFactory for type BorderPanel registered.
+12:23:50: OverlayElementFactory for type TextArea registered.
+12:23:50: Registering ResourceManager for type Font
+12:23:50: Parsing scripts for resource group Autodetect
+12:23:50: Finished parsing scripts for resource group Autodetect
+12:23:50: Creating resources for group Autodetect
+12:23:50: All done
+12:23:50: Parsing scripts for resource group Essential
+12:23:50: Parsing script SdkTrays.material
+12:23:50: Parsing script OgreProfiler.material
+12:23:50: Parsing script SdkTrays.fontdef
+12:23:50: Parsing script SdkTrays.overlay
+12:23:50: Texture: sdk_cursor.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) Internal format is PF_A8R8G8B8,32x32x1.
+12:23:50: Texture: sdk_tray.png: Loading 1 faces(PF_A8R8G8B8,64x64x1) Internal format is PF_A8R8G8B8,64x64x1.
+12:23:50: Texture: sdk_button_up.png: Loading 1 faces(PF_A8R8G8B8,128x32x1) Internal format is PF_A8R8G8B8,128x32x1.
+12:23:50: Texture: sdk_text_box.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) Internal format is PF_A8R8G8B8,32x32x1.
+12:23:50: Texture: sdk_mini_tray.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) Internal format is PF_A8R8G8B8,32x32x1.
+12:23:50: Texture: sdk_track.png: Loading 1 faces(PF_A8R8G8B8,16x32x1) Internal format is PF_A8R8G8B8,16x32x1.
+12:23:50: Texture: sdk_handle.png: Loading 1 faces(PF_A8R8G8B8,16x16x1) Internal format is PF_A8R8G8B8,16x16x1.
+12:23:50: Texture: sdk_mini_text_box.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) Internal format is PF_A8R8G8B8,32x32x1.
+12:23:50: Texture: sdk_label.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) Internal format is PF_A8R8G8B8,32x32x1.
+12:23:50: Texture: sdk_separator.png: Loading 1 faces(PF_A8R8G8B8,64x16x1) Internal format is PF_A8R8G8B8,64x16x1.
+12:23:50: Texture: sdk_logo.png: Loading 1 faces(PF_A8R8G8B8,128x64x1) Internal format is PF_A8R8G8B8,128x64x1.
+12:23:51: Texture: sdk_shade.png: Loading 1 faces(PF_A8R8G8B8,64x48x1) with 6 generated mipmaps from Image. Internal format is PF_A8R8G8B8,64x48x1.
+12:23:51: Texture: sdk_frame.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) Internal format is PF_A8R8G8B8,32x32x1.
+12:23:51: Texture: sdk_mini_text_box_over.png: Loading 1 faces(PF_A8R8G8B8,32x32x1) Internal format is PF_A8R8G8B8,32x32x1.
+12:23:51: Texture: sdk_pulse.png: Loading 1 faces(PF_R8G8B8,8x1x1) Internal format is PF_X8R8G8B8,8x1x1.
+12:23:51: Finished parsing scripts for resource group Essential
+12:23:51: Creating resources for group Essential
+12:23:51: All done
+12:23:51: Parsing scripts for resource group General
+12:23:51: Finished parsing scripts for resource group General
+12:23:51: Creating resources for group General
+12:23:51: All done
+12:23:51: Parsing scripts for resource group Internal
+12:23:51: Finished parsing scripts for resource group Internal
+12:23:51: Creating resources for group Internal
+12:23:51: All done
+12:23:51: Parsing scripts for resource group Popular
+12:23:51: Parsing script DualQuaternion.program
+12:23:51: Parsing script Examples.program
+12:23:51: Parsing script Instancing.program
+12:23:51: Parsing script StdQuad_vp.program
+12:23:51: Parsing script deferred_post.program
+12:23:51: Parsing script ShadowCaster.program
+12:23:51: Parsing script GBuffer.program
+12:23:51: Parsing script triplanarReference.program
+12:23:51: Parsing script AdaptivePNTrianglesTessellation.material
+12:23:51: Parsing script aftRotor.material
+12:23:51: Parsing script ASCII.material
+12:23:51: Parsing script ASMSwizzle.material
+12:23:51: Compiler error: object unsupported by render system in ASMSwizzle.material(1): , Shader name: Ogre/GPTest/Swizzle_GP_ASM
+12:23:51: Parsing script BlackAndWhite.material
+12:23:51: Parsing script Bloom.material
+12:23:51: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Blur0_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:51: High-level program Blur0_ps20 encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Blur0_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:26: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Blur0_vs11.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:26: High-level program Blur0_vs11 encountered an error during loading and is thus not supported.
+12:23:51: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Blur0_vs11.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:51: High-level program Blur0_vs11 encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Blur0_vs11.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:26: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Blur1_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:26: High-level program Blur1_ps20 encountered an error during loading and is thus not supported.
+12:23:51: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Blur1_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:51: High-level program Blur1_ps20 encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Blur1_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:26: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Blur1_vs11.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:26: High-level program Blur1_vs11 encountered an error during loading and is thus not supported.
+12:23:51: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Blur1_vs11.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:51: High-level program Blur1_vs11 encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Blur1_vs11.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:26: Parsing script Bloom2.material
-11:23:26: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource BlurH_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:26: High-level program BlurH_ps20_hlsl encountered an error during loading and is thus not supported.
+12:23:51: Parsing script Bloom2.material
+12:23:51: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource BlurH_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:51: High-level program BlurH_ps20_hlsl encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource BlurH_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Blur_vs11.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: High-level program Blur_vs11_hlsl encountered an error during loading and is thus not supported.
+12:23:52: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Blur_vs11.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:52: High-level program Blur_vs11_hlsl encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Blur_vs11.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource BlurV_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: High-level program BlurV_ps20_hlsl encountered an error during loading and is thus not supported.
+12:23:52: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource BlurV_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:52: High-level program BlurV_ps20_hlsl encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource BlurV_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Bloom2_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: High-level program Bloom2_ps20_hlsl encountered an error during loading and is thus not supported.
+12:23:52: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Bloom2_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:52: High-level program Bloom2_ps20_hlsl encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Bloom2_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in Bloom2.material(323): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in Bloom2.material(324): setting of constant failed
-11:23:27: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource BrightBloom2_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: High-level program BrightBloom2_ps20_hlsl encountered an error during loading and is thus not supported.
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in Bloom2.material(323): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in Bloom2.material(324): setting of constant failed
+12:23:52: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource BrightBloom2_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:52: High-level program BrightBloom2_ps20_hlsl encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource BrightBloom2_ps20.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: Parsing script CGSwizzle.material
-11:23:27: Parsing script CompositorDemo.material
-11:23:27: Parsing script DepthShadowmap.material
-11:23:27: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: High-level program Ogre/DepthShadowmap/CasterVP_HLSL encountered an error during loading and is thus not supported.
+12:23:52: Parsing script CGSwizzle.material
+12:23:52: Parsing script CompositorDemo.material
+12:23:52: Parsing script DepthShadowmap.material
+12:23:52: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:52: High-level program Ogre/DepthShadowmap/CasterVP_HLSL encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(12): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(13): setting of constant failed
-11:23:27: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: High-level program Ogre/DepthShadowmap/CasterFP_HLSL encountered an error during loading and is thus not supported.
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(12): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(13): setting of constant failed
+12:23:52: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:52: High-level program Ogre/DepthShadowmap/CasterFP_HLSL encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: High-level program Ogre/DepthShadowmap/ReceiverVP_HLSL encountered an error during loading and is thus not supported.
+12:23:52: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:52: High-level program Ogre/DepthShadowmap/ReceiverVP_HLSL encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(38): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(39): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(40): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(41): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(42): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(43): setting of constant failed
-11:23:27: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: High-level program Ogre/DepthShadowmap/ReceiverFP_HLSL encountered an error during loading and is thus not supported.
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(38): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(39): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(40): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(41): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(42): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(43): setting of constant failed
+12:23:52: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:52: High-level program Ogre/DepthShadowmap/ReceiverFP_HLSL encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(58): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(59): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(60): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(61): setting of constant failed
-11:23:27: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: High-level program Ogre/DepthShadowmap/ReceiverFPPCF_HLSL encountered an error during loading and is thus not supported.
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(58): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(59): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(60): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(61): setting of constant failed
+12:23:52: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:52: High-level program Ogre/DepthShadowmap/ReceiverFPPCF_HLSL encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(75): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(76): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(77): setting of constant failed
-11:23:27: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: High-level program Ogre/DepthShadowmap/NormalMapReceiverVP_HLSL encountered an error during loading and is thus not supported.
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(75): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(76): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(77): setting of constant failed
+12:23:52: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:52: High-level program Ogre/DepthShadowmap/NormalMapReceiverVP_HLSL encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(88): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(89): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(90): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(91): setting of constant failed
-11:23:27: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: High-level program Ogre/DepthShadowmap/NormalMapReceiverFP_HLSL encountered an error during loading and is thus not supported.
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(88): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(89): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(90): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(91): setting of constant failed
+12:23:52: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:52: High-level program Ogre/DepthShadowmap/NormalMapReceiverFP_HLSL encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(105): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(106): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(107): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(108): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(109): setting of constant failed
-11:23:27: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: High-level program Ogre/DepthShadowmap/NormalMapReceiverFPPCF_HLSL encountered an error during loading and is thus not supported.
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(105): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(106): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(107): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(108): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(109): setting of constant failed
+12:23:52: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:52: High-level program Ogre/DepthShadowmap/NormalMapReceiverFPPCF_HLSL encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource DepthShadowmap.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(122): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(123): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(124): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(125): setting of constant failed
-11:23:27: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:27: Compiler error: invalid parameters in DepthShadowmap.material(126): setting of constant failed
-11:23:27: Parsing script Dither.material
-11:23:27: Parsing script DOF.material
-11:23:27: Parsing script DualQuaternion.material
-11:23:27: Parsing script Embossed.material
-11:23:27: Parsing script Example-Water.material
-11:23:27: Parsing script Examples-Advanced.material
-11:23:28: Compiler error: object unsupported by render system in Examples-Advanced.material(938): , Shader name: Examples/TextureArrayPSasm
-11:23:28: Parsing script Examples-DynTex.material
-11:23:28: Parsing script Examples-Water.material
-11:23:28: Parsing script Examples.material
-11:23:29: Parsing script facial.material
-11:23:29: Parsing script Glass.material
-11:23:29: Parsing script GLSLSwizzle.material
-11:23:29: Parsing script Halftone.material
-11:23:29: Parsing script hdr.material
-11:23:29: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource hdr.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:29: High-level program Ogre/Compositor/HDR/downscale2x2LuminenceHLSL_fp encountered an error during loading and is thus not supported.
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(122): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(123): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(124): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(125): setting of constant failed
+12:23:52: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:52: Compiler error: invalid parameters in DepthShadowmap.material(126): setting of constant failed
+12:23:52: Parsing script Dither.material
+12:23:52: Parsing script DOF.material
+12:23:52: Parsing script DualQuaternion.material
+12:23:52: Parsing script Embossed.material
+12:23:52: Parsing script Example-Water.material
+12:23:52: Parsing script Examples-Advanced.material
+12:23:53: Compiler error: object unsupported by render system in Examples-Advanced.material(938): , Shader name: Examples/TextureArrayPSasm
+12:23:53: Parsing script Examples-DynTex.material
+12:23:53: Parsing script Examples-Water.material
+12:23:53: Parsing script Examples.material
+12:23:54: Parsing script facial.material
+12:23:54: Parsing script Glass.material
+12:23:54: Parsing script GLSLSwizzle.material
+12:23:54: Parsing script Halftone.material
+12:23:54: Parsing script hdr.material
+12:23:54: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource hdr.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:54: High-level program Ogre/Compositor/HDR/downscale2x2LuminenceHLSL_fp encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource hdr.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:29: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:29: Compiler error: invalid parameters in hdr.material(40): setting of constant failed
-11:23:29: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource hdr.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:29: High-level program Ogre/Compositor/HDR/downscale3x3HLSL_fp encountered an error during loading and is thus not supported.
+12:23:54: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:54: Compiler error: invalid parameters in hdr.material(40): setting of constant failed
+12:23:54: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource hdr.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:54: High-level program Ogre/Compositor/HDR/downscale3x3HLSL_fp encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource hdr.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:29: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:29: Compiler error: invalid parameters in hdr.material(109): setting of constant failed
-11:23:29: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource hdr.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:29: High-level program Ogre/Compositor/HDR/downscale3x3brightpassHLSL_fp encountered an error during loading and is thus not supported.
+12:23:54: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:54: Compiler error: invalid parameters in hdr.material(109): setting of constant failed
+12:23:54: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource hdr.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:54: High-level program Ogre/Compositor/HDR/downscale3x3brightpassHLSL_fp encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource hdr.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:29: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:29: Compiler error: invalid parameters in hdr.material(188): setting of constant failed
-11:23:29: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource hdr.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:29: High-level program Ogre/Compositor/HDR/bloomHLSL_fp encountered an error during loading and is thus not supported.
+12:23:54: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:54: Compiler error: invalid parameters in hdr.material(188): setting of constant failed
+12:23:54: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource hdr.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:54: High-level program Ogre/Compositor/HDR/bloomHLSL_fp encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource hdr.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:29: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource hdr.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:29: High-level program Ogre/Compositor/HDR/finaltonemappingHLSL_fp encountered an error during loading and is thus not supported.
+12:23:54: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource hdr.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:54: High-level program Ogre/Compositor/HDR/finaltonemappingHLSL_fp encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource hdr.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:29: Parsing script HeatVision.material
-11:23:29: Parsing script helicopter.material
-11:23:29: Parsing script Hurt.material
-11:23:29: Parsing script HWInstancing.material
-11:23:29: Parsing script HW_VTFInstancing.material
-11:23:30: Parsing script HW_VTF_LUTInstancing.material
-11:23:30: Parsing script instancing.material
-11:23:30: Parsing script InstancingMisc.material
-11:23:30: Parsing script Invert.material
-11:23:30: Parsing script IsoSurf.material
-11:23:30: Parsing script Laplace.material
-11:23:30: Parsing script MotionBlur.material
-11:23:30: Parsing script MRTtest.material
-11:23:30: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource mrttestfp.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:30: High-level program Ogre/MRTtest/scenefp/HLSL encountered an error during loading and is thus not supported.
+12:23:54: Parsing script HeatVision.material
+12:23:54: Parsing script helicopter.material
+12:23:54: Parsing script Hurt.material
+12:23:54: Parsing script HWInstancing.material
+12:23:54: Parsing script HW_VTFInstancing.material
+12:23:55: Parsing script HW_VTF_LUTInstancing.material
+12:23:55: Parsing script instancing.material
+12:23:55: Parsing script InstancingMisc.material
+12:23:55: Parsing script Invert.material
+12:23:55: Parsing script IsoSurf.material
+12:23:55: Parsing script Laplace.material
+12:23:55: Parsing script MotionBlur.material
+12:23:55: Parsing script MRTtest.material
+12:23:55: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource mrttestfp.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:55: High-level program Ogre/MRTtest/scenefp/HLSL encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource mrttestfp.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:30: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource mrttestfp.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:30: High-level program Ogre/MRTtest/quadfp/HLSL encountered an error during loading and is thus not supported.
+12:23:55: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource mrttestfp.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:55: High-level program Ogre/MRTtest/quadfp/HLSL encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource mrttestfp.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:30: Parsing script NightVision.material
-11:23:30: Parsing script Ocean.material
-11:23:30: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource oceanHLSL_Cg.vert in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:30: High-level program HLSL/OceanVS encountered an error during loading and is thus not supported.
+12:23:55: Parsing script NightVision.material
+12:23:55: Parsing script Ocean.material
+12:23:55: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource oceanHLSL_Cg.vert in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:55: High-level program HLSL/OceanVS encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource oceanHLSL_Cg.vert in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:30: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:30: Compiler error: invalid parameters in Ocean.material(10): setting of constant failed
-11:23:30: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:30: Compiler error: invalid parameters in Ocean.material(11): setting of constant failed
-11:23:30: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:30: Compiler error: invalid parameters in Ocean.material(12): setting of constant failed
-11:23:30: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:30: Compiler error: invalid parameters in Ocean.material(13): setting of constant failed
-11:23:30: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource oceanHLSL_Cg.frag in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:30: High-level program HLSL/OceanFS encountered an error during loading and is thus not supported.
+12:23:55: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:55: Compiler error: invalid parameters in Ocean.material(10): setting of constant failed
+12:23:55: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:55: Compiler error: invalid parameters in Ocean.material(11): setting of constant failed
+12:23:55: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:55: Compiler error: invalid parameters in Ocean.material(12): setting of constant failed
+12:23:55: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:55: Compiler error: invalid parameters in Ocean.material(13): setting of constant failed
+12:23:55: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource oceanHLSL_Cg.frag in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:55: High-level program HLSL/OceanFS encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource oceanHLSL_Cg.frag in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:30: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Ocean2HLSL_Cg.vert in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:30: High-level program HLSL/Ocean2VS encountered an error during loading and is thus not supported.
+12:23:55: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Ocean2HLSL_Cg.vert in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:55: High-level program HLSL/Ocean2VS encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Ocean2HLSL_Cg.vert in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:30: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:30: Compiler error: invalid parameters in Ocean.material(327): setting of constant failed
-11:23:30: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:30: Compiler error: invalid parameters in Ocean.material(328): setting of constant failed
-11:23:30: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Ocean2HLSL_Cg.frag in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:30: High-level program HLSL/Ocean2FS encountered an error during loading and is thus not supported.
+12:23:55: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:55: Compiler error: invalid parameters in Ocean.material(327): setting of constant failed
+12:23:55: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:55: Compiler error: invalid parameters in Ocean.material(328): setting of constant failed
+12:23:55: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Ocean2HLSL_Cg.frag in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:55: High-level program HLSL/Ocean2FS encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource Ocean2HLSL_Cg.frag in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:30: Parsing script OffsetMapping.material
-11:23:30: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource OffsetMapping.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:30: High-level program Examples/OffsetMappingIntegratedShadowsVPhlsl encountered an error during loading and is thus not supported.
+12:23:55: Parsing script OffsetMapping.material
+12:23:55: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource OffsetMapping.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:55: High-level program Examples/OffsetMappingIntegratedShadowsVPhlsl encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource OffsetMapping.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:30: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:30: Compiler error: invalid parameters in OffsetMapping.material(437): setting of constant failed
-11:23:30: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:30: Compiler error: invalid parameters in OffsetMapping.material(438): setting of constant failed
-11:23:30: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:31: Compiler error: invalid parameters in OffsetMapping.material(439): setting of constant failed
-11:23:31: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:31: Compiler error: invalid parameters in OffsetMapping.material(440): setting of constant failed
-11:23:31: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:31: Compiler error: invalid parameters in OffsetMapping.material(442): setting of constant failed
-11:23:31: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:31: Compiler error: invalid parameters in OffsetMapping.material(443): setting of constant failed
-11:23:31: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:31: Compiler error: invalid parameters in OffsetMapping.material(445): setting of constant failed
-11:23:31: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:31: Compiler error: invalid parameters in OffsetMapping.material(446): setting of constant failed
-11:23:31: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:31: Compiler error: invalid parameters in OffsetMapping.material(447): setting of constant failed
-11:23:31: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource OffsetMapping.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:31: High-level program Examples/OffsetMappingIntegratedShadowsFPhlsl encountered an error during loading and is thus not supported.
+12:23:55: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:55: Compiler error: invalid parameters in OffsetMapping.material(437): setting of constant failed
+12:23:55: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:55: Compiler error: invalid parameters in OffsetMapping.material(438): setting of constant failed
+12:23:55: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:55: Compiler error: invalid parameters in OffsetMapping.material(439): setting of constant failed
+12:23:55: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:55: Compiler error: invalid parameters in OffsetMapping.material(440): setting of constant failed
+12:23:55: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:55: Compiler error: invalid parameters in OffsetMapping.material(442): setting of constant failed
+12:23:56: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:56: Compiler error: invalid parameters in OffsetMapping.material(443): setting of constant failed
+12:23:56: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:56: Compiler error: invalid parameters in OffsetMapping.material(445): setting of constant failed
+12:23:56: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:56: Compiler error: invalid parameters in OffsetMapping.material(446): setting of constant failed
+12:23:56: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:56: Compiler error: invalid parameters in OffsetMapping.material(447): setting of constant failed
+12:23:56: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource OffsetMapping.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:56: High-level program Examples/OffsetMappingIntegratedShadowsFPhlsl encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource OffsetMapping.hlsl in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:31: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:31: Compiler error: invalid parameters in OffsetMapping.material(453): setting of constant failed
-11:23:31: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:31: Compiler error: invalid parameters in OffsetMapping.material(454): setting of constant failed
-11:23:31: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:31: Compiler error: invalid parameters in OffsetMapping.material(456): setting of constant failed
-11:23:31: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:31: Compiler error: invalid parameters in OffsetMapping.material(457): setting of constant failed
-11:23:31: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:31: Compiler error: invalid parameters in OffsetMapping.material(459): setting of constant failed
-11:23:31: Parsing script Ogre.material
-11:23:31: Parsing script OldMovie.material
-11:23:31: Parsing script OldTV.material
-11:23:31: Parsing script ParticleGS.material
-11:23:31: Parsing script Penguin.material
-11:23:31: Parsing script Posterize.material
-11:23:31: Parsing script pssm.material
-11:23:31: Parsing script RadialBlur.material
-11:23:31: Parsing script RasterizationOrder.material
-11:23:31: Parsing script RZR-002.material
-11:23:31: Parsing script ShaderInstancing.material
-11:23:31: Parsing script ShaderSystem.material
-11:23:31: Parsing script shadows.material
-11:23:31: Parsing script SharpenEdges.material
-11:23:31: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource SharpenEdgesFP.cg in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:31: High-level program Ogre/Compositor/SharpenEdgesFP_ps_2_a encountered an error during loading and is thus not supported.
+12:23:56: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:56: Compiler error: invalid parameters in OffsetMapping.material(453): setting of constant failed
+12:23:56: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:56: Compiler error: invalid parameters in OffsetMapping.material(454): setting of constant failed
+12:23:56: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:56: Compiler error: invalid parameters in OffsetMapping.material(456): setting of constant failed
+12:23:56: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:56: Compiler error: invalid parameters in OffsetMapping.material(457): setting of constant failed
+12:23:56: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:56: Compiler error: invalid parameters in OffsetMapping.material(459): setting of constant failed
+12:23:56: Parsing script Ogre.material
+12:23:56: Parsing script OldMovie.material
+12:23:56: Parsing script OldTV.material
+12:23:56: Parsing script ParticleGS.material
+12:23:56: Parsing script Penguin.material
+12:23:56: Parsing script Posterize.material
+12:23:56: Parsing script pssm.material
+12:23:56: Parsing script RadialBlur.material
+12:23:56: Parsing script RasterizationOrder.material
+12:23:56: Parsing script RZR-002.material
+12:23:56: Parsing script ShaderInstancing.material
+12:23:56: Parsing script ShaderSystem.material
+12:23:56: Parsing script shadows.material
+12:23:56: Parsing script SharpenEdges.material
+12:23:56: OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource SharpenEdgesFP.cg in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
+12:23:56: High-level program Ogre/Compositor/SharpenEdgesFP_ps_2_a encountered an error during loading and is thus not supported.
 OGRE EXCEPTION(6:FileNotFoundException): Cannot locate resource SharpenEdgesFP.cg in resource group Popular or any other group. in ResourceGroupManager::openResource at ..\..\..\..\OgreMain\src\OgreResourceGroupManager.cpp (line 756)
-11:23:31: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
-11:23:31: Compiler error: invalid parameters in SharpenEdges.material(35): setting of constant failed
-11:23:31: Parsing script sibenik.material
-11:23:31: Parsing script smoke.material
-11:23:31: Parsing script Tesselation.material
-11:23:31: Parsing script Tiling.material
-11:23:31: Parsing script topRotor.material
-11:23:31: Parsing script VarianceShadowmap.material
-11:23:31: Parsing script VTFInstancing.material
-11:23:31: Parsing script deferreddemo.material
-11:23:31: Parsing script deferred_post.material
-11:23:31: Parsing script deferred_post_minilight.material
-11:23:31: Parsing script ShadowCaster.material
-11:23:31: Parsing script ssao.material
-11:23:31: Parsing script ROOM.material
-11:23:32: Parsing script DualQuaternionSkinning_Shadow.material
-11:23:32: Parsing script HardwareSkinningShadow.material
-11:23:32: Parsing script RTShaderSystem.material
-11:23:32: Compiler error: unknown error in RTShaderSystem.material(23): token "rtshader_system" is not recognized
-11:23:32: Compiler error: unknown error in RTShaderSystem.material(52): token "rtshader_system" is not recognized
-11:23:32: Compiler error: unknown error in RTShaderSystem.material(81): token "rtshader_system" is not recognized
-11:23:32: Compiler error: unknown error in RTShaderSystem.material(110): token "rtshader_system" is not recognized
-11:23:32: Compiler error: unknown error in RTShaderSystem.material(146): token "rtshader_system" is not recognized
-11:23:32: Compiler error: unknown error in RTShaderSystem.material(81): token "rtshader_system" is not recognized
-11:23:32: Compiler error: unknown error in RTShaderSystem.material(162): token "rtshader_system" is not recognized
-11:23:32: Compiler error: unknown error in RTShaderSystem.material(81): token "rtshader_system" is not recognized
-11:23:32: Compiler error: unknown error in RTShaderSystem.material(110): token "rtshader_system" is not recognized
-11:23:32: Compiler error: unknown error in RTShaderSystem.material(211): token "rtshader_system" is not recognized
-11:23:32: Parsing script TriplanarTexturing.material
-11:23:32: Compiler error: unknown error in TriplanarTexturing.material(9): token "rtshader_system" is not recognized
-11:23:32: Parsing script CreaseShading.material
-11:23:32: Parsing script Crytek.material
-11:23:32: Parsing script GBuffer.material
-11:23:32: Parsing script HemisphereMC.material
-11:23:32: Parsing script HorizonBased.material
-11:23:32: Parsing script Modulate.material
-11:23:32: Parsing script ShowDepth.material
-11:23:32: Parsing script ShowNormals.material
-11:23:32: Parsing script ShowViewPos.material
-11:23:32: Parsing script SSAOPost.material
-11:23:32: Parsing script UnsharpMask.material
-11:23:32: Parsing script Volumetric.material
-11:23:32: Parsing script triplanarReference.material
-11:23:32: Parsing script RomanBath.material
-11:23:32: Parsing script Sinbad.material
-11:23:32: Parsing script emitted_emitter.particle
-11:23:32: Parsing script Examples-Water.particle
-11:23:32: Parsing script Examples.particle
-11:23:33: Parsing script smoke.particle
-11:23:33: Parsing script Examples.compositor
-11:23:33: Parsing script deferred.compositor
-11:23:33: Parsing script ssao.compositor
-11:23:33: Parsing script SSAO.compositor
-11:23:33: Parsing script SSAOPost.compositor
-11:23:33: Finished parsing scripts for resource group Popular
-11:23:33: Creating resources for group Popular
-11:23:33: All done
-11:23:33: Parsing scripts for resource group Tests
-11:23:33: Finished parsing scripts for resource group Tests
-11:23:33: Creating resources for group Tests
-11:23:33: All done
-11:23:33: Terrain created; size=513 minBatch=33 maxBatch=65 treeDepth=4 lodLevels=5 leafLods=2
-11:23:34: D3D9 : Loading 2D Texture, image name : 'dirt_grayrocky_diffusespecular.dds' with 255 mip map levels
-11:23:34: D3D9 : Loading 2D Texture, image name : 'dirt_grayrocky_normalheight.dds' with 255 mip map levels
-11:23:34: D3D9 : Loading 2D Texture, image name : 'grass_green-01_diffusespecular.dds' with 255 mip map levels
-11:23:34: D3D9 : Loading 2D Texture, image name : 'grass_green-01_normalheight.dds' with 255 mip map levels
-11:23:34: D3D9 : Loading 2D Texture, image name : 'growth_weirdfungus-03_diffusespecular.dds' with 255 mip map levels
-11:23:34: D3D9 : Loading 2D Texture, image name : 'growth_weirdfungus-03_normalheight.dds' with 255 mip map levels
-11:23:36: Texture: clouds.jpg: Loading 1 faces(PF_R8G8B8,256x256x1) Internal format is PF_X8R8G8B8,256x256x1.
-11:23:36: Mesh: Loading helicopter.mesh.
-11:23:36: Texture: diffuse_m24_alpha.tga: Loading 1 faces(PF_A8R8G8B8,3000x3000x1) with 11 generated mipmaps from Image. Internal format is PF_A8R8G8B8,3000x3000x1.
-11:23:37: Mesh: Loading topRotor.mesh.
-11:23:37: Mesh: Loading aftRotor.mesh.
-11:23:38: Font SdkTrays/Value using texture size 512x256
-11:23:38: Info: Freetype returned null for character 127 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 128 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 129 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 130 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 131 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 132 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 133 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 134 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 135 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 136 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 137 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 138 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 139 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 140 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 141 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 142 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 143 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 144 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 145 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 146 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 147 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 148 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 149 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 150 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 151 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 152 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 153 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 154 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 155 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 156 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 157 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 158 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 159 in font SdkTrays/Value
-11:23:38: Info: Freetype returned null for character 160 in font SdkTrays/Value
-11:23:38: Texture: SdkTrays/ValueTexture: Loading 1 faces(PF_BYTE_LA,512x256x1) with 0 generated mipmaps from Image. Internal format is PF_BYTE_LA,512x256x1.
-11:23:38: Font SdkTrays/Caption using texture size 512x256
-11:23:38: Info: Freetype returned null for character 160 in font SdkTrays/Caption
-11:23:38: Texture: SdkTrays/CaptionTexture: Loading 1 faces(PF_BYTE_LA,512x256x1) with 0 generated mipmaps from Image. Internal format is PF_BYTE_LA,512x256x1.
-11:23:45: Unloading resource group General
-11:23:45: Finished unloading resource group General
-11:23:45: Unregistering ResourceManager for type Font
+12:23:56: OGRE EXCEPTION(2:InvalidParametersException): Named constants have not been initialised, perhaps a compile error. in GpuProgramParameters::_findNamedConstantDefinition at ..\..\..\..\OgreMain\src\OgreGpuProgramParams.cpp (line 1709)
+12:23:56: Compiler error: invalid parameters in SharpenEdges.material(35): setting of constant failed
+12:23:56: Parsing script sibenik.material
+12:23:56: Parsing script smoke.material
+12:23:56: Parsing script Tesselation.material
+12:23:56: Parsing script Tiling.material
+12:23:56: Parsing script topRotor.material
+12:23:56: Parsing script VarianceShadowmap.material
+12:23:56: Parsing script VTFInstancing.material
+12:23:56: Parsing script deferreddemo.material
+12:23:56: Parsing script deferred_post.material
+12:23:56: Parsing script deferred_post_minilight.material
+12:23:56: Parsing script ShadowCaster.material
+12:23:56: Parsing script ssao.material
+12:23:56: Parsing script ROOM.material
+12:23:56: Parsing script DualQuaternionSkinning_Shadow.material
+12:23:57: Parsing script HardwareSkinningShadow.material
+12:23:57: Parsing script RTShaderSystem.material
+12:23:57: Compiler error: unknown error in RTShaderSystem.material(23): token "rtshader_system" is not recognized
+12:23:57: Compiler error: unknown error in RTShaderSystem.material(52): token "rtshader_system" is not recognized
+12:23:57: Compiler error: unknown error in RTShaderSystem.material(81): token "rtshader_system" is not recognized
+12:23:57: Compiler error: unknown error in RTShaderSystem.material(110): token "rtshader_system" is not recognized
+12:23:57: Compiler error: unknown error in RTShaderSystem.material(146): token "rtshader_system" is not recognized
+12:23:57: Compiler error: unknown error in RTShaderSystem.material(81): token "rtshader_system" is not recognized
+12:23:57: Compiler error: unknown error in RTShaderSystem.material(162): token "rtshader_system" is not recognized
+12:23:57: Compiler error: unknown error in RTShaderSystem.material(81): token "rtshader_system" is not recognized
+12:23:57: Compiler error: unknown error in RTShaderSystem.material(110): token "rtshader_system" is not recognized
+12:23:57: Compiler error: unknown error in RTShaderSystem.material(211): token "rtshader_system" is not recognized
+12:23:57: Parsing script TriplanarTexturing.material
+12:23:57: Compiler error: unknown error in TriplanarTexturing.material(9): token "rtshader_system" is not recognized
+12:23:57: Parsing script CreaseShading.material
+12:23:57: Parsing script Crytek.material
+12:23:57: Parsing script GBuffer.material
+12:23:57: Parsing script HemisphereMC.material
+12:23:57: Parsing script HorizonBased.material
+12:23:57: Parsing script Modulate.material
+12:23:57: Parsing script ShowDepth.material
+12:23:57: Parsing script ShowNormals.material
+12:23:57: Parsing script ShowViewPos.material
+12:23:57: Parsing script SSAOPost.material
+12:23:57: Parsing script UnsharpMask.material
+12:23:57: Parsing script Volumetric.material
+12:23:57: Parsing script triplanarReference.material
+12:23:57: Parsing script RomanBath.material
+12:23:57: Parsing script Sinbad.material
+12:23:57: Parsing script emitted_emitter.particle
+12:23:57: Parsing script Examples-Water.particle
+12:23:57: Parsing script Examples.particle
+12:23:57: Parsing script smoke.particle
+12:23:57: Parsing script Examples.compositor
+12:23:58: Parsing script deferred.compositor
+12:23:58: Parsing script ssao.compositor
+12:23:58: Parsing script SSAO.compositor
+12:23:58: Parsing script SSAOPost.compositor
+12:23:58: Finished parsing scripts for resource group Popular
+12:23:58: Creating resources for group Popular
+12:23:58: All done
+12:23:58: Parsing scripts for resource group Tests
+12:23:58: Finished parsing scripts for resource group Tests
+12:23:58: Creating resources for group Tests
+12:23:58: All done
+12:23:58: Terrain created; size=513 minBatch=33 maxBatch=65 treeDepth=4 lodLevels=5 leafLods=2
+12:23:59: D3D9 : Loading 2D Texture, image name : 'dirt_grayrocky_diffusespecular.dds' with 255 mip map levels
+12:23:59: D3D9 : Loading 2D Texture, image name : 'dirt_grayrocky_normalheight.dds' with 255 mip map levels
+12:23:59: D3D9 : Loading 2D Texture, image name : 'grass_green-01_diffusespecular.dds' with 255 mip map levels
+12:23:59: D3D9 : Loading 2D Texture, image name : 'grass_green-01_normalheight.dds' with 255 mip map levels
+12:23:59: D3D9 : Loading 2D Texture, image name : 'growth_weirdfungus-03_diffusespecular.dds' with 255 mip map levels
+12:23:59: D3D9 : Loading 2D Texture, image name : 'growth_weirdfungus-03_normalheight.dds' with 255 mip map levels
+12:24:00: Texture: clouds.jpg: Loading 1 faces(PF_R8G8B8,256x256x1) Internal format is PF_X8R8G8B8,256x256x1.
+12:24:00: Mesh: Loading helicopter.mesh.
+12:24:01: Texture: diffuse_m24_alpha.tga: Loading 1 faces(PF_A8R8G8B8,3000x3000x1) with 11 generated mipmaps from Image. Internal format is PF_A8R8G8B8,3000x3000x1.
+12:24:02: Mesh: Loading topRotor.mesh.
+12:24:02: Mesh: Loading aftRotor.mesh.
+12:24:03: Font SdkTrays/Value using texture size 512x256
+12:24:03: Info: Freetype returned null for character 127 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 128 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 129 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 130 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 131 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 132 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 133 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 134 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 135 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 136 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 137 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 138 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 139 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 140 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 141 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 142 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 143 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 144 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 145 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 146 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 147 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 148 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 149 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 150 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 151 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 152 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 153 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 154 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 155 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 156 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 157 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 158 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 159 in font SdkTrays/Value
+12:24:03: Info: Freetype returned null for character 160 in font SdkTrays/Value
+12:24:03: Texture: SdkTrays/ValueTexture: Loading 1 faces(PF_BYTE_LA,512x256x1) with 0 generated mipmaps from Image. Internal format is PF_BYTE_LA,512x256x1.
+12:24:03: Font SdkTrays/Caption using texture size 512x256
+12:24:03: Info: Freetype returned null for character 160 in font SdkTrays/Caption
+12:24:03: Texture: SdkTrays/CaptionTexture: Loading 1 faces(PF_BYTE_LA,512x256x1) with 0 generated mipmaps from Image. Internal format is PF_BYTE_LA,512x256x1.
+12:24:59: Unloading resource group General
+12:24:59: Finished unloading resource group General
+12:24:59: Unregistering ResourceManager for type Font

@@ -5,7 +5,6 @@
 //
 #include "stdafx.h"
 #include "GameWorld.h"
-#include "Camera.h"
 
 #include <string>
 #include <iostream>
@@ -84,18 +83,23 @@ void GameWorld::CreateLights()
 
 void GameWorld::Run()
 {
+	//Create the game world
+	InitilaiseScene();
+
 	// Create a camera
 	Ogre::String cameraName = "MainCamera";
+	Ogre::Vector3 cameraOffset = Ogre::Vector3(0.0f, 80.0f, -180.0f);
+	Ogre::Vector3 cameraOffsetRotation = Ogre::Vector3(0.0f, 0.0f, 0.0f);
 	auto cameraNode = application->CreateCamera(cameraName);
-	cameraNode->setPosition(Ogre::Vector3(0.0f, 700.0f, 0.0f));
-	static_cast<Ogre::Camera*>(cameraNode->getAttachedObject("MainCamera"))->lookAt(0.0f, 4.0f, 0.0f);
+	cameraNode->setPosition(helicopter->getPosition() + cameraOffset);
+	static_cast<Ogre::Camera*>(cameraNode->getAttachedObject("MainCamera"))
+		->lookAt(helicopter->getPosition() + Ogre::Vector3(0.0f, 40.0f, 0.0f));
 	shared_ptr<Ogre::MovableObject> cameraObject;
 	cameraObject.reset(cameraNode->getAttachedObject("MainCamera"));
-	std::shared_ptr<Camera> camera = make_shared<Camera>(cameraNode, cameraObject);
+	camera = make_shared<Camera>(cameraNode, cameraObject, cameraOffsetRotation, 
+		cameraOffset, helicopter->getPosition());
+	camera->setRotation(cameraOffsetRotation);
 
-	//Create the game world
-     InitilaiseScene();
-	
 	//Create input device listeners 
 	application->CreateIOS();
 	auto keyboard = application->GetKeyboard();
@@ -139,7 +143,6 @@ void GameWorld::Run()
 
 		keyboard->capture();
 		mouse->capture();
-		camera->Update(keyboard.get(), mouse.get());
 
 		float coeff = 200.0f * deltaTime_s;
 		Ogre::Vector3 translation(Ogre::Vector3::ZERO);
@@ -225,6 +228,7 @@ void GameWorld::Update(float dt, OIS::Keyboard* keyboard)
 
 	helicopter->handleInput(keyboard);
 	helicopter->updateActor(dt);
+	camera->update(helicopter->getPosition(), helicopter->getOrientation());
 }
 
 //a function to rotate an object around the x axis

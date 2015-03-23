@@ -15,6 +15,7 @@
 #include "OgreApplication.h"
 #include "Helicopter.h"
 #include "TerrainManager.h"
+#include "Camera.h"
 
 class GameWorld : public OgreBites::SdkTrayListener
 {
@@ -24,6 +25,7 @@ private:
 	void UpdateScene(Ogre::Vector3 &pos, Ogre::Quaternion &q);
 	Ogre::Matrix3 rotateX(float angle);
 
+	std::shared_ptr<Camera> camera;
 	std::shared_ptr<Helicopter> helicopter;
 	std::shared_ptr<TerrainManager> terrain;
 

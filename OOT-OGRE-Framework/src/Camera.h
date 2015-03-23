@@ -1,32 +1,52 @@
-//
-//  Camera.h
-//  OOT Tutorial Ogre Framework Demo.
-//  Created by Wen Tang on 19/01/15.
-//
-
 #pragma once
-#ifndef _CAMERA_H_
-#define _CAMERA_H_
 
 #include "stdafx.h"
 #include <memory>
 
-using namespace std;
-
+/**
+@brief A class for a Camera object.
+*/
 class Camera
 {
 private:
-
-	shared_ptr<Ogre::SceneNode> sceneNode;
-	shared_ptr<Ogre::MovableObject> camera;
-
+	/**A pointer to the camera scene node.*/
+	std::shared_ptr<Ogre::SceneNode> sceneNode;
+	/**A pointer to the camera movable object.*/
+	std::shared_ptr<Ogre::MovableObject> camera;
+	/**The Camera objects rotation.*/
 	Ogre::Vector3 rotation;
+	/**The Camera objects position.*/
+	Ogre::Vector3 position;
+	/**The Camera objects rotation offset.*/
+	Ogre::Vector3 rotationOffset;
+	/**The Camera objects position offset.*/
+	Ogre::Vector3 positonOffset;
 
 public:
-	Camera(shared_ptr<Ogre::SceneNode> sceneNode, shared_ptr<Ogre::MovableObject> camera);
-	~Camera() {};
+	/**
+	Constructs the Camera object.
+	@param std::shared_ptr<Ogre::SceneNode> A pointer to the camera scene node.
+	@param std::shared_ptr<Ogre::MovableObject> A pointer to the camera moveable object.
+	@param Ogre::Vector3 The rotation offset of the Camera.
+	@param Ogre::Vector3 The positon offset of the Camera.
+	@param Ogre::Vector3 The positon of the Helicopter.
+	*/
+	Camera(std::shared_ptr<Ogre::SceneNode> sceneNode, std::shared_ptr<Ogre::MovableObject> camera, 
+		Ogre::Vector3 rotationOffset, Ogre::Vector3 positonOffset, Ogre::Vector3 helicopterPosition);
 
-	void Update(OIS::Keyboard* keyboard, OIS::Mouse* mouse);
+	/**
+	Destructs the Camera object.
+	*/
+	~Camera();
+
+	/**
+	Updates the Camera.
+	*/
+	void update(Ogre::Vector3 helicopterPosition, Ogre::Vector3 helicopterRotation);
+
+	/**
+	Setter # Sets the rotation of the Camera.
+	@param Ogre::Vector3 The new rotation of the Camera.
+	*/
+	void setRotation(Ogre::Vector3 rotation);
 };
-
-#endif // end of _CAMERA_H_
