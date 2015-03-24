@@ -194,7 +194,16 @@ namespace util
 	float convertAngleToRadian(float angle)
 	{
 		/*return the radian*/
-		return (angle * 3.141596f / 180.0f);
+		return (angle * PI / 180.0f);
+	}
+
+	/**************************************************************************************************************/
+
+	/*Converts the angle from a radian.*/
+	float convertRadianToDegree(float angle)
+	{
+		/*return the angle*/
+		return (angle * 180.0f / PI);
 	}
 
 	/**************************************************************************************************************/
@@ -220,6 +229,18 @@ namespace util
 		}
 
 		/*returns the new angle*/
+		return angle;
+	}
+
+	/**************************************************************************************************************/
+
+	/*Work out the angle using TOA from SOHCAHTOA*/
+	Ogre::Real getAngleTOA(Ogre::Real opp, Ogre::Real adj)
+	{
+		/*Work out the angle using TOA (atan is tan^-1) and covert it to degrees*/
+		Ogre::Real angle = convertRadianToDegree(std::atan(opp/adj));
+
+		/*return the angle*/
 		return angle;
 	}
 }

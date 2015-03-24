@@ -6,6 +6,11 @@
 /**@brief A namespace to contain utility functions.*/
 namespace util
 {
+	/**A definition of pi*/
+	#define PI 3.141596f
+	/**A definition of gravity*/
+	#define GRAVITY 9.81f
+
 	/**
 	Create a 4x4 rotation matrix.
 	@param Ogre::Vector3 The orientation of the object.
@@ -84,10 +89,25 @@ namespace util
 	float convertAngleToRadian(float angle);	
 
 	/**
+	Converts the angle from a radian.
+	@param float The angle to convert.
+	@returns float The converted angle.
+	*/
+	float convertRadianToDegree(float angle);
+
+	/**
 	Makes sure the angle is between 0 and 360.
 	@param Ogre::Real The angle.
 	@param Ogre::Real The value to add to the angle.
 	@returns Ogre::Real The resultant angle between 0 and 360.
 	*/
 	Ogre::Real angleCheck(Ogre::Real angle, Ogre::Real angleChange);
+
+	/**
+	Work out the angle using TOA from SOHCAHTOA*.
+	@param Ogre::Real The opposite length.
+	@param Ogre::Real The adjacent length.
+	@returns float The resultant angle.
+	*/
+	Ogre::Real getAngleTOA(Ogre::Real opp, Ogre::Real adj);
 }

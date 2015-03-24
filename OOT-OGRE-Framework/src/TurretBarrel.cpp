@@ -59,6 +59,11 @@ void TurretBarrel::setUpActor(OgreApplication* application)
 	gameActorNode->setPosition(position);
 	gameActorNode->attachObject(rotor);
 	gameActorNode->showBoundingBox(false);
+
+	/*initialise the projectile*/
+	projectile.reset(new Projectile(Ogre::Vector3(224.30f, 500.0f, 1985.0f), Ogre::Vector3(0.0f, 0.0f, 0.0f), 1.0f));
+
+	projectile->setUpActor(application);
 }
 
 /**************************************************************************************************************/
@@ -66,6 +71,6 @@ void TurretBarrel::setUpActor(OgreApplication* application)
 /*Updates the TurretBarrel actor.*/
 void TurretBarrel::updateActor(float dt)
 {
-	/*set the TurretBarrel to spin*/
+	/*rotate the TurretBarrel*/
 	rotateTurretBarrel(dt);
 }

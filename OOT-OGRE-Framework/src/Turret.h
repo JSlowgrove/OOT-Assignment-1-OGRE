@@ -18,6 +18,12 @@ private:
 	float rotateSpeed;
 	/**A pointer to the TurretBarrel*/
 	std::shared_ptr<TurretBarrel> barrel;
+	
+	/**
+	Rotates the Turret. 
+	@param float The delta time.
+	*/
+	void rotateTurret(float dt);
 
 public:
 	/**

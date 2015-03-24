@@ -6,6 +6,7 @@
 #include "OgreApplication.h"
 #include "MyUtils.h"
 #include "GameActor.h"
+#include "Projectile.h"
 
 /**
 @brief A class for a TurretBarrel object that inherits GameActor.
@@ -17,6 +18,9 @@ private:
 	std::shared_ptr<Ogre::SceneNode> turretNode;
 	/**The speed of the TurretBarrel rotation.*/
 	float rotateSpeed;
+
+	/**A pointer to a Projectile.*/
+	std::shared_ptr<Projectile> projectile;
 
 	/**
 	Rotates the TurretBarrel. 

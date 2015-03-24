@@ -40,6 +40,7 @@ void GameWorld::CreateEntities()
 	helicopter->setUpActor(application);
 
 	/*initialise a turret*/
+	Ogre::SceneNode* helicopterNode = application->GetSceneManager()->getSceneNode(helicopter->getActorID() + "Helicopter ");
 	turret.reset(new Turret(Ogre::Vector3(224.30f, 443.20f, 1985.0f), Ogre::Vector3(0.0f, 0.0f, 0.0f), 10.0f));
 	turret->setUpActor(application);
 }
@@ -231,6 +232,7 @@ void GameWorld::Update(float dt, OIS::Keyboard* keyboard)
 
 	helicopter->handleInput(keyboard);
 	helicopter->updateActor(dt);
+	turret->updateActor(dt);
 	camera->update(helicopter->getPosition(), helicopter->getLastRotation());
 }
 

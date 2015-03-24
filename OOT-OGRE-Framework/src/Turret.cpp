@@ -8,8 +8,7 @@ Turret::Turret(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::Real sca
 			 : GameActor(position, orientation, scale)
 {
 	/*initialise rotate speeds*/
-	rotateSpeed = 0.0f;
-	
+	rotateSpeed = 0.0f;	
 }
 
 /**************************************************************************************************************/
@@ -26,6 +25,19 @@ void Turret::setRotateSpeed(float rotateSpeed)
 {
 	/*set the rotor speed*/
 	this->rotateSpeed = rotateSpeed;
+}
+
+/**************************************************************************************************************/
+
+/*Rotates the Turret.*/
+void Turret::rotateTurret(float dt)
+{
+	/*get the rotation in the form of a Quaternion*/
+	Ogre::Quaternion orientationQ = util::covertRotateToQuaternion(
+		Ogre::Vector3(0.0f, util::convertAngleToRadian(rotateSpeed * dt), 0.0f));
+
+	/*rotate the Turret*/
+	gameActorNode->rotate(orientationQ);
 }
 
 /**************************************************************************************************************/
@@ -68,4 +80,9 @@ void Turret::setUpActor(OgreApplication* application)
 /*Updates the Turret actor.*/
 void Turret::updateActor(float dt)
 {
+	/*rotate the Turret*/
+	rotateTurret(dt);
+
+	/*update the TurretBarrel*/
+	barrel->updateActor(dt);
 }
