@@ -14,6 +14,7 @@
 #include <iostream>
 #include "OgreApplication.h"
 #include "Helicopter.h"
+#include "Turret.h"
 #include "TerrainManager.h"
 #include "Camera.h"
 
@@ -27,6 +28,7 @@ private:
 
 	std::shared_ptr<Camera> camera;
 	std::shared_ptr<Helicopter> helicopter;
+	std::shared_ptr<Turret> turret;
 	std::shared_ptr<TerrainManager> terrain;
 
 	OgreBites::ParamsPanel* paramPanel;

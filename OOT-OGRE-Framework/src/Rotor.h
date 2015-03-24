@@ -25,8 +25,9 @@ private:
 
 	/**
 	Rotates the Rotor. 
+	@param float The delta time.
 	*/
-	void rotateRotor();
+	void rotateRotor(float dt);
 
 public:
 	/**

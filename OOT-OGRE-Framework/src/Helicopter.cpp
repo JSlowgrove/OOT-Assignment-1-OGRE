@@ -241,8 +241,8 @@ void Helicopter::handleInput(OIS::Keyboard* keyboard)
 void Helicopter::updateActor(float dt)
 {
 	/*set the rotors speed*/
-	mainRotor->setRotateSpeed(10.0f);
-	sideRotor->setRotateSpeed(10.0f);
+	mainRotor->setRotateSpeed(500.0f);
+	sideRotor->setRotateSpeed(500.0f);
 
 	/*update the helicopter speeds depending on the user commands*/
 	updateSpeed();

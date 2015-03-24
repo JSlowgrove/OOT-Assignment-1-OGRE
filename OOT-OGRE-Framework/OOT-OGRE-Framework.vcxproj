@@ -21,6 +21,8 @@
     <ClInclude Include="src\Rotor.h" />
     <ClInclude Include="src\stdafx.h" />
     <ClInclude Include="src\TerrainManager.h" />
+    <ClInclude Include="src\Turret.h" />
+    <ClInclude Include="src\TurretBarrel.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Camera.cpp" />
@@ -36,6 +38,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\TerrainManager.cpp" />
+    <ClCompile Include="src\Turret.cpp" />
+    <ClCompile Include="src\TurretBarrel.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F53594BB-1D45-4150-8E0A-7B5E0F023C36}</ProjectGuid>

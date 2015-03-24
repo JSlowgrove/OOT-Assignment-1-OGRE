@@ -36,8 +36,12 @@ void GameWorld::InitilaiseScene()
 void GameWorld::CreateEntities()
 {
 	/*initialise a helicopter*/
-	helicopter.reset(new Helicopter(Ogre::Vector3(0.0f, 600.0f, 0.0f), Ogre::Vector3(0.0f, 0.0f, 0.0f), 1.0f));
+	helicopter.reset(new Helicopter(Ogre::Vector3(200.0f, 600.0f, 1800.0f), Ogre::Vector3(0.0f, 0.0f, 0.0f), 1.0f));
 	helicopter->setUpActor(application);
+
+	/*initialise a turret*/
+	turret.reset(new Turret(Ogre::Vector3(224.30f, 443.20f, 1985.0f), Ogre::Vector3(0.0f, 0.0f, 0.0f), 10.0f));
+	turret->setUpActor(application);
 }
 
 // Create a ogre world environment with a predefined geometry and a texture

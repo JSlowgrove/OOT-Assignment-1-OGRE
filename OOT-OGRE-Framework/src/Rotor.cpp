@@ -43,14 +43,11 @@ void Rotor::setRotateAxis(Ogre::Vector3 rotationAxis)
 /**************************************************************************************************************/
 
 /*rotates the Rotor.*/
-void Rotor::rotateRotor()
+void Rotor::rotateRotor(float dt)
 {
-	/*work out the rotation angle of the rotor*/
-	Ogre::Matrix3 rotateMat;
-	float rotateAngle = rotateSpeed * 3.141596f / 180.0f;
-
 	/*get the rotation in the form of a Quaternion*/
-	Ogre::Quaternion orientationQ = util::covertRotateToQuaternion(rotationAxis, rotateAngle);
+	Ogre::Quaternion orientationQ = util::covertRotateToQuaternion(rotationAxis, 
+		util::convertAngleToRadian(rotateSpeed * dt));
 
 	/*rotate the rotor*/
 	gameActorNode->rotate(orientationQ);
@@ -80,5 +77,5 @@ void Rotor::setUpActor(OgreApplication* application)
 void Rotor::updateActor(float dt)
 {
 	/*set the rotor to spin*/
-	rotateRotor();
+	rotateRotor(dt);
 }

@@ -1,4 +1,4 @@
-material lambert3
+material helicopter
 {
 	technique
 	{
