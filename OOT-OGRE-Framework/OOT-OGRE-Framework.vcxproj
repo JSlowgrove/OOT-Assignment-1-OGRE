@@ -34,7 +34,7 @@
     <ClCompile Include="src\OgreApplication.cpp" />
     <ClCompile Include="src\OgreWrapper.cpp" />
     <ClCompile Include="src\GameWorld.cpp" />
-    <ClCompile Include="src\Porjectile.cpp" />
+    <ClCompile Include="src\Projectile.cpp" />
     <ClCompile Include="src\Rotor.cpp" />
     <ClCompile Include="src\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

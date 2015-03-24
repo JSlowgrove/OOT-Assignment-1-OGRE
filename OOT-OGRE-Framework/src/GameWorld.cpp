@@ -40,7 +40,6 @@ void GameWorld::CreateEntities()
 	helicopter->setUpActor(application);
 
 	/*initialise a turret*/
-	Ogre::SceneNode* helicopterNode = application->GetSceneManager()->getSceneNode(helicopter->getActorID() + "Helicopter ");
 	turret.reset(new Turret(Ogre::Vector3(224.30f, 443.20f, 1985.0f), Ogre::Vector3(0.0f, 0.0f, 0.0f), 10.0f));
 	turret->setUpActor(application);
 }
@@ -93,16 +92,15 @@ void GameWorld::Run()
 	// Create a camera
 	Ogre::String cameraName = "MainCamera";
 	Ogre::Vector3 cameraOffset = Ogre::Vector3(0.0f, 80.0f, -180.0f);
-	Ogre::Vector3 cameraOffsetRotation = Ogre::Vector3(0.0f, 0.0f, 0.0f);
-	auto cameraNode = application->CreateCamera(cameraName);
-	cameraNode->setPosition(helicopter->getPosition() + cameraOffset);
+	Ogre::Vector3 cameraOffsetRotation = Ogre::Vector3(0.0f, 40.0f, 0.0f);
+	auto cameraNode = application->CreateCamera(cameraName, helicopter->getActorNode().get());
+	cameraNode->translate(cameraOffset, Ogre::Node::TS_LOCAL);
 	static_cast<Ogre::Camera*>(cameraNode->getAttachedObject("MainCamera"))
-		->lookAt(helicopter->getPosition() + Ogre::Vector3(0.0f, 40.0f, 0.0f));
+		->lookAt(helicopter->getPosition() + cameraOffsetRotation);
 	shared_ptr<Ogre::MovableObject> cameraObject;
 	cameraObject.reset(cameraNode->getAttachedObject("MainCamera"));
-	camera.reset(new Camera(cameraNode, cameraObject, cameraOffsetRotation, 
-		cameraOffset, helicopter->getPosition(), helicopter->getOrientation()));
-	camera->setRotation(cameraOffsetRotation);
+	camera.reset(new Camera(cameraNode, cameraObject, cameraOffsetRotation, cameraOffset));
+
 
 	//Create input device listeners 
 	application->CreateIOS();
@@ -128,7 +126,7 @@ void GameWorld::Run()
 
 		//Update helicopter stats
 		char buffer[256];
-		Ogre::SceneNode *helicopterNode = application->GetSceneManager()->getSceneNode(helicopter->getActorID() + "Helicopter ");
+		Ogre::SceneNode *helicopterNode = helicopter->getActorNode().get();
 		Ogre::Vector3 vValue = helicopter->getPosition();
 		sprintf_s(buffer, 256, "%4.2f %4.2f %4.2f", vValue.x, vValue.y, vValue.z);
 		paramPanel->setParamValue(0, buffer);
@@ -194,7 +192,6 @@ void GameWorld::Run()
 		{
 			timeToUpdate -= STEP_LENGTH;
 			Update(deltaTime_s, dynamic_cast<OIS::Keyboard*>(keyboard.get()));
-
 			numOfUpdates++;
 		}
 		
@@ -233,7 +230,7 @@ void GameWorld::Update(float dt, OIS::Keyboard* keyboard)
 	helicopter->handleInput(keyboard);
 	helicopter->updateActor(dt);
 	turret->updateActor(dt);
-	camera->update(helicopter->getPosition(), helicopter->getLastRotation());
+	camera->update(dt);
 }
 
 //a function to rotate an object around the x axis

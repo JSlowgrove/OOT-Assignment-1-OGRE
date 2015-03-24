@@ -22,11 +22,11 @@ Projectile::~Projectile()
 void Projectile::setUpActor(OgreApplication* application)
 {
 	/*load the particle effect*/
-	auto particle = application->GetSceneManager()->createParticleSystem("sun", "Space/Sun");
+	auto particle = application->GetSceneManager()->createParticleSystem("projectile", "Space/Sun");
 
 	/*initialise the Turret node*/
 	gameActorNode.reset(application->GetSceneManager()->getRootSceneNode()
-		->createChildSceneNode("Projectile " + std::to_string(actorID)));
+		->createChildSceneNode("Projectile " + getActorID()));
 	gameActorNode->setScale(Ogre::Vector3(scale, scale, scale));
 	gameActorNode->setPosition(position);
 	gameActorNode->attachObject(particle);

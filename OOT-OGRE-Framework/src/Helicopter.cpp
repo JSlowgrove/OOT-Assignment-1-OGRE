@@ -136,14 +136,14 @@ void Helicopter::setUpActor(OgreApplication* application)
 	orientationQ.FromRotationMatrix(rotateXMat);
 
 	/*load the mesh and material (original model & texture from http://www.turbosquid.com/FullPreview/Index.cfm/ID/863905) */
-	auto helicopter = application->GetSceneManager()->createEntity("helicopter" + std::to_string(actorID),"helicopter.mesh");
+	auto helicopter = application->GetSceneManager()->createEntity("helicopter" + getActorID(),"helicopter.mesh");
 
 	/*set the lighting*/
 	helicopter->setCastShadows(false);
 
 	/*initialise the helicopter node*/
 	gameActorNode.reset(application->GetSceneManager()->getRootSceneNode()
-		->createChildSceneNode(std::to_string(actorID) + "Helicopter "));
+		->createChildSceneNode("Helicopter " + getActorID() + " "));
 	gameActorNode->setScale(Ogre::Vector3(scale, scale, scale));
 	gameActorNode->setOrientation(orientationQ);
 	gameActorNode->setPosition(position);

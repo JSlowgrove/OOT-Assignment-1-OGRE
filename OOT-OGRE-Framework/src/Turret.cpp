@@ -46,7 +46,7 @@ void Turret::rotateTurret(float dt)
 void Turret::setUpActor(OgreApplication* application)
 {
 	/*load the mesh and material*/
-	auto turret = application->GetSceneManager()->createEntity("Turret " + std::to_string(actorID), "turret.mesh");
+	auto turret = application->GetSceneManager()->createEntity("Turret " + getActorID(), "turret.mesh");
 
 	/*initialise helicopter rotation*/
 	Ogre::Matrix3 rotateMat;
@@ -62,7 +62,7 @@ void Turret::setUpActor(OgreApplication* application)
 
 	/*initialise the Turret node*/
 	gameActorNode.reset(application->GetSceneManager()->getRootSceneNode()
-		->createChildSceneNode("Turret " + std::to_string(actorID) + " "));
+		->createChildSceneNode("Turret " + getActorID() + " "));
 	gameActorNode->setScale(Ogre::Vector3(scale, scale, scale));
 	gameActorNode->setOrientation(orientationQ);
 	gameActorNode->setPosition(position);

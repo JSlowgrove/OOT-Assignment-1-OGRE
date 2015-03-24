@@ -32,6 +32,15 @@ GameActor::~GameActor()
 
 /**************************************************************************************************************/
 
+/*Gets the node of the game actor.*/
+std::shared_ptr<Ogre::SceneNode> GameActor::getActorNode()
+{
+	/*return the actor node*/
+	return gameActorNode;
+}
+
+/**************************************************************************************************************/
+
 /*Gets the actorID of the game actor.*/
 std::string GameActor::getActorID()
 {

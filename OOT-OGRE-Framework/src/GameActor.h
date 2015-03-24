@@ -55,6 +55,12 @@ public:
 	virtual void updateActor(float dt) = 0;
 
 	/**
+	Getter # Gets the node of the GameActor.
+	@returns std::shared_ptr<Ogre::SceneNode> A pointer to the node of the GameActor.
+	*/
+	std::shared_ptr<Ogre::SceneNode> getActorNode();
+
+	/**
 	Getter # Gets the actorID of the GameActor.
 	@returns std::string The actorID of the GameActor.
 	*/

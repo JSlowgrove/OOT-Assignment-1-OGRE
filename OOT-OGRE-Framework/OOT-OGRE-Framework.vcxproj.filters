@@ -95,7 +95,7 @@
     <ClCompile Include="src\TurretBarrel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Porjectile.cpp">
+    <ClCompile Include="src\Projectile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

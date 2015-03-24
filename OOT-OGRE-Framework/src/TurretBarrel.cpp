@@ -49,13 +49,13 @@ void TurretBarrel::rotateTurretBarrel(float dt)
 void TurretBarrel::setUpActor(OgreApplication* application)
 {
 	/*load the mesh and material*/
-	auto rotor = application->GetSceneManager()->createEntity("Barrel " + std::to_string(actorID), "turretBarrel.mesh");
+	auto rotor = application->GetSceneManager()->createEntity("Barrel " + getActorID(), "turretBarrel.mesh");
 
 	/*set the lighting*/
 	rotor->setCastShadows(false);
 
 	/*initialise the rotor node*/
-	gameActorNode.reset(turretNode->createChildSceneNode("Barrel " + std::to_string(actorID)));
+	gameActorNode.reset(turretNode->createChildSceneNode("Barrel " + getActorID()));
 	gameActorNode->setPosition(position);
 	gameActorNode->attachObject(rotor);
 	gameActorNode->showBoundingBox(false);

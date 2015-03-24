@@ -59,13 +59,13 @@ void Rotor::rotateRotor(float dt)
 void Rotor::setUpActor(OgreApplication* application)
 {
 	/*load the mesh and material (original model & texture from http://www.turbosquid.com/FullPreview/Index.cfm/ID/863905) */
-	auto rotor = application->GetSceneManager()->createEntity(rotorType + std::to_string(actorID), rotorType + ".mesh");
+	auto rotor = application->GetSceneManager()->createEntity(rotorType + getActorID(), rotorType + ".mesh");
 
 	/*set the lighting*/
 	rotor->setCastShadows(false);
 	
 	/*initialise the rotor node*/
-	gameActorNode.reset(helicopterNode->createChildSceneNode(rotorType + " " + std::to_string(actorID)));
+	gameActorNode.reset(helicopterNode->createChildSceneNode(rotorType + " " + getActorID()));
 	gameActorNode->setPosition(position);
 	gameActorNode->attachObject(rotor);
 	gameActorNode->showBoundingBox(false);
