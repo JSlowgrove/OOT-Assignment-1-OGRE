@@ -259,15 +259,15 @@ void Helicopter::updateActor(float dt)
 	/*store the new position*/
 	position = gameActorNode->getPosition();
 
-	/*create a rotation vector 3 from the speed*/
-	Ogre::Vector3 radianRotation = Ogre::Vector3(util::convertAngleToRadian(rotateSpeed.x * dt), 
-		util::convertAngleToRadian(rotateSpeed.y *dt), util::convertAngleToRadian(rotateSpeed.z * dt));
+	/*create a rotation vector3 for rotation on the x*/
+	Ogre::Vector3 radianRotation = Ogre::Vector3(util::convertAngleToRadian(rotateSpeed.x * dt), 0.0f, 0.0f);
+	/*rotate the helicopter in local space*/
+	gameActorNode->rotate(util::covertRotateToQuaternion(radianRotation), Ogre::Node::TS_LOCAL);
 
-	/*get the rotation in the form of a Quaternion*/
-	Ogre::Quaternion orientationQ = util::covertRotateToQuaternion(radianRotation);
-
-	/*rotate the helicopter*/
-	gameActorNode->rotate(orientationQ);
+	/*create a rotation vector3 for rotation on the y*/
+	radianRotation = Ogre::Vector3(0.0f, util::convertAngleToRadian(rotateSpeed.y * dt), 0.0f);
+	/*rotate the helicopter in world space*/
+	gameActorNode->rotate(util::covertRotateToQuaternion(radianRotation), Ogre::Node::TS_WORLD);
 
 	/*create a rotation vector 3 from the speed*/
 	lastRotation = Ogre::Vector3((rotateSpeed.x * dt), (rotateSpeed.y *dt), (rotateSpeed.z * dt));

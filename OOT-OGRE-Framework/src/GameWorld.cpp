@@ -233,18 +233,6 @@ void GameWorld::Update(float dt, OIS::Keyboard* keyboard)
 	camera->update(dt);
 }
 
-//a function to rotate an object around the x axis
-Ogre::Matrix3 GameWorld::rotateX(float angle) 
-{ 
-	Ogre::Matrix3 matX, rotateY, rotateZ; 
-	matX = Ogre::Matrix3( 
-		1.0, 0.0, 0.0, 
-		0.0, std::cos(angle), -std::sin(angle),
-		0.0, std::sin(angle), std::cos(angle) 
-		);
-	return matX; 
-}
-
 void GameWorld::CreateGUI()
 {
 	OgreBites::InputContext inputContext;
