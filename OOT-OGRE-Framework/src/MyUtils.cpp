@@ -1,78 +1,77 @@
 #include "stdafx.h"
 #include "MyUtils.h"
 
+/*A namespace to contain utility functions.*/
 namespace util
 {
-	//*** Exerise 3: define reusable utility functions
+	/*Create a 4x4 rotation matrix.*/
 	Ogre::Matrix3 RotationMatrixXYZ(Ogre::Vector3&  orientation)
 	{
-		Ogre::Matrix3 rotateX, rotateY, rotateZ;
-		const float angleX = orientation.x;
-		const float angleY = orientation.y;
-		const float angleZ = orientation.z;
+		/*get a rotation matrix for x*/
+		Ogre::Matrix3 rotateX = xRotationMatrix3(orientation.x);
 
-        
-		rotateX = Ogre::Matrix3(
-			1.0, 0.0, 0.0,
-			0.0, std::cos(angleX), -std::sin(angleX),
-			0.0, std::sin(angleX), std::cos(angleX)
-			);
+		/*get a rotation matrix for y*/
+		Ogre::Matrix3 rotateY = yRotationMatrix3(orientation.y);
 
-		rotateY = Ogre::Matrix3(
-			std::cos(angleY), 0.0, std::sin(angleY),
-			0.0, 1.0, 0.0,
-			-std::sin(angleY), 0.0, std::cos(angleY)
-			);
+		/*get a rotation matrix for z*/
+		Ogre::Matrix3 rotateZ = zRotationMatrix3(orientation.z);
 
-		rotateZ = Ogre::Matrix3(
-			std::cos(angleZ), -std::sin(angleZ), 0.0,
-			std::sin(angleZ),  std::cos(angleZ), 0.0,
-			0.0, 0.0, 1.0
-			);
+		/*create a rotation matrix by combining all 3 rotation matrix's*/
+		Ogre::Matrix3 resultantMatrix = rotateZ * rotateY * rotateX;
 
-		Ogre::Matrix3 rotation = rotateZ*rotateY*rotateX;
-		
-		return rotation;
+		/*return the resultant matrix*/
+		return resultantMatrix;
 	}
 
-	Ogre::Matrix3 rotate_x(float angle)
+	/**************************************************************************************************************/
+
+	/*Create a 3x3 rotation matrix for x.*/
+	Ogre::Matrix3 xRotationMatrix3(float angle)
 	{
-		Ogre::Matrix3 matX, rotateY, rotateZ;
-		matX = Ogre::Matrix3(
-			1.0, 0.0, 0.0,
-			0.0, std::cos(angle), -std::sin(angle),
-			0.0, std::sin(angle), std::cos(angle)
+		/*create the 3x3 rotation matrix*/
+		Ogre::Matrix3 rotationMatrix;
+		rotationMatrix = Ogre::Matrix3(
+			1.0,	0.0,				0.0,
+			0.0,	std::cos(angle),	-std::sin(angle),
+			0.0,	std::sin(angle),	std::cos(angle)
 			);
 
-		return matX;
+		/*return the matrix*/
+		return rotationMatrix;
 	}
 
-	Ogre::Matrix3 rotate_y(float angle)
+	/**************************************************************************************************************/
+
+	/*Create a 3x3 rotation matrix for y.*/
+	Ogre::Matrix3 yRotationMatrix3(float angle)
 	{
-		Ogre::Matrix3 matY;
-		matY = Ogre::Matrix3(
-			std::cos(angle), 0.0, std::sin(angle),
-			0.0, 1.0, 0.0,
-			-std::sin(angle), 0.0, std::cos(angle)
+		/*create the 3x3 rotation matrix*/
+		Ogre::Matrix3 rotationMatrix;
+		rotationMatrix = Ogre::Matrix3(
+			std::cos(angle),	0.0,	std::sin(angle),
+			0.0,				1.0,	0.0,
+			-std::sin(angle),	0.0,	std::cos(angle)
 			);
-		return matY;
+
+		/*return the matrix*/
+		return rotationMatrix;
 	}
 
-	Ogre::Matrix3 rotate_z(float angle)
-	{
-		Ogre::Matrix3 matZ;
+	/**************************************************************************************************************/
 
-		matZ = Ogre::Matrix3(
-			std::cos(angle), -std::sin(angle), 0.0,
-			std::sin(angle), std::cos(angle), 0.0,
-			0.0, 0.0, 1.0
+	/*Create a 3x3 rotation matrix for z.*/
+	Ogre::Matrix3 zRotationMatrix3(float angle)
+	{
+		/*create the 3x3 rotation matrix*/
+		Ogre::Matrix3 rotationMatrix;
+		rotationMatrix = Ogre::Matrix3(
+			std::cos(angle),	-std::sin(angle),	0.0,
+			std::sin(angle),	std::cos(angle),	0.0,
+			0.0,				0.0,				1.0
 			);
-		return matZ;
-	}
 
-	float deg2Rad(float deg)
-	{
-		return deg * 0.0174532925f;
+		/*return the matrix*/
+		return rotationMatrix;
 	}
 
 	/**************************************************************************************************************/
@@ -80,43 +79,74 @@ namespace util
 	/*Create a 4x4 rotation matrix.*/
 	Ogre::Matrix4 RotationMatrixXYZW(Ogre::Vector3&  orientation)
 	{
-		/*initialise a 4x4 matrix for each axis rotation*/
-		Ogre::Matrix4 rotateX, rotateY, rotateZ;
-
-		/*initialise the angles from the orientation*/
-		const float angleX = orientation.x;
-		const float angleY = orientation.y;
-		const float angleZ = orientation.z;
-
 		/*create the x 4x4 rotation matrix*/
-		rotateX = Ogre::Matrix4(
+		Ogre::Matrix4 rotateX = xRotationMatrix4(orientation.x);
+
+		/*create the y 4x4 rotation matrix*/
+		Ogre::Matrix4 rotateY = yRotationMatrix4(orientation.y);
+
+		/*create the z 4x4 rotation matrix*/
+		Ogre::Matrix4 rotateZ = zRotationMatrix4(orientation.z);
+
+		/*create a rotation matrix by combining all 3 rotation matrix's*/
+		Ogre::Matrix4 resultantMatrix = rotateZ * rotateY * rotateX;
+
+		/*return the resultant matrix*/
+		return resultantMatrix;
+	}
+	
+	/**************************************************************************************************************/
+
+	/*Create a 4x4 rotation matrix for x.*/
+	Ogre::Matrix4 xRotationMatrix4(float angle)
+	{
+		/*create the 4x4 rotation matrix*/
+		Ogre::Matrix4 rotationMatrix;
+		rotationMatrix = Ogre::Matrix4(
 			1.0,	0.0,				0.0,				0.0,
-			0.0,	std::cos(angleX),	-std::sin(angleX),	0.0,
-			0.0,	std::sin(angleX),	std::cos(angleX),	0.0,
+			0.0,	std::cos(angle),	-std::sin(angle),	0.0,
+			0.0,	std::sin(angle),	std::cos(angle),	0.0,
 			0.0,	0.0,				0.0,				1.0
 			);
 
-		/*create the y 4x4 rotation matrix*/
-		rotateY = Ogre::Matrix4(
-			std::cos(angleY),	0.0,	std::sin(angleY),	0.0,
+		/*return the matrix*/
+		return rotationMatrix;
+	}
+
+	/**************************************************************************************************************/
+
+	/*Create a 4x4 rotation matrix for y.*/
+	Ogre::Matrix4 yRotationMatrix4(float angle)
+	{
+		/*create the 4x4 rotation matrix*/
+		Ogre::Matrix4 rotationMatrix;
+		rotationMatrix = Ogre::Matrix4(
+			std::cos(angle),	0.0,	std::sin(angle),	0.0,
 			0.0,				1.0,	0.0,				0.0,
-			-std::sin(angleY),	0.0,	std::cos(angleY),	0.0,
+			-std::sin(angle),	0.0,	std::cos(angle),	0.0,
 			0.0,				0.0,	0.0,				1.0
 			);
 
-		/*create the z 4x4 rotation matrix*/
-		rotateZ = Ogre::Matrix4(
-			std::cos(angleZ),	-std::sin(angleZ),	0.0,	0.0,
-			std::sin(angleZ),	std::cos(angleZ),	0.0,	0.0,
+		/*return the matrix*/
+		return rotationMatrix;
+	}
+
+	/**************************************************************************************************************/
+
+	/*Create a 4x4 rotation matrix for z.*/
+	Ogre::Matrix4 zRotationMatrix4(float angle)
+	{
+		/*create the 4x4 rotation matrix*/
+		Ogre::Matrix4 rotationMatrix;
+		rotationMatrix = Ogre::Matrix4(
+			std::cos(angle),	-std::sin(angle),	0.0,	0.0,
+			std::sin(angle),	std::cos(angle),	0.0,	0.0,
 			0.0,				0.0,				1.0,	0.0,
 			0.0,				0.0,				0.0,	1.0
 			);
 
-		/*combine these 3 matrix's in to one matrix*/
-		Ogre::Matrix4 rotation = rotateZ*rotateY*rotateX;
-
-		/*return the 4x4 rotation matrix*/
-		return rotation;
+		/*return the matrix*/
+		return rotationMatrix;
 	}
 
 	/**************************************************************************************************************/
@@ -160,10 +190,36 @@ namespace util
 
 	/**************************************************************************************************************/
 
-	/*Converts the rotate speed to a rotation angle.*/
-	float convertToAngle(float speed)
+	/*Converts the angle to a radian.*/
+	float convertAngleToRadian(float angle)
 	{
-		/*return the converted angle*/
-		return (speed * 3.141596f / 180.0f);
+		/*return the radian*/
+		return (angle * 3.141596f / 180.0f);
+	}
+
+	/**************************************************************************************************************/
+
+	/*Makes sure the angle is between 0 and 360.*/
+	Ogre::Real angleCheck(Ogre::Real angle, Ogre::Real angleChange)
+	{
+		/*work out the new angle*/
+		if ((angle + angleChange) > 360)
+		{
+			/*store the new angle after reseting it to 0*/
+			angle = (angle + angleChange) - 360;
+		}
+		else if ((angle + angleChange) < 0)
+		{
+			/*store the new angle after reseting it to 360*/
+			angle = (angle + angleChange) + 360;
+		}
+		else
+		{
+			/*store the new angle*/
+			angle += angleChange;
+		}
+
+		/*returns the new angle*/
+		return angle;
 	}
 }

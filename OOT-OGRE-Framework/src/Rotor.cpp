@@ -53,7 +53,7 @@ void Rotor::rotateRotor()
 	Ogre::Quaternion orientationQ = util::covertRotateToQuaternion(rotationAxis, rotateAngle);
 
 	/*rotate the rotor*/
-	rotorNode->rotate(orientationQ);
+	gameActorNode->rotate(orientationQ);
 }
 
 /**************************************************************************************************************/
@@ -62,16 +62,16 @@ void Rotor::rotateRotor()
 void Rotor::setUpActor(OgreApplication* application)
 {
 	/*load the mesh and material (original model & texture from http://www.turbosquid.com/FullPreview/Index.cfm/ID/863905) */
-	auto rotor = application->GetSceneManager()->createEntity(rotorType, rotorType + ".mesh");
+	auto rotor = application->GetSceneManager()->createEntity(rotorType + std::to_string(actorID), rotorType + ".mesh");
 
 	/*set the lighting*/
 	rotor->setCastShadows(false);
 	
 	/*initialise the rotor node*/
-	rotorNode.reset(helicopterNode->createChildSceneNode(rotorType + " " + std::to_string(actorID)));
-	rotorNode->setPosition(position);
-	rotorNode->attachObject(rotor);
-	rotorNode->showBoundingBox(false);
+	gameActorNode.reset(helicopterNode->createChildSceneNode(rotorType + " " + std::to_string(actorID)));
+	gameActorNode->setPosition(position);
+	gameActorNode->attachObject(rotor);
+	gameActorNode->showBoundingBox(false);
 }
 
 /**************************************************************************************************************/

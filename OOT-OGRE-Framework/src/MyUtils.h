@@ -3,21 +3,64 @@
 #include "stdafx.h"
 #include "OgreMath.h"
 
+/**@brief A namespace to contain utility functions.*/
 namespace util
 {
-	//*** Exerise 3: declare reusable utility functions
+	/**
+	Create a 4x4 rotation matrix.
+	@param Ogre::Vector3 The orientation of the object.
+	@returns Ogre::Matrix3 The rotation matrix.
+	*/
 	Ogre::Matrix3 RotationMatrixXYZ(Ogre::Vector3&  orientation);
-	Ogre::Matrix3 rotate_x(float angle);
-	Ogre::Matrix3 rotate_y(float angle);
-	Ogre::Matrix3 rotate_z(float angle);
 
-	float deg2Rad(float deg);
+	/**
+	Create a 3x3 rotation matrix for x.
+	@param float The angle.
+	@returns Ogre::Matrix3 The rotation matrix.
+	*/
+	Ogre::Matrix3 xRotationMatrix3(float angle);
+
+	/**
+	Create a 3x3 rotation matrix for y.
+	@param float The angle.
+	@returns Ogre::Matrix3 The rotation matrix.
+	*/
+	Ogre::Matrix3 yRotationMatrix3(float angle);
+
+	/**
+	Create a 3x3 rotation matrix for z.
+	@param float The angle.
+	@returns Ogre::Matrix3 The rotation matrix.
+	*/
+	Ogre::Matrix3 zRotationMatrix3(float angle);
 
 	/**
 	Create a 4x4 rotation matrix.
 	@param Ogre::Vector3 The orientation of the object.
+	@returns Ogre::Matrix4 The rotation matrix.
 	*/
 	Ogre::Matrix4 RotationMatrixXYZW(Ogre::Vector3&  orientation);
+
+	/**
+	Create a 4x4 rotation matrix for x.
+	@param float The angle.
+	@returns Ogre::Matrix4 The rotation matrix.
+	*/
+	Ogre::Matrix4 xRotationMatrix4(float angle);
+
+	/**
+	Create a 4x4 rotation matrix for y.
+	@param float The angle.
+	@returns Ogre::Matrix4 The rotation matrix.
+	*/
+	Ogre::Matrix4 yRotationMatrix4(float angle);
+
+	/**
+	Create a 4x4 rotation matrix for z.
+	@param float The angle.
+	@returns Ogre::Matrix4 The rotation matrix.
+	*/
+	Ogre::Matrix4 zRotationMatrix4(float angle);
 
 	/**
 	Convert the rotation to a quaternion rotation.
@@ -34,9 +77,17 @@ namespace util
 	Ogre::Quaternion covertRotateToQuaternion(Ogre::Vector3 rotation);
 
 	/**
-	Converts the rotate speed to a rotation angle.
-	@param float The speed to convert.
-	@returns float The converted angle.
+	Converts the angle to a radian.
+	@param float The angle to convert.
+	@returns float The converted radian.
 	*/
-	float convertToAngle(float speed);	
+	float convertAngleToRadian(float angle);	
+
+	/**
+	Makes sure the angle is between 0 and 360.
+	@param Ogre::Real The angle.
+	@param Ogre::Real The value to add to the angle.
+	@returns Ogre::Real The resultant angle between 0 and 360.
+	*/
+	Ogre::Real angleCheck(Ogre::Real angle, Ogre::Real angleChange);
 }

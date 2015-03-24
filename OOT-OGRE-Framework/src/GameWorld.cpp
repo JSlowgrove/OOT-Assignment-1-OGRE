@@ -53,7 +53,6 @@ void GameWorld::CreateEnviroment()
 	
 }
 
-
 //Create light in the scene
 void GameWorld::CreateLights()
 {
@@ -96,8 +95,8 @@ void GameWorld::Run()
 		->lookAt(helicopter->getPosition() + Ogre::Vector3(0.0f, 40.0f, 0.0f));
 	shared_ptr<Ogre::MovableObject> cameraObject;
 	cameraObject.reset(cameraNode->getAttachedObject("MainCamera"));
-	camera = make_shared<Camera>(cameraNode, cameraObject, cameraOffsetRotation, 
-		cameraOffset, helicopter->getPosition());
+	camera.reset(new Camera(cameraNode, cameraObject, cameraOffsetRotation, 
+		cameraOffset, helicopter->getPosition(), helicopter->getOrientation()));
 	camera->setRotation(cameraOffsetRotation);
 
 	//Create input device listeners 
@@ -228,7 +227,7 @@ void GameWorld::Update(float dt, OIS::Keyboard* keyboard)
 
 	helicopter->handleInput(keyboard);
 	helicopter->updateActor(dt);
-	camera->update(helicopter->getPosition(), helicopter->getOrientation());
+	camera->update(helicopter->getPosition(), helicopter->getLastRotation());
 }
 
 //a function to rotate an object around the x axis

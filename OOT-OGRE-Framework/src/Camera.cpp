@@ -5,12 +5,14 @@
 
 /*Constructs the Camera object.*/
 Camera::Camera(std::shared_ptr<Ogre::SceneNode> sceneNode, std::shared_ptr<Ogre::MovableObject> camera, 
-			   Ogre::Vector3 rotationOffset, Ogre::Vector3 positonOffset, Ogre::Vector3 helicopterPosition)
+			   Ogre::Vector3 rotationOffset, Ogre::Vector3 positonOffset, 
+			   Ogre::Vector3 helicopterPosition, Ogre::Vector3 helicopterRotation)
 {
 	/*initialise the variables*/
 	this->sceneNode = sceneNode;
 	this->camera = camera;
-	rotation = this->rotationOffset = rotationOffset;
+	rotation = helicopterRotation;
+	this->rotationOffset = rotationOffset;
 	this->positonOffset = positonOffset;
 	position = helicopterPosition + positonOffset;
 }
@@ -27,8 +29,9 @@ Camera::~Camera()
 /*Updates the Camera.*/
 void Camera::update(Ogre::Vector3 helicopterPosition, Ogre::Vector3 helicopterRotation)
 {
-	/*store the new position of the camera*/
+	/*set the position of the camera*/
 	position = helicopterPosition + positonOffset;
+
 	/*set the new position of the camera*/
 	sceneNode->setPosition(position);
 }

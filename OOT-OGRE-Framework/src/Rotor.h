@@ -15,8 +15,6 @@ class Rotor : public GameActor
 private:
 	/**A pointer to the Helicopter node.*/
 	std::shared_ptr<Ogre::SceneNode> helicopterNode;
-	/**A pointer to the rotor node of the Helicopter.*/
-	std::shared_ptr<Ogre::SceneNode> rotorNode;
 	/**The speed of the Rotor rotation.*/
 	float rotateSpeed;
 	/**The type of Rotor*/

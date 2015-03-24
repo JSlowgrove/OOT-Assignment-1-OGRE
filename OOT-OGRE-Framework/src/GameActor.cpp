@@ -147,4 +147,15 @@ void GameActor::setScale(Ogre::Real scale)
 	this->scale = scale;
 }
 
+/**************************************************************************************************************/
+
+/*changes the position of the GameActor.*/
+void GameActor::changePosition(Ogre::Vector3 position)
+{
+	/*set the position variable*/
+	setPosition(position);
+
+	/*set the position*/
+	gameActorNode->setPosition(position);
+}
 

@@ -14,8 +14,6 @@
 class Helicopter : public GameActor
 {
 private:
-	/**A pointer to the Helicopter node.*/
-	std::shared_ptr<Ogre::SceneNode> helicopterNode;
 	/**A pointer to the main rotor of the Helicopter.*/
 	std::shared_ptr<Rotor> mainRotor;
 	/**A pointer to the side rotor of the Helicopter.*/
@@ -24,6 +22,8 @@ private:
 	Ogre::Vector3 speed;
 	/**The rotate speed*/
 	Ogre::Vector3 rotateSpeed;
+	/**The last rotation of the Helicopter.*/
+	Ogre::Vector3 lastRotation;
 	/**A bool for if the Helicopter should move up*/
 	bool up;
 	/**A bool for if the Helicopter should move down*/
@@ -54,14 +54,6 @@ private:
 	Updates the rotate speeds of the helicopter using the user commands.
 	*/
 	void updateRotate();
-
-	/**
-	Works out the new orientation angle.
-	@param Ogre::Real The orientation value to check.
-	@param Ogre::Real The rotation value.
-	@returns Ogre::Real The new angle.
-	*/
-	Ogre::Real orientationCheck(Ogre::Real orientationCheck, Ogre::Real rotation);
 
 public:
 	/**
@@ -136,6 +128,12 @@ public:
 	@param float The new z rotate speed of the Helicopter.
 	*/
 	void setZRotateSpeed(float zRotateSpeed);
+
+	/**
+	Getter # Gets the last rotation of the Helicopter.
+	@returns Ogre::Vector3 The last rotate of the Helicopter.
+	*/
+	Ogre::Vector3 getLastRotation();
 
 	/**
 	Sets up the actor for the Helicopter.

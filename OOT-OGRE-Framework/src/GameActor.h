@@ -15,6 +15,8 @@ class GameActor
 private:
 
 protected:
+	/**A pointer to the GameActor node.*/
+	std::shared_ptr<Ogre::SceneNode> gameActorNode;
 	/**The position of the GameActor.*/
 	Ogre::Vector3 position;
 	/**The orientation of the GameActor.*/
@@ -128,5 +130,11 @@ public:
 	Setter # Sets the scale of the GameActor.
 	@param Ogre::Real The new scale of the GameActor.
 	*/
-	void setScale(Ogre::Real scale);
+	void setScale(Ogre::Real scale);	
+
+	/**
+	Changes the position of the GameActor.
+	@param Ogre::Vector3 The new position of the GameActor.
+	*/
+	void changePosition(Ogre::Vector3 position);
 };

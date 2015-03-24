@@ -116,39 +116,48 @@ void Helicopter::setZRotateSpeed(float zRotateSpeed)
 
 /**************************************************************************************************************/
 
+/*Gets the last rotation of the Helicopter.*/
+Ogre::Vector3 Helicopter::getLastRotation()
+{
+	/*return the last rotation*/
+	return lastRotation;
+}
+
+/**************************************************************************************************************/
+
 /*Sets the actor for the Helicopter.*/
 void Helicopter::setUpActor(OgreApplication* application)
 {
 	/*initialise helicopter rotation*/
 	Ogre::Matrix3 rotateXMat;
-	float angle = orientation.x * 3.141596f / 180.0f;
+	float angle = util::convertAngleToRadian(orientation.x);
 	rotateXMat = util::RotationMatrixXYZ(Ogre::Vector3(angle, 0.f, 0.f));
 	Ogre::Quaternion orientationQ;
 	orientationQ.FromRotationMatrix(rotateXMat);
 
 	/*load the mesh and material (original model & texture from http://www.turbosquid.com/FullPreview/Index.cfm/ID/863905) */
-	auto helicopter = application->GetSceneManager()->createEntity("helicopter","helicopter.mesh");
+	auto helicopter = application->GetSceneManager()->createEntity("helicopter" + std::to_string(actorID),"helicopter.mesh");
 
 	/*set the lighting*/
 	helicopter->setCastShadows(false);
 
 	/*initialise the helicopter node*/
-	helicopterNode.reset(application->GetSceneManager()->getRootSceneNode()
+	gameActorNode.reset(application->GetSceneManager()->getRootSceneNode()
 		->createChildSceneNode(std::to_string(actorID) + "Helicopter "));
-	helicopterNode->setScale(Ogre::Vector3(scale, scale, scale));
-	helicopterNode->setOrientation(orientationQ);
-	helicopterNode->setPosition(position);
-	helicopterNode->attachObject(helicopter);
-	helicopterNode->showBoundingBox(false);
+	gameActorNode->setScale(Ogre::Vector3(scale, scale, scale));
+	gameActorNode->setOrientation(orientationQ);
+	gameActorNode->setPosition(position);
+	gameActorNode->attachObject(helicopter);
+	gameActorNode->showBoundingBox(false);
 
 	/*initialise the main rotor*/
 	Ogre::Vector3 initialRotorPosition = Ogre::Vector3(-0.35f, 39.0f, -4.85f);
-	mainRotor.reset(new Rotor(initialRotorPosition, orientation, scale, helicopterNode, "topRotor"));
+	mainRotor.reset(new Rotor(initialRotorPosition, orientation, scale, gameActorNode, "topRotor"));
 	mainRotor->setUpActor(application);
 
 	/*initialise the side rotor*/
 	initialRotorPosition = Ogre::Vector3(8.0f, 43.0f, -110.5f);
-	sideRotor.reset(new Rotor(initialRotorPosition, orientation, scale, helicopterNode, "aftRotor"));
+	sideRotor.reset(new Rotor(initialRotorPosition, orientation, scale, gameActorNode, "aftRotor"));
 	sideRotor->setUpActor(application);
 }
 
@@ -234,8 +243,8 @@ void Helicopter::updateActor(float dt)
 	/*set the rotors speed*/
 	mainRotor->setRotateSpeed(10.0f);
 	sideRotor->setRotateSpeed(10.0f);
-	
-	/*update the helicopter position depending on the user commands*/
+
+	/*update the helicopter speeds depending on the user commands*/
 	updateSpeed();
 	updateRotate();
 
@@ -245,27 +254,30 @@ void Helicopter::updateActor(float dt)
 	Ogre::Real translationZ = speed.z * dt;
 
 	/*translate the helicopter against it local position*/
-	helicopterNode->translate(translationX, translationY, translationZ, Ogre::Node::TS_LOCAL);
+	gameActorNode->translate(translationX, translationY, translationZ, Ogre::Node::TS_LOCAL);
 
 	/*store the new position*/
-	position = helicopterNode->getPosition();
+	position = gameActorNode->getPosition();
 
 	/*create a rotation vector 3 from the speed*/
-	Ogre::Vector3 rotation = Ogre::Vector3(util::convertToAngle(rotateSpeed.x), 
-		util::convertToAngle(rotateSpeed.y), util::convertToAngle(rotateSpeed.z));
+	Ogre::Vector3 radianRotation = Ogre::Vector3(util::convertAngleToRadian(rotateSpeed.x * dt), 
+		util::convertAngleToRadian(rotateSpeed.y *dt), util::convertAngleToRadian(rotateSpeed.z * dt));
 
 	/*get the rotation in the form of a Quaternion*/
-	Ogre::Quaternion orientationQ = util::covertRotateToQuaternion(rotation);
+	Ogre::Quaternion orientationQ = util::covertRotateToQuaternion(radianRotation);
 
 	/*rotate the helicopter*/
-	helicopterNode->rotate(orientationQ);
+	gameActorNode->rotate(orientationQ);
+
+	/*create a rotation vector 3 from the speed*/
+	lastRotation = Ogre::Vector3((rotateSpeed.x * dt), (rotateSpeed.y *dt), (rotateSpeed.z * dt));
 
 	/*work out and store the x new orientation*/
-	orientation.x = orientationCheck(orientation.x, rotateSpeed.x);
+	orientation.x = util::angleCheck(orientation.x, (rotateSpeed.x * dt));
 	/*work out and store the y new orientation*/
-	orientation.y = orientationCheck(orientation.y, rotateSpeed.y);
+	orientation.y = util::angleCheck(orientation.y, (rotateSpeed.y * dt));
 	/*work out and store the z new orientation*/
-	orientation.z = orientationCheck(orientation.z, rotateSpeed.z);
+	orientation.z = util::angleCheck(orientation.z, (rotateSpeed.z * dt));
 
 	/*set the main rotor to spin*/
 	mainRotor->setRotateAxis(Ogre::Vector3(0.0f,1.0f,0.0f));
@@ -342,12 +354,12 @@ void Helicopter::updateRotate()
 	if (rotateUp)
 	{
 		/*set the speed to cause the the helicopter to rotate down*/
-		setXRotateSpeed(10.0f);
+		setXRotateSpeed(100.0f);
 	}
 	else if (rotateDown)
 	{
 		/*set the speed to cause the the helicopter to rotate up*/
-		setXRotateSpeed(-10.0f);
+		setXRotateSpeed(-100.0f);
 	}
 	else
 	{
@@ -359,42 +371,16 @@ void Helicopter::updateRotate()
 	if (rotateLeft)
 	{
 		/*set the speed to cause the the helicopter to rotate left*/
-		setYRotateSpeed(10.0f);
+		setYRotateSpeed(100.0f);
 	}
 	else if (rotateRight)
 	{
 		/*set the speed to cause the the helicopter to rotate right*/
-		setYRotateSpeed(-10.0f);
+		setYRotateSpeed(-100.0f);
 	}
 	else
 	{
 		/*set the speed to cause the the helicopter to stay still along the y axis*/
 		setYRotateSpeed(0.0f);
 	}
-}
-
-/**************************************************************************************************************/
-
-/*Works out the new orientation angle.*/
-Ogre::Real Helicopter::orientationCheck(Ogre::Real orientationCheck, Ogre::Real rotation)
-{
-	/*work out the new orientation*/
-	if ((orientationCheck + rotation) > 360)
-	{
-		/*store the new orientation after reseting it to 0*/
-		orientationCheck = (orientationCheck + rotation) - 360;
-	}
-	else if ((orientationCheck + rotation) < 0)
-	{
-		/*store the new orientation after reseting it to 360*/
-		orientationCheck = (orientationCheck + rotation) + 360;
-	}
-	else
-	{
-		/*store the new orientation*/
-		orientationCheck += rotation;
-	}
-
-	/*returns the new angle*/
-	return orientationCheck;
 }

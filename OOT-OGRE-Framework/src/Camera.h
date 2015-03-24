@@ -2,6 +2,7 @@
 
 #include "stdafx.h"
 #include <memory>
+#include "myUtils.h"
 
 /**
 @brief A class for a Camera object.
@@ -32,7 +33,8 @@ public:
 	@param Ogre::Vector3 The positon of the Helicopter.
 	*/
 	Camera(std::shared_ptr<Ogre::SceneNode> sceneNode, std::shared_ptr<Ogre::MovableObject> camera, 
-		Ogre::Vector3 rotationOffset, Ogre::Vector3 positonOffset, Ogre::Vector3 helicopterPosition);
+		Ogre::Vector3 rotationOffset, Ogre::Vector3 positonOffset, 
+		Ogre::Vector3 helicopterPosition, Ogre::Vector3 helicopterRotation);
 
 	/**
 	Destructs the Camera object.
