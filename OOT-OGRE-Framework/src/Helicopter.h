@@ -36,14 +36,10 @@ private:
 	bool forwards;
 	/**A bool for if the Helicopter should move backwards*/
 	bool backwards;
-	/**A bool for if the Helicopter should rotate up*/
-	bool rotateUp;
-	/**A bool for if the Helicopter should rotate down*/
-	bool rotateDown;
-	/**A bool for if the Helicopter should rotate left*/
-	bool rotateLeft;
-	/**A bool for if the Helicopter should rotate right*/
-	bool rotateRight;
+	/**The x mouse position*/
+	int mouseX;
+	/**The y mouse position*/
+	int mouseY;
 
 	/**
 	Updates the speeds of the helicopter using the user commands.
@@ -51,9 +47,9 @@ private:
 	void updateSpeed();
 
 	/**
-	Updates the rotate speeds of the helicopter using the user commands.
+	Rotates the helicopter using the user commands.
 	*/
-	void updateRotate();
+	void rotateHelicopter();
 
 public:
 	/**
@@ -145,7 +141,7 @@ public:
 	Handles the user input.
 	@param OIS::Keyboard* A pointer to the keyboard.
 	*/
-	void handleInput(OIS::Keyboard* keyboard);
+	void handleInput(OIS::Keyboard* keyboard, OIS::Mouse* mouse);
 
 	/**
 	Updates the Helicopter actor.

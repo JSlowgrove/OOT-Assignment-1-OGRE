@@ -52,7 +52,7 @@ public:
 	void CreateEnviroment();
 	void CreateLights();
 	void CreateEntities();
-	void Update(float dt, OIS::Keyboard* keyboard);
+	void Update(float dt, OIS::Keyboard* keyboard, OIS::Mouse* mouse);
 	void Reset();
 
 };

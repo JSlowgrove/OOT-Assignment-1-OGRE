@@ -8,7 +8,8 @@ Helicopter::Helicopter(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::
 	: GameActor(position, orientation, scale)
 {
 	/*initialise the user commands to false*/
-	up = down = left = right = forwards = backwards = rotateUp = rotateDown = rotateLeft = rotateRight = false;
+	up = down = left = right = forwards = backwards /*= rotateUp = rotateDown = rotateLeft = rotateRight*/ = false;
+	mouseX = mouseY = 0;
 
 	/*initialise the helicopter speed*/
 	speed = Ogre::Vector3(0.0f, 0.0f, 0.0f);
@@ -164,10 +165,10 @@ void Helicopter::setUpActor(OgreApplication* application)
 /**************************************************************************************************************/
 
 /*Handles the user input*/
-void Helicopter::handleInput(OIS::Keyboard* keyboard)
+void Helicopter::handleInput(OIS::Keyboard* keyboard, OIS::Mouse* mouse)
 {
 	/*set the user commands to false*/
-	up = down = left = right = forwards = backwards = rotateUp = rotateDown = rotateLeft = rotateRight = false;
+	up = down = left = right = forwards = backwards /*= rotateUp = rotateDown = rotateLeft = rotateRight*/ = false;
 
 	/*if W is pressed*/
 	if (keyboard->isKeyDown(OIS::KC_W))
@@ -207,32 +208,24 @@ void Helicopter::handleInput(OIS::Keyboard* keyboard)
 		/*set the down user command to be true*/
 		down = true;
 	}
-
-	/*if Up is pressed*/
-	if (keyboard->isKeyDown(OIS::KC_UP))
+	
+	/*check if the mouse is off the screen on the x axis*/
+	if (mouse->getMouseState().X.abs > mouse->getMouseState().width)
 	{
-		/*set the rotate up user command to be true*/
-		rotateUp = true;
-	}
-	/*if Down is pressed*/
-	else if (keyboard->isKeyDown(OIS::KC_DOWN))
-	{
-		/*set the rotate down user command to be true*/
-		rotateDown = true;
+		/*quit the function to not store the mouse position*/
+		return;
 	}
 
-	/*if right is pressed*/
-	if (keyboard->isKeyDown(OIS::KC_RIGHT))
+	/*check if the mouse is off the screen on the y axis*/
+	if (mouse->getMouseState().Y.abs > mouse->getMouseState().height)
 	{
-		/*set the rotate right user command to be true*/
-		rotateRight = true;
+		/*quit the function to not store the mouse position*/
+		return;
 	}
-	/*if left pressed*/
-	else if (keyboard->isKeyDown(OIS::KC_LEFT))
-	{
-		/*set the rotate left user command to be true*/
-		rotateLeft = true;
-	}
+
+	/*store the mouse position*/
+	mouseX = mouse->getMouseState().X.rel;
+	mouseY = mouse->getMouseState().Y.rel;
 }
 
 /**************************************************************************************************************/
@@ -246,7 +239,6 @@ void Helicopter::updateActor(float dt)
 
 	/*update the helicopter speeds depending on the user commands*/
 	updateSpeed();
-	updateRotate();
 
 	/*get the translate of the helicopter*/
 	Ogre::Real translationX = speed.x * dt;
@@ -259,25 +251,8 @@ void Helicopter::updateActor(float dt)
 	/*store the new position*/
 	position = gameActorNode->getPosition();
 
-	/*create a rotation vector3 for rotation on the x*/
-	Ogre::Vector3 radianRotation = Ogre::Vector3(util::convertAngleToRadian(rotateSpeed.x * dt), 0.0f, 0.0f);
-	/*rotate the helicopter in local space*/
-	gameActorNode->rotate(util::covertRotateToQuaternion(radianRotation), Ogre::Node::TS_LOCAL);
-
-	/*create a rotation vector3 for rotation on the y*/
-	radianRotation = Ogre::Vector3(0.0f, util::convertAngleToRadian(rotateSpeed.y * dt), 0.0f);
-	/*rotate the helicopter in world space*/
-	gameActorNode->rotate(util::covertRotateToQuaternion(radianRotation), Ogre::Node::TS_WORLD);
-
-	/*create a rotation vector 3 from the speed*/
-	lastRotation = Ogre::Vector3((rotateSpeed.x * dt), (rotateSpeed.y *dt), (rotateSpeed.z * dt));
-
-	/*work out and store the x new orientation*/
-	orientation.x = util::angleCheck(orientation.x, (rotateSpeed.x * dt));
-	/*work out and store the y new orientation*/
-	orientation.y = util::angleCheck(orientation.y, (rotateSpeed.y * dt));
-	/*work out and store the z new orientation*/
-	orientation.z = util::angleCheck(orientation.z, (rotateSpeed.z * dt));
+	/*rotate the helicopter*/
+	rotateHelicopter();
 
 	/*set the main rotor to spin*/
 	mainRotor->setRotateAxis(Ogre::Vector3(0.0f,1.0f,0.0f));
@@ -347,40 +322,21 @@ void Helicopter::updateSpeed()
 
 /**************************************************************************************************************/
 
-/*Updates the rotate speeds of the helicopter using the user commands.*/
-void Helicopter::updateRotate()
+/*Rotates the helicopter using the user commands*/
+void Helicopter::rotateHelicopter()
 {
-	/*x axis*/
-	if (rotateUp)
-	{
-		/*set the speed to cause the the helicopter to rotate down*/
-		setXRotateSpeed(100.0f);
-	}
-	else if (rotateDown)
-	{
-		/*set the speed to cause the the helicopter to rotate up*/
-		setXRotateSpeed(-100.0f);
-	}
-	else
-	{
-		/*set the speed to cause the the helicopter to stay still along the x axis*/
-		setXRotateSpeed(0.0f);
-	}
+	/*A magic number to slow down the rotation speed*/
+	Ogre::Real slowDown = 0.0017f;
 
-	/*y axis*/	
-	if (rotateLeft)
-	{
-		/*set the speed to cause the the helicopter to rotate left*/
-		setYRotateSpeed(100.0f);
-	}
-	else if (rotateRight)
-	{
-		/*set the speed to cause the the helicopter to rotate right*/
-		setYRotateSpeed(-100.0f);
-	}
-	else
-	{
-		/*set the speed to cause the the helicopter to stay still along the y axis*/
-		setYRotateSpeed(0.0f);
-	}
+	/*increase the orientation as related to the mouse position*/
+	orientation.x += mouseX;
+	orientation.y += mouseY;
+
+	/*convert the orientation into two quaternions*/
+	Ogre::Quaternion newRotationX, newRotationY;
+	newRotationX.FromAngleAxis((Ogre::Radian)(orientation.x * -slowDown), Ogre::Vector3::UNIT_Y);
+	newRotationY.FromAngleAxis((Ogre::Radian)(orientation.y *  slowDown), Ogre::Vector3::UNIT_X);
+
+	/*set the orientation of the helicopter*/
+	gameActorNode->setOrientation(newRotationX * newRotationY);
 }

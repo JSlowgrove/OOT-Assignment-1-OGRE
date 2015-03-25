@@ -191,7 +191,7 @@ void GameWorld::Run()
 		while (timeToUpdate > STEP_LENGTH && numOfUpdates < 60)
 		{
 			timeToUpdate -= STEP_LENGTH;
-			Update(deltaTime_s, dynamic_cast<OIS::Keyboard*>(keyboard.get()));
+			Update(deltaTime_s, dynamic_cast<OIS::Keyboard*>(keyboard.get()), dynamic_cast<OIS::Mouse*>(mouse.get()));
 			numOfUpdates++;
 		}
 		
@@ -223,11 +223,11 @@ void GameWorld::UpdateScene(Ogre::Vector3 &pos, Ogre::Quaternion &q )
 	// show updated position in Ogre
 }
 
-void GameWorld::Update(float dt, OIS::Keyboard* keyboard)
+void GameWorld::Update(float dt, OIS::Keyboard* keyboard, OIS::Mouse* mouse)
 {
 	UpdateGame(dt);
 
-	helicopter->handleInput(keyboard);
+	helicopter->handleInput(keyboard, mouse);
 	helicopter->updateActor(dt);
 	turret->updateActor(dt);
 	camera->update(dt);
