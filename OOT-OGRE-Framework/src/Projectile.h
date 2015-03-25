@@ -6,6 +6,7 @@
 #include "OgreApplication.h"
 #include "MyUtils.h"
 #include "GameActor.h"
+#include "GamePhysics.h"
 
 /**
 @brief A class for a Projectile object that inherits GameActor.
@@ -13,6 +14,7 @@
 class Projectile : public GameActor
 {
 private:
+	GamePhysics* test;
 public:
 	/**
 	Constructs the Projectile object.

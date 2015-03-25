@@ -71,6 +71,8 @@ void TurretBarrel::setUpActor(OgreApplication* application)
 /*Updates the TurretBarrel actor.*/
 void TurretBarrel::updateActor(float dt)
 {
+	projectile->updateActor(dt);
+
 	/*rotate the TurretBarrel*/
 	rotateTurretBarrel(dt);
 }

@@ -8,8 +8,6 @@ namespace util
 {
 	/**A definition of pi*/
 	#define PI 3.141596f
-	/**A definition of gravity*/
-	#define GRAVITY 9.81f
 
 	/**
 	Create a 4x4 rotation matrix.

@@ -7,13 +7,15 @@
 Projectile::Projectile(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::Real scale) 
 	: GameActor(position, orientation, scale)
 {
+	test = new GamePhysics(100.0f,0.0f,0.0f);
 }
 
 /**************************************************************************************************************/
 
-/*Projectile the Projectile object.*/
+/*Destructs the Projectile object.*/
 Projectile::~Projectile()
 {
+	delete test;
 }
 
 /**************************************************************************************************************/
@@ -38,4 +40,9 @@ void Projectile::setUpActor(OgreApplication* application)
 /*Updates the Projectile actor.*/
 void Projectile::updateActor(float dt)
 {
+	test->updateProjectile(dt);
+	position.x = position.x + test->getProjectileDisplacement().x;
+	position.y = position.y + test->getProjectileDisplacement().y;
+	position.z = position.z + test->getProjectileDisplacement().z;
+	gameActorNode->setPosition(position);
 }
