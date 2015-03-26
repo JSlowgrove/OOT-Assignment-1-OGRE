@@ -56,4 +56,11 @@ public:
 	@param float The delta time.
 	*/
 	void updateActor(float dt);
+
+	/**
+	Updates the Projectiles.
+	@param float The delta time.
+	@param OgreApplication * A pointer to the application.
+	*/
+	void updateProjectiles(float dt, OgreApplication* application);
 };

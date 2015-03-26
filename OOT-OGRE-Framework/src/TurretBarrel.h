@@ -18,9 +18,10 @@ private:
 	std::shared_ptr<Ogre::SceneNode> turretNode;
 	/**The speed of the TurretBarrel rotation.*/
 	float rotateSpeed;
-
-	/**A pointer to a Projectile.*/
-	std::shared_ptr<Projectile> projectile;
+	/**The amount of time it has been since the last projectile was fired.*/
+	Ogre::Real timeSinceLastProjectile;
+	/**A vector of Projectiles.*/
+	std::vector<std::shared_ptr<Projectile>> projectile;
 
 	/**
 	Rotates the TurretBarrel. 
@@ -52,7 +53,7 @@ public:
 
 	/**
 	Sets up the actor for the TurretBarrel.
-	@param OgreApplication A pointer to the application.
+	@param OgreApplication * A pointer to the application.
 	*/
 	void setUpActor(OgreApplication* application);
 
@@ -61,4 +62,11 @@ public:
 	@param float The delta time.
 	*/
 	void updateActor(float dt);
+
+	/**
+	Updates the Projectiles.
+	@param float The delta time.
+	@param OgreApplication * A pointer to the application.
+	*/
+	void updateProjectiles(float dt, OgreApplication* application);
 };

@@ -10,6 +10,8 @@ TurretBarrel::TurretBarrel(Ogre::Vector3 position, Ogre::Vector3 orientation, Og
 {
 	/*initialise rotate speed*/
 	rotateSpeed = 0.0f;
+	/*initialise the time since last projectile*/
+	timeSinceLastProjectile = 0.0f;
 	/*load the variables*/
 	this->turretNode = turretNode;
 }
@@ -61,9 +63,9 @@ void TurretBarrel::setUpActor(OgreApplication* application)
 	gameActorNode->showBoundingBox(false);
 
 	/*initialise the projectile*/
-	projectile.reset(new Projectile(Ogre::Vector3(224.30f, 500.0f, 1985.0f), Ogre::Vector3(0.0f, 0.0f, 0.0f), 1.0f));
-
-	projectile->setUpActor(application);
+	projectile.push_back(make_shared<Projectile>(Ogre::Vector3(224.30f, 500.0f, 1985.0f),
+		Ogre::Vector3(0.0f, 0.0f, 0.0f), 0.03f));
+	projectile.back()->setUpActor(application);
 }
 
 /**************************************************************************************************************/
@@ -71,8 +73,41 @@ void TurretBarrel::setUpActor(OgreApplication* application)
 /*Updates the TurretBarrel actor.*/
 void TurretBarrel::updateActor(float dt)
 {
-	projectile->updateActor(dt);
-
 	/*rotate the TurretBarrel*/
 	rotateTurretBarrel(dt);
+}
+
+/**************************************************************************************************************/
+
+/*Updates the Projectile vector.*/
+void TurretBarrel::updateProjectiles(float dt, OgreApplication* application)
+{
+	/*update the time since last projectile*/
+	timeSinceLastProjectile += dt;
+
+	/*if the time since the last projectile was more than a second ago*/
+	if (timeSinceLastProjectile > 1.0f)
+	{
+		/*initialise a new projectile*/
+		projectile.push_back(make_shared<Projectile>(Ogre::Vector3(224.30f, 500.0f, 1985.0f),
+			Ogre::Vector3(0.0f, 0.0f, 0.0f), 0.03f));
+		projectile.back()->setUpActor(application);
+		
+		/*reset the time since the last projectile*/
+		timeSinceLastProjectile = 0.0f;
+	}
+
+	/*loop through all of the projectiles*/
+	for (auto currentProjectile : projectile)
+	{
+		/*update the projectile*/
+		currentProjectile->updateActor(dt);
+	}
+
+	/*if there is more than 10 projectiles in the vector*/
+	if (projectile.size() > 10)
+	{
+		/*remove the projectile at the front*/
+		projectile.erase(projectile.begin());
+	}
 }

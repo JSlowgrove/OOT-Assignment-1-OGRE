@@ -6,7 +6,7 @@
 #include "MyUtils.h"
 
 /**A definition of gravity*/
-#define GRAVITY 9.81f
+#define GRAVITY 98.1f
 
 /**
 @brief A class for the GamePhysics.

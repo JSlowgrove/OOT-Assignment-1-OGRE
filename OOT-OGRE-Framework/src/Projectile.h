@@ -14,7 +14,8 @@
 class Projectile : public GameActor
 {
 private:
-	GamePhysics* test;
+	/**The projectile motion*/
+	std::shared_ptr<GamePhysics> motion;
 public:
 	/**
 	Constructs the Projectile object.

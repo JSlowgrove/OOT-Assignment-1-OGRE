@@ -230,6 +230,7 @@ void GameWorld::Update(float dt, OIS::Keyboard* keyboard, OIS::Mouse* mouse)
 	helicopter->handleInput(keyboard, mouse);
 	helicopter->updateActor(dt);
 	turret->updateActor(dt);
+	turret->updateProjectiles(dt, application);
 	camera->update(dt);
 }
 

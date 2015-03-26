@@ -86,3 +86,12 @@ void Turret::updateActor(float dt)
 	/*update the TurretBarrel*/
 	barrel->updateActor(dt);
 }
+
+/**************************************************************************************************************/
+
+/*Updates the projectiles.*/
+void Turret::updateProjectiles(float dt, OgreApplication* application)
+{
+	/*update the projectiles*/
+	barrel->updateProjectiles(dt, application);
+}
