@@ -8,8 +8,8 @@ Projectile::Projectile(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::
 					   std::shared_ptr<Ogre::SceneNode> parentNode, Ogre::Vector3 initalVelocity) 
 	: GameActor(position, orientation, scale)
 {
-	/*initialise the game physics*/
-	motion.reset(new GamePhysics(initalVelocity));
+	/*initialise the projectile*/
+	projectile.reset(new ProjectileObject(initalVelocity));
 	/*load the variables*/
 	this->parentNode = parentNode;
 }
@@ -62,8 +62,8 @@ void Projectile::setUpActor(OgreApplication* application)
 void Projectile::updateActor(float dt)
 {
 	/*update the projectile motion*/
-	motion->updateProjectile(dt);
+	updateProjectile(dt);
 
 	/*update the position*/
-	gameActorNode->translate(motion->getProjectileDisplacement(), Ogre::Node::TS_WORLD);
+	gameActorNode->translate(getProjectileDisplacement(), Ogre::Node::TS_WORLD);
 }

@@ -14,6 +14,7 @@
 class GamePhysics
 {
 private:
+protected:
 	/**
 	A structure for game objects that need projectile motion.
 	For use with SUVAT equations.
@@ -61,22 +62,13 @@ private:
 	};
 
 	/**The projectile object*/
-	ProjectileObject* projectile;
+	std::shared_ptr<ProjectileObject> projectile;
 
 public:
 	/**
 	Constructs the GamePhysics.
-	@param Ogre::Vector3 The inital velocity of the projectile object.
 	*/
-	GamePhysics(Ogre::Vector3 initalVelocity);
-
-	/**
-	Constructs the GamePhysics.
-	@param Ogre::Real The inital x velocity of the projectile object.
-	@param Ogre::Real The inital y velocity of the projectile object.
-	@param Ogre::Real The inital z velocity of the projectile object.
-	*/
-	GamePhysics(Ogre::Real initalXVelocity, Ogre::Real initalYVelocity, Ogre::Real initalZVelocity);
+	GamePhysics();
 
 	/**
 	Destructs the GamePhysics object.

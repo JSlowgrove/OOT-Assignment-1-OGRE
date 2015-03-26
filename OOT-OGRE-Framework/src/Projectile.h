@@ -9,13 +9,11 @@
 #include "GamePhysics.h"
 
 /**
-@brief A class for a Projectile object that inherits GameActor.
+@brief A class for a Projectile object that inherits GameActor and GamePhysics.
 */
-class Projectile : public GameActor
+class Projectile : public GameActor, public GamePhysics
 {
 private:
-	/**The projectile motion*/
-	std::shared_ptr<GamePhysics> motion;
 	/**The parent node of the projectile*/
 	std::shared_ptr<Ogre::SceneNode> parentNode;
 public:

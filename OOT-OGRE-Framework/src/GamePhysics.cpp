@@ -4,19 +4,8 @@
 /**************************************************************************************************************/
 
 /*Constructs the GamePhysics object.*/
-GamePhysics::GamePhysics(Ogre::Vector3 initalVelocity)
+GamePhysics::GamePhysics()
 {
-	/*initialise the projectile*/
-	projectile = new ProjectileObject(initalVelocity);
-}
-
-/**************************************************************************************************************/
-
-/*Constructs the GamePhysics object.*/
-GamePhysics::GamePhysics(Ogre::Real initalXVelocity, Ogre::Real initalYVelocity, Ogre::Real initalZVelocity)
-{
-	/*initialise the projectile*/
-	projectile = new ProjectileObject(initalXVelocity, initalYVelocity, initalZVelocity);
 }
 
 /**************************************************************************************************************/
@@ -24,8 +13,6 @@ GamePhysics::GamePhysics(Ogre::Real initalXVelocity, Ogre::Real initalYVelocity,
 /*Destructs the GamePhysics object.*/
 GamePhysics::~GamePhysics()
 {
-	/*delete pointers*/
-	delete projectile;
 }
 
 /**************************************************************************************************************/

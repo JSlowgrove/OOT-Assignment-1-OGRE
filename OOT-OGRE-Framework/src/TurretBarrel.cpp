@@ -138,7 +138,7 @@ Ogre::Vector3 TurretBarrel::workOutLaunchVector()
 
 	/*increase the launch vector by the magnitude of the projectile*/
 	launchVector *= magnitude;
-
+	
 	/*Add a magic number to account for projectile motion*/
 	launchVector.y += 10.0f;
 
