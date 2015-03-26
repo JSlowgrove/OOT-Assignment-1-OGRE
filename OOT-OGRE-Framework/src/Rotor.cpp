@@ -33,14 +33,14 @@ void Rotor::updateRotateSpeed()
 	if (rotateSpeed < maxRotorSpeed * (targetRotateSpeedPercent * 0.01f))
 	{
 		/*increase the rotor speed*/
-		rotateSpeed += 100.0f;
+		rotateSpeed += (0.05f * maxRotorSpeed);
 	}
 
 	/*test if the rotor speed is greater than the target speed*/
 	if (rotateSpeed > maxRotorSpeed * (targetRotateSpeedPercent * 0.01f))
 	{
 		/*decrease the rotor speed*/
-		rotateSpeed -= 100.0f;
+		rotateSpeed -= (0.05f * maxRotorSpeed);
 	}
 }
 

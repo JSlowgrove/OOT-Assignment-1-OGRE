@@ -20,6 +20,10 @@ private:
 	std::shared_ptr<Rotor> sideRotor;
 	/**The speed of the Helicopter.*/
 	Ogre::Vector3 speed;
+	/**The max speed of the Helicopter.*/
+	Ogre::Real maxSpeed;
+	/**The percentage speed of the max speed that the Helicopter will target*/
+	Ogre::Vector3 targetSpeedPercent;
 	/**A bool for if the Helicopter should move up*/
 	bool up;
 	/**A bool for if the Helicopter should move down*/
@@ -46,6 +50,11 @@ private:
 	Rotates the helicopter using the user commands.
 	*/
 	void rotateHelicopter();
+
+	/**
+	Updates the move speed of the Helicopter.
+	*/
+	void updateMoveSpeed();
 
 public:
 	/**

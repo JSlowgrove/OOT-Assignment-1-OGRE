@@ -8,11 +8,13 @@ Helicopter::Helicopter(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::
 	: GameActor(position, orientation, scale)
 {
 	/*initialise the user commands to false*/
-	up = down = left = right = forwards = backwards /*= rotateUp = rotateDown = rotateLeft = rotateRight*/ = false;
+	up = down = left = right = forwards = backwards = false;
 	mouseX = mouseY = 0;
 
-	/*initialise the helicopter speed*/
-	speed = Ogre::Vector3(0.0f, 0.0f, 0.0f);
+	/*initialise the helicopter speeds*/
+	maxSpeed = 1000.0f;
+	targetSpeedPercent = Ogre::Vector3(0.0f, 0.0f, 0.0f);
+	speed = maxSpeed * (targetSpeedPercent * 0.01f);
 }
 
 /**************************************************************************************************************/
@@ -111,7 +113,7 @@ void Helicopter::setUpActor(OgreApplication* application)
 void Helicopter::handleInput(OIS::Keyboard* keyboard, OIS::Mouse* mouse)
 {
 	/*set the user commands to false*/
-	up = down = left = right = forwards = backwards /*= rotateUp = rotateDown = rotateLeft = rotateRight*/ = false;
+	up = down = left = right = forwards = backwards = false;
 
 	/*if W is pressed*/
 	if (keyboard->isKeyDown(OIS::KC_W))
@@ -182,6 +184,9 @@ void Helicopter::updateActor(float dt)
 
 	/*update the helicopter speeds depending on the user commands*/
 	updateSpeed();
+	updateMoveSpeed();
+
+	std::cout<<speed.x<<","<<speed.y<<","<<speed.z<<std::endl;
 
 	/*get the translate of the helicopter*/
 	Ogre::Real translationX = speed.x * dt;
@@ -213,59 +218,52 @@ void Helicopter::updateSpeed()
 {
 	/*set the target speed of both the rotors to 45%*/
 	mainRotor->setTargetRotateSpeedPercent(45.0f);
-	sideRotor->setTargetRotateSpeedPercent(45.0f);
+	sideRotor->setTargetRotateSpeedPercent(25.0f);
+
+	/*set the target speed to cause the the helicopter to stay still*/
+	targetSpeedPercent = 0.0f;
 
 	/*x axis*/
 	if (left)
 	{
-		/*set the speed to cause the the helicopter to move left*/
-		setXSpeed(100.0f);
+		/*set the target speed to cause the the helicopter to move left*/
+		targetSpeedPercent.x = 100.0f;
 
 		/*set the target speed of the side rotor to 100%*/
 		sideRotor->setTargetRotateSpeedPercent(100.0f);
 	}
 	else if (right)
 	{
-		/*set the speed to cause the the helicopter to move right*/
-		setXSpeed(-100.0f);
+		/*set the target speed to cause the the helicopter to move right*/
+		targetSpeedPercent.x = -100.0f;
 
 		/*set the target speed of the side rotor to 100%*/
-		sideRotor->setTargetRotateSpeedPercent(100.0f);
-	}
-	else
-	{
-		/*set the speed to cause the the helicopter to stay still along the x axis*/
-		setXSpeed(0.0f);
+		sideRotor->setTargetRotateSpeedPercent(-100.0f);
 	}
 
 	/*y axis*/
 	if (up)
 	{
-		/*set the speed to cause the the helicopter to move up*/
-		setYSpeed(100.0f);
+		/*set the target speed to cause the the helicopter to move up*/
+		targetSpeedPercent.y = 100.0f;
 
 		/*set the target speed of the main rotor to 100%*/
 		mainRotor->setTargetRotateSpeedPercent(100.0f);
 	}
 	else if (down)
 	{
-		/*set the speed to cause the the helicopter to move down*/
-		setYSpeed(-100.0f);
+		/*set the target speed to cause the the helicopter to move down*/
+		targetSpeedPercent.y = -100.0f;
 
 		/*set the target speed of the main rotor to 35%*/
 		mainRotor->setTargetRotateSpeedPercent(35.0f);
-	}
-	else
-	{
-		/*set the speed to cause the the helicopter to stay still along the y axis*/
-		setYSpeed(0.0f);
 	}
 
 	/*z axis*/
 	if (forwards)
 	{
-		/*set the speed to cause the the helicopter to move forwards*/
-		setZSpeed(100.0f);
+		/*set the target speed to cause the the helicopter to move forwards*/
+		targetSpeedPercent.z = 100.0f;
 
 		/*set the target speed of both the rotors to 100%*/
 		mainRotor->setTargetRotateSpeedPercent(100.0f);
@@ -273,17 +271,60 @@ void Helicopter::updateSpeed()
 	}
 	else if (backwards)
 	{
-		/*set the speed to cause the the helicopter to move backwards*/
-		setZSpeed(-100.0f);
+		/*set the target speed to cause the the helicopter to move backwards*/
+		targetSpeedPercent.z = -100.0f;
 
 		/*set the target speed of both the rotors to 100%*/
 		mainRotor->setTargetRotateSpeedPercent(100.0f);
-		sideRotor->setTargetRotateSpeedPercent(100.0f);
+		sideRotor->setTargetRotateSpeedPercent(-100.0f);
 	}
-	else
+}
+
+/**************************************************************************************************************/
+
+/*Updates the move speeds of the Helicopter.*/
+void Helicopter::updateMoveSpeed()
+{
+	/*test if the speed is less than the target speed*/
+	if (speed.x < maxSpeed * (targetSpeedPercent.x * 0.01f))
 	{
-		/*set the speed to cause the the helicopter to stay still along the z axis*/
-		setZSpeed(0.0f);
+		/*increase the speed*/
+		speed.x += (0.01f * maxSpeed);
+	}
+
+	/*test if the speed is greater than the target speed*/
+	if (speed.x > maxSpeed * (targetSpeedPercent.x * 0.01f))
+	{
+		/*decrease the speed*/
+		speed.x -= (0.01f * maxSpeed);
+	}
+
+	/*test if the speed is less than the target speed*/
+	if (speed.y < maxSpeed * (targetSpeedPercent.y * 0.01f))
+	{
+		/*increase the speed*/
+		speed.y += (0.01f * maxSpeed);
+	}
+
+	/*test if the speed is greater than the target speed*/
+	if (speed.y > maxSpeed * (targetSpeedPercent.y * 0.01f))
+	{
+		/*decrease the speed*/
+		speed.y -= (0.01f * maxSpeed);
+	}
+
+	/*test if the speed is less than the target speed*/
+	if (speed.z < maxSpeed * (targetSpeedPercent.z * 0.01f))
+	{
+		/*increase the speed*/
+		speed.z += (0.01f * maxSpeed);
+	}
+
+	/*test if the speed is greater than the target speed*/
+	if (speed.z > maxSpeed * (targetSpeedPercent.z * 0.01f))
+	{
+		/*decrease the speed*/
+		speed.z -= (0.01f * maxSpeed);
 	}
 }
 
