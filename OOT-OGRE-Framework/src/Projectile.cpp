@@ -4,10 +4,14 @@
 /**************************************************************************************************************/
 
 /*Constructs the Projectile object.*/
-Projectile::Projectile(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::Real scale) 
+Projectile::Projectile(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::Real scale, 
+					   std::shared_ptr<Ogre::SceneNode> parentNode, Ogre::Vector3 initalVelocity) 
 	: GameActor(position, orientation, scale)
 {
-	motion.reset(new GamePhysics(100.0f,100.0f,100.0f));
+	/*initialise the game physics*/
+	motion.reset(new GamePhysics(initalVelocity));
+	/*load the variables*/
+	this->parentNode = parentNode;
 }
 
 /**************************************************************************************************************/
@@ -43,13 +47,13 @@ void Projectile::setUpActor(OgreApplication* application)
 	sphere->setMaterialName("PROJECTILE");
 
 	/*initialise the Turret node*/
-	gameActorNode.reset(application->GetSceneManager()->getRootSceneNode()
-		->createChildSceneNode("Projectile " + getActorID()));
+	gameActorNode.reset(parentNode->createChildSceneNode("Projectile " + getActorID()));
+	gameActorNode->setInheritScale(false);
 	gameActorNode->setScale(Ogre::Vector3(scale, scale, scale));
-	gameActorNode->setPosition(position);
 	gameActorNode->attachObject(particle);
 	gameActorNode->showBoundingBox(false);
 	gameActorNode->attachObject(sphere);
+	gameActorNode->translate(position, Ogre::Node::TS_LOCAL);
 }
 
 /**************************************************************************************************************/
@@ -60,11 +64,6 @@ void Projectile::updateActor(float dt)
 	/*update the projectile motion*/
 	motion->updateProjectile(dt);
 
-	/*update the position from the projectile motion*/
-	position.x = position.x + motion->getProjectileDisplacement().x;
-	position.y = position.y + motion->getProjectileDisplacement().y;
-	position.z = position.z + motion->getProjectileDisplacement().z;
-
 	/*update the position*/
-	gameActorNode->setPosition(position);
+	gameActorNode->translate(motion->getProjectileDisplacement(), Ogre::Node::TS_WORLD);
 }

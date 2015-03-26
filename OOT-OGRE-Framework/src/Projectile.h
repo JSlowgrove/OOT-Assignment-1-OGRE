@@ -16,14 +16,19 @@ class Projectile : public GameActor
 private:
 	/**The projectile motion*/
 	std::shared_ptr<GamePhysics> motion;
+	/**The parent node of the projectile*/
+	std::shared_ptr<Ogre::SceneNode> parentNode;
 public:
 	/**
 	Constructs the Projectile object.
 	@param Ogre::Vector3 The position of the Projectile.
 	@param Ogre::Vector3 The orientation of the Projectile.
 	@param Ogre::Real The scale of the Projectile.
+	@param std::shared_ptr<Ogre::SceneNode> A shared pointer to the parent node.
+	@param Ogre::Vector3 The inital velocity of the Projectile.
 	*/
-	Projectile(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::Real scale);
+	Projectile(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::Real scale, 
+		std::shared_ptr<Ogre::SceneNode> parentNode, Ogre::Vector3 initalVelocity);
 
 	/**
 	Destructs the Projectile object.

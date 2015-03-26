@@ -63,8 +63,8 @@ void TurretBarrel::setUpActor(OgreApplication* application)
 	gameActorNode->showBoundingBox(false);
 
 	/*initialise the projectile*/
-	projectile.push_back(make_shared<Projectile>(Ogre::Vector3(224.30f, 500.0f, 1985.0f),
-		Ogre::Vector3(0.0f, 0.0f, 0.0f), 0.03f));
+	projectile.push_back(make_shared<Projectile>(Ogre::Vector3(0.0f, 5.0f, 0.0f),
+		Ogre::Vector3(0.0f, 0.0f, 0.0f), 0.03f, gameActorNode, Ogre::Vector3(100.0f, 100.0f, 100.0f)));
 	projectile.back()->setUpActor(application);
 }
 
@@ -89,8 +89,8 @@ void TurretBarrel::updateProjectiles(float dt, OgreApplication* application)
 	if (timeSinceLastProjectile > 1.0f)
 	{
 		/*initialise a new projectile*/
-		projectile.push_back(make_shared<Projectile>(Ogre::Vector3(224.30f, 500.0f, 1985.0f),
-			Ogre::Vector3(0.0f, 0.0f, 0.0f), 0.03f));
+		projectile.push_back(make_shared<Projectile>(Ogre::Vector3(0.0f, 5.0f, 0.0f),
+			Ogre::Vector3(0.0f, 0.0f, 0.0f), 0.03f, gameActorNode, Ogre::Vector3(100.0f, 100.0f, 100.0f)));
 		projectile.back()->setUpActor(application);
 		
 		/*reset the time since the last projectile*/

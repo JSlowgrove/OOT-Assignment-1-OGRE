@@ -29,6 +29,7 @@ private:
 	std::shared_ptr<Camera> camera;
 	std::shared_ptr<Helicopter> helicopter;
 	std::shared_ptr<Turret> turret;
+	std::shared_ptr<Turret> turret2;
 	std::shared_ptr<TerrainManager> terrain;
 
 	OgreBites::ParamsPanel* paramPanel;

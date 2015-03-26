@@ -186,8 +186,6 @@ void Helicopter::updateActor(float dt)
 	updateSpeed();
 	updateMoveSpeed();
 
-	std::cout<<speed.x<<","<<speed.y<<","<<speed.z<<std::endl;
-
 	/*get the translate of the helicopter*/
 	Ogre::Real translationX = speed.x * dt;
 	Ogre::Real translationY = speed.y * dt;

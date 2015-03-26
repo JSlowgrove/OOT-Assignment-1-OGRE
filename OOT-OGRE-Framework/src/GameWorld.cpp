@@ -42,6 +42,10 @@ void GameWorld::CreateEntities()
 	/*initialise a turret*/
 	turret.reset(new Turret(Ogre::Vector3(224.30f, 443.20f, 1985.0f), Ogre::Vector3(0.0f, 0.0f, 0.0f), 10.0f));
 	turret->setUpActor(application);
+
+	/*initialise a turret*/
+	turret2.reset(new Turret(Ogre::Vector3(345.30f, 245.0f, 1000.0f), Ogre::Vector3(0.0f, 0.0f, 0.0f), 10.0f));
+	turret2->setUpActor(application);
 }
 
 // Create a ogre world environment with a predefined geometry and a texture
@@ -231,6 +235,8 @@ void GameWorld::Update(float dt, OIS::Keyboard* keyboard, OIS::Mouse* mouse)
 	helicopter->updateActor(dt);
 	turret->updateActor(dt);
 	turret->updateProjectiles(dt, application);
+	turret2->updateActor(dt);
+	turret2->updateProjectiles(dt, application);
 	camera->update(dt);
 }
 
