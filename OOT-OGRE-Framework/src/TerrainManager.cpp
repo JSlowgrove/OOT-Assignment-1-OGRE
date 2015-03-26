@@ -184,3 +184,8 @@ void TerrainManager::Loaded()
 		    printf("Terrain loaded !!!");
     }
 }
+
+bool TerrainManager::collisionDetection()
+{
+	return true;
+}

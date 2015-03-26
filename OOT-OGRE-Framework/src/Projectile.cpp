@@ -7,7 +7,7 @@
 Projectile::Projectile(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::Real scale) 
 	: GameActor(position, orientation, scale)
 {
-	test = new GamePhysics(100.0f,0.0f,0.0f);
+	test = new GamePhysics(10.0f,100.0f,100.0f);
 }
 
 /**************************************************************************************************************/

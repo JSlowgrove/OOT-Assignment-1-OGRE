@@ -8,8 +8,10 @@ Rotor::Rotor(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::Real scale
 			 std::shared_ptr<Ogre::SceneNode> helicopterNode, Ogre::String rotorType) 
 	: GameActor(position, orientation, scale)
 {
-	/*initialise rotate speed*/
-	rotateSpeed = 0.0f;
+	/*initialise rotate speeds*/
+	maxRotorSpeed = 2000.0f;
+	targetRotateSpeedPercent = 75.0f;
+	rotateSpeed = maxRotorSpeed * (targetRotateSpeedPercent * 0.01f);
 	/*load the variables*/
 	this->helicopterNode = helicopterNode;
 	this->rotorType = rotorType;
@@ -24,11 +26,31 @@ Rotor::~Rotor()
 
 /**************************************************************************************************************/
 
-/*Sets the rotation speed of the Rotor.*/
-void Rotor::setRotateSpeed(float rotateSpeed)
+/*Updates the rotation speed of the Rotor.*/
+void Rotor::updateRotateSpeed()
 {
-	/*set the rotor speed*/
-	this->rotateSpeed = rotateSpeed;
+	/*test if the rotor speed is less than the target speed*/
+	if (rotateSpeed < maxRotorSpeed * (targetRotateSpeedPercent * 0.01f))
+	{
+		/*increase the rotor speed*/
+		rotateSpeed += 100.0f;
+	}
+
+	/*test if the rotor speed is greater than the target speed*/
+	if (rotateSpeed > maxRotorSpeed * (targetRotateSpeedPercent * 0.01f))
+	{
+		/*decrease the rotor speed*/
+		rotateSpeed -= 100.0f;
+	}
+}
+
+/**************************************************************************************************************/
+
+/*Sets the target percentage rotation speed of the Rotor.*/
+void Rotor::setTargetRotateSpeedPercent(Ogre::Real targetRotateSpeedPercent)
+{
+	/*set the target percent of the rotor speed*/
+	this->targetRotateSpeedPercent = targetRotateSpeedPercent;
 }
 
 /**************************************************************************************************************/

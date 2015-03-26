@@ -16,12 +16,16 @@ private:
 	/**A pointer to the Helicopter node.*/
 	std::shared_ptr<Ogre::SceneNode> helicopterNode;
 	/**The speed of the Rotor rotation.*/
-	float rotateSpeed;
+	Ogre::Real rotateSpeed;
 	/**The type of Rotor*/
 	Ogre::String rotorType;
 	/**The rotation axis of the Rotor. 
 	E.g. to rotate on the x rotation axis will be (1.0f,0.0f,0.0f).*/
 	Ogre::Vector3 rotationAxis;
+	/**The max speed that the Rotor will rotate*/
+	Ogre::Real maxRotorSpeed;
+	/**The percentage speed of the max speed that the Rotor will target*/
+	Ogre::Real targetRotateSpeedPercent;
 
 	/**
 	Rotates the Rotor. 
@@ -47,10 +51,15 @@ public:
 	~Rotor();
 
 	/**
-	Setter # Sets the rotation speed of the rotor.
-	@param float The new rotation speed of the rotor.
+	Updates the rotation speed of the rotor.
 	*/
-	void setRotateSpeed(float rotateSpeed);
+	void updateRotateSpeed();
+
+	/**
+	Setter # Sets the target percent of the rotation speed of the rotor.
+	@param Ogre::Real The new target percentage rotation speed of the rotor.
+	*/
+	void setTargetRotateSpeedPercent(Ogre::Real targetRotateSpeedPercent);
 
 	/**
 	Setter # Sets the rotation axis of the rotor.

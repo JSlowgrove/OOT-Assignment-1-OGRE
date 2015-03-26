@@ -20,10 +20,6 @@ private:
 	std::shared_ptr<Rotor> sideRotor;
 	/**The speed of the Helicopter.*/
 	Ogre::Vector3 speed;
-	/**The rotate speed*/
-	Ogre::Vector3 rotateSpeed;
-	/**The last rotation of the Helicopter.*/
-	Ogre::Vector3 lastRotation;
 	/**A bool for if the Helicopter should move up*/
 	bool up;
 	/**A bool for if the Helicopter should move down*/
@@ -94,37 +90,7 @@ public:
 	@param float The new z speed of the Helicopter.
 	*/
 	void setZSpeed(float zSpeed);
-
-	/**
-	Getter # Gets the rotate speed of the Helicopter.
-	@returns Ogre::Vector3 The rotate speed of the Helicopter.
-	*/
-	Ogre::Vector3 getRotateSpeed();
-
-	/**
-	Setter # Sets the rotate speed of the Helicopter.
-	@param Ogre::Vector3 The new rotate speed of the Helicopter.
-	*/
-	void setRotateSpeed(Ogre::Vector3 rotateSpeed);
-	
-	/**
-	Setter # Sets the x rotate speed of the Helicopter.
-	@param float The new x rotate speed of the Helicopter.
-	*/
-	void setXRotateSpeed(float xRotateSpeed);
-
-	/**
-	Setter # Sets the y rotate speed of the Helicopter.
-	@param float The new y rotate speed of the Helicopter.
-	*/
-	void setYRotateSpeed(float yRotateSpeed);
-
-	/**
-	Setter # Sets the z rotate speed of the Helicopter.
-	@param float The new z rotate speed of the Helicopter.
-	*/
-	void setZRotateSpeed(float zRotateSpeed);
-
+		
 	/**
 	Getter # Gets the last rotation of the Helicopter.
 	@returns Ogre::Vector3 The last rotate of the Helicopter.

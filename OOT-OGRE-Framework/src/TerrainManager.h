@@ -12,6 +12,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include "OgreApplication.h"
+#include <OgreAxisAlignedBox.h>
 
 #include "Terrain/OgreTerrain.h"
 #include "Terrain/OgreTerrainGroup.h"
@@ -37,6 +38,8 @@ private:
     void InitBlendMaps(Ogre::Terrain* terrain);
     void ConfigureTerrainDefaults(Ogre::Light* light, const Ogre::ColourValue& ambientLight);
 	void GetTerrainHightMap(bool flipX, bool flipY, Ogre::Image& hMap);
+
+	bool collisionDetection();
 
 };
 
