@@ -14,18 +14,17 @@
 class Turret : public GameActor
 {
 private:
-	/**The speed of the Turret rotation.*/
-	float rotateSpeed;
 	/**A pointer to the TurretBarrel*/
 	std::shared_ptr<TurretBarrel> barrel;
 	/**The target vector of the Projectile*/
 	Ogre::Vector3 target;
+	/**The last target vector of the Projectile*/
+	Ogre::Vector3 lastTarget;
 	
 	/**
 	Rotates the Turret. 
-	@param float The delta time.
 	*/
-	void rotateTurret(float dt);
+	void rotateTurret();
 
 public:
 	/**
@@ -46,12 +45,6 @@ public:
 	@param Ogre::Vector3 The new target of the Turret.
 	*/
 	void setTarget(Ogre::Vector3 target);
-
-	/**
-	Setter # Sets the rotation speed of the Turret.
-	@param float The new rotation speed of the Turret.
-	*/
-	void setRotateSpeed(float rotateSpeed);
 
 	/**
 	Sets up the actor for the Turret.

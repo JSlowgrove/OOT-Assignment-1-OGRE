@@ -47,13 +47,18 @@ void Projectile::setUpActor(OgreApplication* application)
 	sphere->setMaterialName("PROJECTILE");
 
 	/*initialise the Turret node*/
-	gameActorNode.reset(parentNode->createChildSceneNode("Projectile " + getActorID()));
-	gameActorNode->setInheritScale(false);
+	gameActorNode.reset(parentNode->createChildSceneNode("Projectile Local " + getActorID()));
+	
+	/*get the world position of the node*/
+	Ogre::Vector3 worldPosition = gameActorNode->convertLocalToWorldPosition(getPosition());
+
+	/*re-initialise the Turret node to not be a child of the turret*/
+	gameActorNode.reset(application->GetSceneManager()->getRootSceneNode()->createChildSceneNode("Projectile " + getActorID()));
 	gameActorNode->setScale(Ogre::Vector3(scale, scale, scale));
+	gameActorNode->setPosition(worldPosition);
 	gameActorNode->attachObject(particle);
 	gameActorNode->showBoundingBox(false);
 	gameActorNode->attachObject(sphere);
-	gameActorNode->translate(position, Ogre::Node::TS_LOCAL);
 }
 
 /**************************************************************************************************************/

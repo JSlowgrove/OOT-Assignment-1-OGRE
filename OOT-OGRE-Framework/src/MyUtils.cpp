@@ -243,4 +243,35 @@ namespace util
 		/*return the angle*/
 		return angle;
 	}
+
+	/**************************************************************************************************************/
+
+	/*Work out the aim rotation as a quaternion*/
+	Ogre::Quaternion aim(Ogre::Vector3 target, Ogre::Vector3 lastTarget, Ogre::Vector3 position, Ogre::Vector3 rotateAxis)
+	{
+		/*work out the direction vector to the target*/
+		Ogre::Vector3 v1 = target - position;
+		v1.normalise();
+
+		/*work out the direction vector to the last target*/
+		Ogre::Vector3 v2 = lastTarget - position;
+		v2.normalise();
+
+		/*work out the angle between the two vectors*/
+		Ogre::Radian angle = -Ogre::Math::ACos(v1.dotProduct(v2));
+
+		/*work out a resultant vector of the cross product of the first two vectors*/
+		Ogre::Vector3 v3 = v1.crossProduct(v2);
+		v3.normalise();
+
+		/*convert the value to a rotation quaternion using the rotation axis*/
+		Ogre::Quaternion q = 
+			Ogre::Quaternion(Ogre::Math::Cos(0.5f * angle), 
+			(v3.x * Ogre::Math::Sin(0.5f * angle)) * rotateAxis.x,
+			(v3.y * Ogre::Math::Sin(0.5f * angle)) * rotateAxis.y,
+			(v3.z * Ogre::Math::Sin(0.5f * angle)) * rotateAxis.z);
+
+		/*return the quaternion*/
+		return q;
+	}
 }

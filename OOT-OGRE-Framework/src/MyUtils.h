@@ -102,10 +102,20 @@ namespace util
 	Ogre::Real angleCheck(Ogre::Real angle, Ogre::Real angleChange);
 
 	/**
-	Work out the angle using TOA from SOHCAHTOA*.
+	Work out the angle using TOA from SOHCAHTOA.
 	@param Ogre::Real The opposite length.
 	@param Ogre::Real The adjacent length.
 	@returns float The resultant angle.
 	*/
 	Ogre::Real getAngleTOA(Ogre::Real opp, Ogre::Real adj);
+
+	/**
+	Work out the aim rotation as a quaternion.
+	@param Ogre::Vector3 The target position.
+	@param Ogre::Vector3 The last target position.
+	@param Ogre::Vector3 The position.
+	@param Ogre::Vector3 The axis for the rotation.
+	@returns Ogre::Quaternion The resultant rotation.
+	*/
+	Ogre::Quaternion aim(Ogre::Vector3 target, Ogre::Vector3 lastTarget, Ogre::Vector3 position, Ogre::Vector3 rotateAxis);
 }

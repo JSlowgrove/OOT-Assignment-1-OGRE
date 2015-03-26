@@ -8,8 +8,8 @@ TurretBarrel::TurretBarrel(Ogre::Vector3 position, Ogre::Vector3 orientation, Og
 			 std::shared_ptr<Ogre::SceneNode> turretNode, Ogre::Vector3 spawn) 
 			 : GameActor(position, orientation, scale)
 {
-	/*initialise rotate speed*/
-	rotateSpeed = 0.0f;
+	/*initialise the targets*/
+	lastTarget = target = 0.0f;
 	/*initialise the time since last projectile*/
 	timeSinceLastProjectile = 0.0f;
 	/*initialise the magnitude*/
@@ -31,27 +31,19 @@ TurretBarrel::~TurretBarrel()
 /*Sets the target of the Turret.*/
 void TurretBarrel::setTarget(Ogre::Vector3 target)
 {
-	/*set the target*/
+	/*set the targets*/
+	lastTarget = this->target;
 	this->target = target;
 }
 
 /**************************************************************************************************************/
 
-/*Sets the rotation speed of the TurretBarrel.*/
-void TurretBarrel::setRotateSpeed(float rotateSpeed)
-{
-	/*set the rotor speed*/
-	this->rotateSpeed = rotateSpeed;
-}
-
-/**************************************************************************************************************/
-
 /*Rotates the TurretBarrel.*/
-void TurretBarrel::rotateTurretBarrel(float dt)
+void TurretBarrel::rotateTurretBarrel()
 {
 	/*get the rotation in the form of a Quaternion*/
-	Ogre::Quaternion orientationQ = util::covertRotateToQuaternion(
-		Ogre::Vector3(util::convertAngleToRadian(rotateSpeed * dt), 0.0f, 0.0f));
+	Ogre::Quaternion orientationQ = 
+		util::aim(target, lastTarget, position, Ogre::Vector3(1.0f, 0.0f, 0.0f));
 
 	/*rotate the TurretBarrel*/
 	gameActorNode->rotate(orientationQ, Ogre::Node::TS_LOCAL);
@@ -86,7 +78,7 @@ void TurretBarrel::setUpActor(OgreApplication* application)
 void TurretBarrel::updateActor(float dt)
 {
 	/*rotate the TurretBarrel*/
-	rotateTurretBarrel(dt);
+	rotateTurretBarrel();
 }
 
 /**************************************************************************************************************/

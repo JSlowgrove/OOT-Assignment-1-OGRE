@@ -16,8 +16,6 @@ class TurretBarrel : public GameActor
 private:
 	/**A pointer to the Turret node.*/
 	std::shared_ptr<Ogre::SceneNode> turretNode;
-	/**The speed of the TurretBarrel rotation.*/
-	float rotateSpeed;
 	/**The amount of time it has been since the last projectile was fired.*/
 	Ogre::Real timeSinceLastProjectile;
 	/**A vector of Projectiles.*/
@@ -26,14 +24,15 @@ private:
 	Ogre::Real magnitude;
 	/**The target vector of the Projectile*/
 	Ogre::Vector3 target;
+	/**The last target vector of the Projectile*/
+	Ogre::Vector3 lastTarget;
 	/**The world position of the Projectile spawn*/
 	Ogre::Vector3 spawn;
 
 	/**
 	Rotates the TurretBarrel. 
-	@param float The delta time.
 	*/
-	void rotateTurretBarrel(float dt);
+	void rotateTurretBarrel();
 
 	/**
 	Work out the launch vector of the projectile.
@@ -63,12 +62,6 @@ public:
 	@param Ogre::Vector3 The new target of the TurretBarrel.
 	*/
 	void setTarget(Ogre::Vector3 target);
-
-	/**
-	Setter # Sets the rotation speed of the TurretBarrel.
-	@param float The new rotation speed of the TurretBarrel.
-	*/
-	void setRotateSpeed(float rotateSpeed);
 
 	/**
 	Sets up the actor for the TurretBarrel.
