@@ -18,6 +18,8 @@ private:
 	float rotateSpeed;
 	/**A pointer to the TurretBarrel*/
 	std::shared_ptr<TurretBarrel> barrel;
+	/**The target vector of the Projectile*/
+	Ogre::Vector3 target;
 	
 	/**
 	Rotates the Turret. 
@@ -38,6 +40,12 @@ public:
 	Destructs the Turret object.
 	*/
 	~Turret();
+
+	/**
+	Setter # Sets the target of the Turret.
+	@param Ogre::Vector3 The new target of the Turret.
+	*/
+	void setTarget(Ogre::Vector3 target);
 
 	/**
 	Setter # Sets the rotation speed of the Turret.

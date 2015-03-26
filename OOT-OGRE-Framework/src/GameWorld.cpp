@@ -231,12 +231,21 @@ void GameWorld::Update(float dt, OIS::Keyboard* keyboard, OIS::Mouse* mouse)
 {
 	UpdateGame(dt);
 
+	/*update the helicopter*/
 	helicopter->handleInput(keyboard, mouse);
 	helicopter->updateActor(dt);
+
+	/*update the first turret*/
+	turret->setTarget(helicopter->getPosition());
 	turret->updateActor(dt);
 	turret->updateProjectiles(dt, application);
+
+	/*update the second turret*/
+	turret2->setTarget(helicopter->getPosition());
 	turret2->updateActor(dt);
 	turret2->updateProjectiles(dt, application);
+
+	/*update the camera*/
 	camera->update(dt);
 }
 

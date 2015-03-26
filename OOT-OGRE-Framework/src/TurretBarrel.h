@@ -22,12 +22,24 @@ private:
 	Ogre::Real timeSinceLastProjectile;
 	/**A vector of Projectiles.*/
 	std::vector<std::shared_ptr<Projectile>> projectile;
+	/**Projectile magnitude*/
+	Ogre::Real magnitude;
+	/**The target vector of the Projectile*/
+	Ogre::Vector3 target;
+	/**The world position of the Projectile spawn*/
+	Ogre::Vector3 spawn;
 
 	/**
 	Rotates the TurretBarrel. 
 	@param float The delta time.
 	*/
 	void rotateTurretBarrel(float dt);
+
+	/**
+	Work out the launch vector of the projectile.
+	@returns Ogre::Vector3 The launch vector of the projectile.
+	*/
+	Ogre::Vector3 workOutLaunchVector();
 
 public:
 	/**
@@ -36,14 +48,21 @@ public:
 	@param Ogre::Vector3 The orientation of the TurretBarrel.
 	@param Ogre::Real The scale of the TurretBarrel.
 	@param std::shared_ptr<Ogre::SceneNode> A shared pointer to the Turret node.
+	@param Ogre::Vector3 The world position of the projectile spawn.
 	*/
 	TurretBarrel(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::Real scale, 
-		std::shared_ptr<Ogre::SceneNode> turretNode);
+		std::shared_ptr<Ogre::SceneNode> turretNode, Ogre::Vector3 spawn);
 
 	/**
 	Destructs the TurretBarrel object.
 	*/
 	~TurretBarrel();
+
+	/**
+	Setter # Sets the target of the TurretBarrel.
+	@param Ogre::Vector3 The new target of the TurretBarrel.
+	*/
+	void setTarget(Ogre::Vector3 target);
 
 	/**
 	Setter # Sets the rotation speed of the TurretBarrel.

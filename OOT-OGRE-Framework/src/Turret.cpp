@@ -20,6 +20,15 @@ Turret::~Turret()
 
 /**************************************************************************************************************/
 
+/*Sets the target of the Turret.*/
+void Turret::setTarget(Ogre::Vector3 target)
+{
+	/*set the target*/
+	this->target = target;
+}
+
+/**************************************************************************************************************/
+
 /*Sets the rotation speed of the Turret.*/
 void Turret::setRotateSpeed(float rotateSpeed)
 {
@@ -71,8 +80,9 @@ void Turret::setUpActor(OgreApplication* application)
 
 	/*initialise the turret barrel*/
 	Ogre::Vector3 initialPosition = Ogre::Vector3(0.0f, 0.0f, 0.0f);
-	barrel.reset(new TurretBarrel(initialPosition, orientation, scale, gameActorNode));
+	barrel.reset(new TurretBarrel(initialPosition, orientation, scale, gameActorNode, position));
 	barrel->setUpActor(application);
+	barrel->setTarget(target);
 }
 
 /**************************************************************************************************************/
@@ -83,7 +93,10 @@ void Turret::updateActor(float dt)
 	/*rotate the Turret*/
 	rotateTurret(dt);
 
-	/*update the TurretBarrel*/
+	/*update the Barrel target*/
+	barrel->setTarget(target);
+
+	/*update the Barrel*/
 	barrel->updateActor(dt);
 }
 

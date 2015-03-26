@@ -5,15 +5,18 @@
 
 /*Constructs the TurretBarrel object.*/
 TurretBarrel::TurretBarrel(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::Real scale, 
-			 std::shared_ptr<Ogre::SceneNode> turretNode) 
+			 std::shared_ptr<Ogre::SceneNode> turretNode, Ogre::Vector3 spawn) 
 			 : GameActor(position, orientation, scale)
 {
 	/*initialise rotate speed*/
 	rotateSpeed = 0.0f;
 	/*initialise the time since last projectile*/
 	timeSinceLastProjectile = 0.0f;
+	/*initialise the magnitude*/
+	magnitude = 500.0f;
 	/*load the variables*/
 	this->turretNode = turretNode;
+	this->spawn = spawn;
 }
 
 /**************************************************************************************************************/
@@ -21,6 +24,15 @@ TurretBarrel::TurretBarrel(Ogre::Vector3 position, Ogre::Vector3 orientation, Og
 /*Destructs the TurretBarrel object.*/
 TurretBarrel::~TurretBarrel()
 {
+}
+
+/**************************************************************************************************************/
+
+/*Sets the target of the Turret.*/
+void TurretBarrel::setTarget(Ogre::Vector3 target)
+{
+	/*set the target*/
+	this->target = target;
 }
 
 /**************************************************************************************************************/
@@ -64,7 +76,7 @@ void TurretBarrel::setUpActor(OgreApplication* application)
 
 	/*initialise the projectile*/
 	projectile.push_back(make_shared<Projectile>(Ogre::Vector3(0.0f, 5.0f, 0.0f),
-		Ogre::Vector3(0.0f, 0.0f, 0.0f), 0.03f, gameActorNode, Ogre::Vector3(100.0f, 100.0f, 100.0f)));
+		Ogre::Vector3(0.0f, 0.0f, 0.0f), 0.03f, gameActorNode, workOutLaunchVector()));
 	projectile.back()->setUpActor(application);
 }
 
@@ -90,7 +102,7 @@ void TurretBarrel::updateProjectiles(float dt, OgreApplication* application)
 	{
 		/*initialise a new projectile*/
 		projectile.push_back(make_shared<Projectile>(Ogre::Vector3(0.0f, 5.0f, 0.0f),
-			Ogre::Vector3(0.0f, 0.0f, 0.0f), 0.03f, gameActorNode, Ogre::Vector3(100.0f, 100.0f, 100.0f)));
+			Ogre::Vector3(0.0f, 0.0f, 0.0f), 0.03f, gameActorNode, workOutLaunchVector()));
 		projectile.back()->setUpActor(application);
 		
 		/*reset the time since the last projectile*/
@@ -110,4 +122,26 @@ void TurretBarrel::updateProjectiles(float dt, OgreApplication* application)
 		/*remove the projectile at the front*/
 		projectile.erase(projectile.begin());
 	}
+}
+
+
+/**************************************************************************************************************/
+
+/*Work out the launch vector of the projectile.*/
+Ogre::Vector3 TurretBarrel::workOutLaunchVector()
+{
+	/*work out the direction vector*/
+	Ogre::Vector3 launchVector = target - (spawn + Ogre::Vector3(0.0f, 5.0f, 0.0f));
+
+	/*normalise the launch vector*/
+	launchVector.normalise();
+
+	/*increase the launch vector by the magnitude of the projectile*/
+	launchVector *= magnitude;
+
+	/*Add a magic number to account for projectile motion*/
+	launchVector.y += 10.0f;
+
+	/*return the launch vector of the projectile*/
+	return launchVector;
 }
