@@ -36,7 +36,7 @@ void GameWorld::InitilaiseScene()
 void GameWorld::CreateEntities()
 {
 	/*initialise a helicopter*/
-	helicopter.reset(new Helicopter(Ogre::Vector3(200.0f, 600.0f, 1800.0f), Ogre::Vector3(0.0f, 0.0f, 0.0f), 1.0f));
+	helicopter.reset(new Helicopter(Ogre::Vector3(200.0f, 600.0f, 0.0f), Ogre::Vector3(0.0f, 0.0f, 0.0f), 1.0f));
 	helicopter->setUpActor(application);
 
 	/*initialise a turret*/
@@ -138,6 +138,10 @@ void GameWorld::Run()
 		sprintf_s(buffer, 256, "%4.2f %4.2f %4.2f", vValue.x, vValue.y, vValue.z);
 		paramPanel->setParamValue(1, buffer);
 
+		/*update the health panel*/
+		sprintf_s(buffer, 256, "%0i", helicopter->getHealth());
+		healthPanel->setParamValue(0, buffer);
+
 		//Evaluate the current time and the time elapsed since last frame 
 		//Prepare the next iteration. 	
 		unsigned long currentTime = timer->getMilliseconds();
@@ -238,12 +242,12 @@ void GameWorld::Update(float dt, OIS::Keyboard* keyboard, OIS::Mouse* mouse)
 	/*update the first turret*/
 	turret->setTarget(helicopter->getPosition());
 	turret->updateActor(dt);
-	turret->updateProjectiles(dt, application);
+	turret->updateProjectiles(dt, application, helicopter);
 
 	/*update the second turret*/	
 	turret2->setTarget(helicopter->getPosition());
 	turret2->updateActor(dt);
-	turret2->updateProjectiles(dt, application);
+	turret2->updateProjectiles(dt, application, helicopter);
 
 	/*update the camera*/
 	camera->update(dt);
@@ -264,4 +268,9 @@ void GameWorld::CreateGUI()
 
 	trayManager->showLogo(OgreBites::TL_BOTTOMRIGHT);
 	trayManager->hideCursor(); 
+
+	//Create a health panel
+	Ogre::StringVector health;
+	health.push_back("Helicopter Health");
+	healthPanel = trayManager->createParamsPanel(OgreBites::TL_TOPRIGHT, "Health Panel", 350, health);
 }

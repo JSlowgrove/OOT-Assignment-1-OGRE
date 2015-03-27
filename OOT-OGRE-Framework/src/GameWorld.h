@@ -32,6 +32,7 @@ private:
 	std::shared_ptr<Turret> turret2;
 	std::shared_ptr<TerrainManager> terrain;
 
+	OgreBites::ParamsPanel* healthPanel;
 	OgreBites::ParamsPanel* paramPanel;
 	void CreateGUI();
 

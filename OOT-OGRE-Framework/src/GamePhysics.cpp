@@ -118,7 +118,7 @@ bool GamePhysics::collisionTest(Ogre::Vector3 position, Ogre::Vector3 testPositi
 	Ogre::Real dist = position.distance(testPosition);
 
 	/*check if within 100.0f of the target*/
-	if (dist <= 100.0f)
+	if (dist <= 50.0f)
 	{
 		/*collision is true*/
 		return true;

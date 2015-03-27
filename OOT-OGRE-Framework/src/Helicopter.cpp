@@ -15,6 +15,13 @@ Helicopter::Helicopter(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::
 	maxSpeed = 1000.0f;
 	targetSpeedPercent = Ogre::Vector3(0.0f, 0.0f, 0.0f);
 	speed = maxSpeed * (targetSpeedPercent * 0.01f);
+
+	/*initialise health*/
+	health = 3;
+
+	/*initialise the spawn and direction*/
+	spawn = position;
+	direction = orientation;
 }
 
 /**************************************************************************************************************/
@@ -22,6 +29,35 @@ Helicopter::Helicopter(Ogre::Vector3 position, Ogre::Vector3 orientation, Ogre::
 /*Destructs the Helicopter object.*/
 Helicopter::~Helicopter()
 {
+}
+
+/**************************************************************************************************************/
+
+/*Decrease the health of the Helicopter by 1.*/
+void Helicopter::takeDamage()
+{
+	/*decrease the health*/
+	health--;
+}
+
+/**************************************************************************************************************/
+
+/*reset the helicopter*/
+void Helicopter::resetHelicopter()
+{
+	/*reset the health, direction and position*/
+	health = 3;
+	gameActorNode->setPosition(spawn);
+	gameActorNode->setOrientation(util::covertRotateToQuaternion(direction));
+}
+
+/**************************************************************************************************************/
+
+/*Gets the health of the Helicopter.*/
+int Helicopter::getHealth()
+{
+	/*return the health*/
+	return health;
 }
 
 /**************************************************************************************************************/

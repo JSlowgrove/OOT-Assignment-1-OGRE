@@ -84,7 +84,7 @@ void TurretBarrel::updateActor(float dt)
 /**************************************************************************************************************/
 
 /*Updates the Projectile vector.*/
-void TurretBarrel::updateProjectiles(float dt, OgreApplication* application)
+void TurretBarrel::updateProjectiles(float dt, OgreApplication* application, std::shared_ptr<Helicopter> helicopter)
 {
 	/*update the time since last projectile*/
 	timeSinceLastProjectile += dt;
@@ -116,6 +116,16 @@ void TurretBarrel::updateProjectiles(float dt, OgreApplication* application)
 		{
 			/*remove the projectile*/
 			projectile.erase(projectile.begin() + i);
+			
+			/*decrease the health of the helicopter*/
+			helicopter->takeDamage();
+
+			/*check if the helicopter is destroyed*/
+			if (helicopter->getHealth() == 0)
+			{
+				/*reset the helicopter*/
+				helicopter->resetHelicopter();
+			}
 		}
 	}
 

@@ -18,6 +18,10 @@ private:
 	std::shared_ptr<Rotor> mainRotor;
 	/**A pointer to the side rotor of the Helicopter.*/
 	std::shared_ptr<Rotor> sideRotor;
+	/**The spawn of the Helicopter.*/
+	Ogre::Vector3 spawn;
+	/**The initial direction of the Helicopter.*/
+	Ogre::Vector3 direction;
 	/**The speed of the Helicopter.*/
 	Ogre::Vector3 speed;
 	/**The max speed of the Helicopter.*/
@@ -40,6 +44,8 @@ private:
 	int mouseX;
 	/**The y mouse position*/
 	int mouseY;
+	/**The health of the helicopter*/
+	int health;
 
 	/**
 	Updates the speeds of the helicopter using the user commands.
@@ -69,6 +75,22 @@ public:
 	Destructs the Helicopter object.
 	*/
 	~Helicopter();
+
+	/**
+	Decrease the health of the Helicopter by 1.
+	*/
+	void takeDamage();
+
+	/**
+	Resets the Helicopter to it's initial values.
+	*/
+	void resetHelicopter();
+
+	/**
+	Getter # Gets the health of the Helicopter.
+	@returns int The health of the Helicopter.
+	*/
+	int getHealth();
 
 	/**
 	Getter # Gets the speed of the Helicopter.

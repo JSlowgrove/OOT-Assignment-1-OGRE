@@ -94,8 +94,8 @@ void Turret::updateActor(float dt)
 /**************************************************************************************************************/
 
 /*Updates the projectiles.*/
-void Turret::updateProjectiles(float dt, OgreApplication* application)
+void Turret::updateProjectiles(float dt, OgreApplication* application, std::shared_ptr<Helicopter> helicopter)
 {
 	/*update the projectiles*/
-	barrel->updateProjectiles(dt, application);
+	barrel->updateProjectiles(dt, application, helicopter);
 }

@@ -7,6 +7,7 @@
 #include "MyUtils.h"
 #include "GameActor.h"
 #include "Projectile.h"
+#include "Helicopter.h"
 
 /**
 @brief A class for a TurretBarrel object that inherits GameActor.
@@ -80,5 +81,5 @@ public:
 	@param float The delta time.
 	@param OgreApplication * A pointer to the application.
 	*/
-	void updateProjectiles(float dt, OgreApplication* application);
+	void updateProjectiles(float dt, OgreApplication* application, std::shared_ptr<Helicopter> helicopter);
 };
