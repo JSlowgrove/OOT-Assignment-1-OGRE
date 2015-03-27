@@ -9,6 +9,7 @@
 
 /**
 @brief A class for a Rotor object that inherits GameActor.
+@author Jamie Slowgrove
 */
 class Rotor : public GameActor
 {

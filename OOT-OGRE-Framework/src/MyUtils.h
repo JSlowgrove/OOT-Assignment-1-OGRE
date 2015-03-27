@@ -3,7 +3,10 @@
 #include "stdafx.h"
 #include "OgreMath.h"
 
-/**@brief A namespace to contain utility functions.*/
+/**
+@brief A namespace to contain utility functions.
+@author Jamie Slowgrove
+*/
 namespace util
 {
 	/**A definition of pi*/

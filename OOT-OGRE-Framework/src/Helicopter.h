@@ -10,6 +10,7 @@
 
 /**
 @brief A class for a Helicopter object that inherits GameActor.
+@author Jamie Slowgrove
 */
 class Helicopter : public GameActor
 {

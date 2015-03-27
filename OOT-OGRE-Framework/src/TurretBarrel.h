@@ -11,6 +11,7 @@
 
 /**
 @brief A class for a TurretBarrel object that inherits GameActor.
+@author Jamie Slowgrove
 */
 class TurretBarrel : public GameActor
 {

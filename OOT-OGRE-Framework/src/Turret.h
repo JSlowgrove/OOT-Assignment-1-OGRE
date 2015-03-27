@@ -10,6 +10,7 @@
 
 /**
 @brief A class for a Turret object that inherits GameActor.
+@author Jamie Slowgrove
 */
 class Turret : public GameActor
 {

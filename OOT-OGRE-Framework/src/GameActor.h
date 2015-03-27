@@ -9,6 +9,7 @@
 
 /**
 @brief A class for a GameActor object.
+@author Jamie Slowgrove
 */
 class GameActor
 {

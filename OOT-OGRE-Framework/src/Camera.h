@@ -6,6 +6,7 @@
 
 /**
 @brief A class for a Camera object.
+@author Jamie Slowgrove
 */
 class Camera
 {

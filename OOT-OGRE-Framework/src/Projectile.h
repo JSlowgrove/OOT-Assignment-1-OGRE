@@ -10,6 +10,7 @@
 
 /**
 @brief A class for a Projectile object that inherits GameActor and GamePhysics.
+@author Jamie Slowgrove
 */
 class Projectile : public GameActor, public GamePhysics
 {

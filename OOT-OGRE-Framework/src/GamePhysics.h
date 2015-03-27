@@ -10,6 +10,7 @@
 
 /**
 @brief A class for the GamePhysics.
+@author Jamie Slowgrove
 */
 class GamePhysics
 {
