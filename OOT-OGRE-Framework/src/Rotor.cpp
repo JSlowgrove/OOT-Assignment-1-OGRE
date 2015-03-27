@@ -1,6 +1,13 @@
 #include "stdafx.h"
 #include "Rotor.h"
 
+/*
+The method that I employed to animate the rotors was using percentages. I set a maximum rotation speed for the 
+rotor, I then send in a percentage of that speed which I wish the rotors to target. The rotors then 
+increase/decrease the speed of the rotors over time until they reach the target speed. This gives the
+impression of the rotors speeding up or down, as opposed to just instantly changing speed.
+*/
+
 /**************************************************************************************************************/
 
 /*Constructs the Rotor object.*/

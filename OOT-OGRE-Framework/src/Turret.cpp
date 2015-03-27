@@ -1,6 +1,13 @@
 #include "stdafx.h"
 #include "Turret.h"
 
+/*
+In my turret class I have its turret barrel as an instance inside of it, with the projectiles from the turret 
+instanced within the barrel. As such if I wish to include another turret into the scene all that I need to do 
+is initialise and update a new turret, and it will automatically create its own barrel and projectiles without 
+me needing to instance them myself. 
+*/
+
 /**************************************************************************************************************/
 
 /*Constructs the Turret object.*/

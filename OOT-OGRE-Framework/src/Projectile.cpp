@@ -1,6 +1,11 @@
 #include "stdafx.h"
 #include "Projectile.h"
 
+/*
+My projectile class also inherits my game physics class as well as my game actor class. This is to allow the 
+projectile to access and use the projectile motion and collision physics that I have included in this class. 
+*/
+
 /**************************************************************************************************************/
 
 /*Constructs the Projectile object.*/

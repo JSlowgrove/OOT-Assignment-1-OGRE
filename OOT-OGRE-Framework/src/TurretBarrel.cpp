@@ -1,6 +1,11 @@
 #include "stdafx.h"
 #include "TurretBarrel.h"
 
+/*
+The projectiles are automatically fired by the turrets every seconds in the direction of the player, and will
+disappear if they either collide with the helicopter or there is more than 10 projectiles per turret.
+*/
+
 /**************************************************************************************************************/
 
 /*Constructs the TurretBarrel object.*/

@@ -1,6 +1,13 @@
 #include "stdafx.h"
 #include "GameActor.h"
 
+/*
+The game actor class contains a number of protected attributes that are inherited by its children. 
+These all contain getters and setter, depending on whether the data needs to be accessed externally. 
+The game actor class also contains some pure virtual functions, for dealing with setting up and 
+updating the class. These are overwritten in its children classes.
+*/
+
 /**************************************************************************************************************/
 
 /*initialise the actor id generator static variable*/
