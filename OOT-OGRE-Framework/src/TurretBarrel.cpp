@@ -108,6 +108,17 @@ void TurretBarrel::updateProjectiles(float dt, OgreApplication* application)
 		currentProjectile->updateActor(dt);
 	}
 
+	/*loop through all of the projectiles*/
+	for (unsigned int i = 0; i < projectile.size(); i++)
+	{
+		/*test if the projectile collides with the helicopter*/
+		if (projectile[i]->collisionTest(projectile[i]->getWorldPosition(), target))
+		{
+			/*remove the projectile*/
+			projectile.erase(projectile.begin() + i);
+		}
+	}
+
 	/*if there is more than 10 projectiles in the vector*/
 	if (projectile.size() > 10)
 	{

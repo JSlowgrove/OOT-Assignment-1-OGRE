@@ -107,3 +107,23 @@ Ogre::Real GamePhysics::getSfromVAT(Ogre::Real v, Ogre::Real a, Ogre::Real t)
 	/*return the displacement*/
 	return s;
 }
+
+
+/**************************************************************************************************************/
+
+/*Test if there is a collision*/
+bool GamePhysics::collisionTest(Ogre::Vector3 position, Ogre::Vector3 testPosition)
+{
+	/*get the distance between the two vectors*/
+	Ogre::Real dist = position.distance(testPosition);
+
+	/*check if within 100.0f of the target*/
+	if (dist <= 100.0f)
+	{
+		/*collision is true*/
+		return true;
+	}
+
+	/*collision is false*/
+	return false;
+}

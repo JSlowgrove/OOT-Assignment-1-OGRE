@@ -34,6 +34,12 @@ public:
 	~Projectile();
 
 	/**
+	Getter # Gets the world position of the Projectile.
+	@returns Ogre::Vector3 The world position of the Projectile.
+	*/
+	Ogre::Vector3 getWorldPosition();
+
+	/**
 	Sets up the actor for the Projectile.
 	@param OgreApplication A pointer to the application.
 	*/

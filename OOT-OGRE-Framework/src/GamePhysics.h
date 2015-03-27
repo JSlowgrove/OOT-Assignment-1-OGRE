@@ -136,4 +136,11 @@ public:
 	@returns Ogre::Real The displacement.
 	*/
 	Ogre::Real getSfromVAT(Ogre::Real v, Ogre::Real a, Ogre::Real t);
+
+	/**
+	Test if there is a collision.
+	@param Ogre::Vector3 The position.
+	@param Ogre::Vector3 The test position.
+	*/
+	bool collisionTest(Ogre::Vector3 position, Ogre::Vector3 testPosition);
 };

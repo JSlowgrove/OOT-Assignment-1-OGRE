@@ -240,7 +240,7 @@ void GameWorld::Update(float dt, OIS::Keyboard* keyboard, OIS::Mouse* mouse)
 	turret->updateActor(dt);
 	turret->updateProjectiles(dt, application);
 
-	/*update the second turret*/
+	/*update the second turret*/	
 	turret2->setTarget(helicopter->getPosition());
 	turret2->updateActor(dt);
 	turret2->updateProjectiles(dt, application);

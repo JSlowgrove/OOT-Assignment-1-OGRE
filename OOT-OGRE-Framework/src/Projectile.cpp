@@ -21,6 +21,16 @@ Projectile::~Projectile()
 {
 }
 
+
+/**************************************************************************************************************/
+
+/*Gets the world position of the Projectile.*/
+Ogre::Vector3 Projectile::getWorldPosition()
+{
+	/*return the world position*/
+	return gameActorNode->convertLocalToWorldPosition(position);
+}
+
 /**************************************************************************************************************/
 
 /*Sets the actor for the Projectile.*/
@@ -68,6 +78,9 @@ void Projectile::updateActor(float dt)
 {
 	/*update the projectile motion*/
 	updateProjectile(dt);
+
+	/*update the value of position*/
+	position += getProjectileDisplacement();
 
 	/*update the position*/
 	gameActorNode->translate(getProjectileDisplacement(), Ogre::Node::TS_WORLD);
